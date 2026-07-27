@@ -1,7 +1,7 @@
 "use client";
 
 const STATS = [
-  { value: "24,800+", label: "Active users" },
+  { value: "24,000+", label: "Active users" },
   { value: "8,400+", label: "Regional Indian dishes" },
   { value: "12,600+", label: "Weekly food decisions" },
   { value: "3,200+", label: "Dietitian-reviewed swaps" },

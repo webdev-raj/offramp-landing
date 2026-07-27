@@ -5,18 +5,33 @@ import { ArrowRight, ChevronRight, Star } from "lucide-react";
 
 export default function Hero({ onOpenSwapModal }) {
   return (
-    <section className="relative overflow-hidden bg-[#E0187A]">
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[640px] lg:min-h-[700px]">
-        {/* Left Side: Pink Panel */}
-        <div className="relative bg-[#E0187A] px-6 sm:px-10 lg:pl-16 lg:pr-12 pt-12 pb-28 md:pb-24 flex flex-col justify-center z-10">
+    <section className="relative overflow-hidden" style={{ minHeight: "640px" }}>
+      {/* Two-panel split background */}
+      <div className="absolute inset-0 grid grid-cols-2">
+        {/* Left: Pink */}
+        <div className="bg-[#E0187A]" />
+        {/* Right: Yellow with dot pattern */}
+        <div
+          className="bg-[#F5A623] relative"
+          style={{
+            backgroundImage: `radial-gradient(circle, #C8781A 1.5px, transparent 1.5px)`,
+            backgroundSize: "20px 20px",
+          }}
+        />
+      </div>
+
+      {/* Content Grid */}
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 min-h-[640px] lg:min-h-[700px]">
+        {/* Left Side Content */}
+        <div className="relative px-6 sm:px-10 lg:pl-16 lg:pr-8 pt-14 pb-32 md:pb-16 flex flex-col justify-center">
           {/* Subheader Badge */}
-          <div className="flex items-center gap-2 text-[#FFD23F] text-xs font-extrabold tracking-widest uppercase mb-6">
+          <div className="flex items-center gap-2 text-[#FFD23F] text-xs font-extrabold tracking-widest uppercase mb-5">
             <Star className="w-3.5 h-3.5 fill-[#FFD23F] text-[#FFD23F]" />
             <span>SMART FOOD SWAPS · INDIA</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-anton uppercase leading-[0.92] text-5xl sm:text-6xl lg:text-7xl mb-6 tracking-tight drop-shadow-sm">
+          <h1 className="font-anton uppercase leading-[0.92] text-5xl sm:text-6xl lg:text-[5.5rem] mb-5 tracking-tight">
             <span className="text-[#FFD23F]">LOVE THE </span>
             <span className="text-white">FOOD</span>
             <br />
@@ -25,16 +40,16 @@ export default function Hero({ onOpenSwapModal }) {
           </h1>
 
           {/* Body Paragraph */}
-          <p className="text-white/90 text-base sm:text-lg max-w-lg mb-8 leading-relaxed font-normal">
+          <p className="text-white/90 text-sm sm:text-base max-w-md mb-7 leading-relaxed font-normal">
             Helping people change what they eat without changing who they are —
             through AI-guided food transitions using familiar Indian flavors.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mb-10">
+          <div className="flex flex-wrap items-center gap-3 mb-8">
             <button
               onClick={onOpenSwapModal}
-              className="bg-[#FFC93C] hover:bg-[#ffbd12] text-[#3D1400] font-bold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg shadow-black/15 flex items-center gap-2 hover:scale-[1.02] active:scale-95 transition-all"
+              className="bg-[#FFC93C] hover:bg-[#ffbd12] text-[#3D1400] font-bold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-black/15 flex items-center gap-2 hover:scale-[1.02] active:scale-95 transition-all"
             >
               <span>START SWAP</span>
               <ArrowRight className="w-5 h-5" />
@@ -42,7 +57,7 @@ export default function Hero({ onOpenSwapModal }) {
 
             <button
               onClick={onOpenSwapModal}
-              className="border-2 border-white/80 hover:border-white text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full flex items-center gap-1.5 hover:bg-white/10 transition-colors"
+              className="border-2 border-white/80 hover:border-white text-white font-semibold text-sm px-6 py-3.5 rounded-full flex items-center gap-1.5 hover:bg-white/10 transition-colors"
             >
               <span>See how it works</span>
               <ChevronRight className="w-5 h-5" />
@@ -58,28 +73,25 @@ export default function Hero({ onOpenSwapModal }) {
               <span className="font-bold text-white ml-1">4.8 / 5</span>
             </div>
             <span className="w-1.5 h-1.5 rounded-full bg-white/50" />
-            <span>24,800+ active users</span>
+            <span>24,000+ active users</span>
           </div>
 
           {/* Subtle Devanagari background watermark */}
           <span
             aria-hidden="true"
-            className="hidden lg:block absolute bottom-2 left-6 text-[12rem] font-anton text-white/[0.06] select-none leading-none pointer-events-none"
+            className="hidden lg:block absolute bottom-4 left-6 text-[11rem] font-anton text-white/[0.05] select-none leading-none pointer-events-none"
           >
             आहार
           </span>
         </div>
 
-        {/* Right Side: Yellow Panel with Red Diamond Texture */}
-        <div className="relative bg-[#F5A623] bg-diamond-red min-h-[350px] md:min-h-full">
-          {/* Subtle overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
-        </div>
+        {/* Right Side: Empty (background handles the yellow) */}
+        <div className="hidden md:block" />
       </div>
 
-      {/* Floating Phone Mockup centered on seam */}
+      {/* Floating Phone Mockup - centered on the seam */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20 py-8">
-        <div className="w-[280px] sm:w-[310px] lg:w-[330px] pointer-events-auto transform hover:rotate-1 hover:scale-[1.01] transition-transform duration-300 shadow-2xl rounded-[3rem]">
+        <div className="w-[260px] sm:w-[290px] lg:w-[310px] ml-[30%] md:ml-0 pointer-events-auto transform hover:rotate-1 hover:scale-[1.01] transition-transform duration-300">
           {/* Phone Frame */}
           <div className="rounded-[2.8rem] bg-[#111111] p-3 ring-4 ring-black/20 shadow-2xl">
             <div className="rounded-[2.2rem] bg-[#FDF6E8] overflow-hidden border border-[#E8DCC4]">
@@ -143,7 +155,7 @@ export default function Hero({ onOpenSwapModal }) {
                 <ul className="space-y-1.5 mb-4 px-1">
                   <li className="flex items-start gap-1.5 text-[9px] text-[#4A4A4A] font-medium leading-tight">
                     <span className="text-[#E0187A] font-bold">•</span>
-                    <span>45% lower saturated fat & zero cholesterol</span>
+                    <span>45% lower saturated fat &amp; zero cholesterol</span>
                   </li>
                   <li className="flex items-start gap-1.5 text-[9px] text-[#4A4A4A] font-medium leading-tight">
                     <span className="text-[#E0187A] font-bold">•</span>
