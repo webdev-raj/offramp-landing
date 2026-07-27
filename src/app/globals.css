@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-anton: 'Anton', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-poppins);
+  }
+}
+
+.font-anton {
+  font-family: var(--font-anton), sans-serif;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Diamond pattern textures matching Figma design */
+.bg-diamond-red {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23C81E3A' fill-opacity='0.45' d='M12 2L20 12L12 22L4 12Z'/%3E%3C/svg%3E");
+  background-size: 18px 18px;
+}
+
+.bg-diamond-yellow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23F5A623' fill-opacity='0.8' d='M12 2L20 12L12 22L4 12Z'/%3E%3C/svg%3E");
+  background-size: 16px 16px;
+}
+
+.bg-diamond-gold {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Cpath fill='%23F5A623' fill-opacity='0.7' d='M12 4L18 12L12 20L6 12Z'/%3E%3C/svg%3E");
+  background-size: 20px 20px;
+}
+
+/* Scalloped / Wavy border styling matching the Figma separator */
+.wavy-separator-navy {
+  background: radial-gradient(circle at 10px -5px, transparent 12px, #1B2264 13px);
+  background-size: 20px 20px;
+  background-repeat: repeat-x;
+}
+
+.wavy-top-navy {
+  position: relative;
+}
+
+.wavy-top-navy::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: radial-gradient(circle at 10px 14px, #1B2264 10px, transparent 11px);
+  background-size: 20px 14px;
+  background-repeat: repeat-x;
+}
+
+/* 4-sided Scalloped / Postage Stamp Border Mask */
+.scallop-card {
+  --scallop-size: 16px;
+  --scallop-radius: 6px;
+  -webkit-mask: 
+    radial-gradient(var(--scallop-radius) at 50% 0, #0000 99%, #000) 0 0 / var(--scallop-size) 100% repeat-x,
+    radial-gradient(var(--scallop-radius) at 50% 100%, #0000 99%, #000) 0 100% / var(--scallop-size) 100% repeat-x,
+    radial-gradient(var(--scallop-radius) at 0 50%, #0000 99%, #000) 0 0 / 100% var(--scallop-size) repeat-y,
+    radial-gradient(var(--scallop-radius) at 100% 50%, #0000 99%, #000) 100% 0 / 100% var(--scallop-size) repeat-y;
+  -webkit-mask-composite: source-in;
+  mask: 
+    radial-gradient(var(--scallop-radius) at 50% 0, #0000 99%, #000) 0 0 / var(--scallop-size) 100% repeat-x,
+    radial-gradient(var(--scallop-radius) at 50% 100%, #0000 99%, #000) 0 100% / var(--scallop-size) 100% repeat-x,
+    radial-gradient(var(--scallop-radius) at 0 50%, #0000 99%, #000) 0 0 / 100% var(--scallop-size) repeat-y,
+    radial-gradient(var(--scallop-radius) at 100% 50%, #0000 99%, #000) 100% 0 / 100% var(--scallop-size) repeat-y;
+  mask-composite: intersect;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDF8EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E0187A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C01567;
+}
