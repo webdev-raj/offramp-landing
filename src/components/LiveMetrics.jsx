@@ -87,7 +87,7 @@ export default function LiveMetrics() {
           {METRIC_CARDS.map((card) => (
             <div
               key={card.id}
-              className={`${card.bgClass} rounded-2xl p-5 sm:p-6 border flex flex-col justify-between min-h-[210px] sm:min-h-[230px] shadow-md hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 group cursor-pointer`}
+              className={`${card.bgClass} scallop-card rounded-2xl p-5 sm:p-6 border flex flex-col justify-between min-h-[210px] sm:min-h-[230px] shadow-md hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 group cursor-pointer`}
             >
               {/* Card Top Star */}
               <div>

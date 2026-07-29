@@ -5,7 +5,7 @@ import { ArrowRight, Zap, ShieldAlert, Calendar, RotateCcw, Sparkles } from "luc
 
 export default function ToolsGrid({ onOpenSwapModal }) {
   return (
-    <section className="py-8 px-6 lg:py-12 bg-[#FDF8EE] relative overflow-hidden">
+    <section className="py-8 px-6 lg:py-20 bg-[#FEE9B7] relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}

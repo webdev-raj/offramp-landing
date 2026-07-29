@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 
 const STATS = [
   { value: "24,000+", label: "Active users" },
@@ -7,13 +8,23 @@ const STATS = [
   { value: "3,200+", label: "Dietitian-reviewed swaps" },
 ];
 
+const TOP_CIRCLE_COUNT = 50;
+const DIAMOND_COUNT = 34;
+
 export default function StatsBand() {
   return (
     <section className="relative bg-[#1B2264] text-white z-10">
-      {/* Top Diamond Accent Border */}
-      <div className="h-3 bg-diamond-gold border-b border-white/10" />
+      {/* Top circle row */}
+      <div className="h-5 w-full bg-[#1B2264] pl-2 flex items-center justify-start gap-2 whitespace-nowrap">
+        {Array.from({ length: TOP_CIRCLE_COUNT }).map((_, i) => (
+          <div
+            key={i}
+            className="h-5 w-6 rounded-full bg-[#1B2264] -translate-y-1 "
+          />
+        ))}
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-6 py-8 lg:py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/15 text-center">
           {STATS.map((stat, idx) => (
             <div key={idx} className="pt-4 md:pt-0 px-2 group">
@@ -28,8 +39,15 @@ export default function StatsBand() {
         </div>
       </div>
 
-      {/* Bottom Diamond Accent Border */}
-      <div className="h-3 bg-diamond-gold border-t border-white/10" />
+      {/* Bottom diamond accent border */}
+      <div className="h-4 w-full pl-1 flex items-center gap-1.5">
+        {Array.from({ length: DIAMOND_COUNT }).map((_, i) => (
+          <div key={i} className="h-full flex items-center justify-start gap-1.5">
+            <div className="fill-rect h-full w-4 bg-[#F5AE38] rotate-45 -translate-y-1.5" />
+            <div className="border-rect h-full w-4 bg-white/10 border-2 border-[#F5AE38] rotate-45 -translate-y-1.5" />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

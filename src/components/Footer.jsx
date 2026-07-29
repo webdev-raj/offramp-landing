@@ -1,124 +1,179 @@
 "use client";
 
-import { Heart, ArrowRight } from "lucide-react";
+import { useState } from "react";
 
-const TEAM_MEMBERS = [
-  { name: "Priya Sharma", role: "Dietitian & Co-founder", initials: "PS", bg: "bg-[#E0187A]" },
-  { name: "Arjun Mehta", role: "AI Lead", initials: "AM", bg: "bg-[#2542A5]" },
-  { name: "Kavya Iyer", role: "Food Scientist", initials: "KI", bg: "bg-[#1B7042]" },
-  { name: "Rohan Desai", role: "Product Designer", initials: "RD", bg: "bg-[#C44319]" },
-];
+export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  const DIAMOND_COUNT = 44;
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setEmail("");
+      setTimeout(() => setSubscribed(false), 4000);
+    }
+  };
 
-export default function Footer({ onOpenSwapModal }) {
   return (
-    <footer className="bg-[#1B2264] text-white">
-      {/* Meet the Team Section */}
-      <div className="border-b border-white/10 pt-16 pb-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
-            <div>
-              <p className="text-[#FFC93C] text-xs font-extrabold tracking-[0.2em] uppercase mb-3">
-                ★ THE PEOPLE BEHIND IT
-              </p>
-              <h2 className="font-anton uppercase text-4xl sm:text-5xl lg:text-6xl text-white leading-[0.95] tracking-tight">
-                Meet the <span className="text-[#E0187A]">team</span>
-              </h2>
-            </div>
-            <button
-              onClick={onOpenSwapModal}
-              className="shrink-0 bg-[#FFC93C] hover:bg-[#ffbd12] text-[#3D1400] font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-full shadow-md transition-all flex items-center gap-2 self-start md:self-auto"
-            >
-              <span>Join the Mission</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+    <footer className="w-full text-white font-poppins">
+      {/* 1. TOP NEWSLETTER SUBSCRIPTION BANNER (PINK BACKGROUND) */}
+      <div className="bg-[#E0187A] py-10 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          {/* Left Text Block */}
+          <div>
+            <p className="text-[11px] font-mono tracking-[0.22em] text-white/80 uppercase mb-1.5 font-bold">
+              WEEKLY KITCHEN NOTES
+            </p>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug">
+              Safer swaps, expert explainers, and product updates.
+            </h3>
           </div>
 
-          {/* Team Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-            {TEAM_MEMBERS.map((member) => (
-              <div key={member.name} className="group cursor-pointer">
-                <div className={`${member.bg} w-full aspect-square rounded-2xl flex items-center justify-center text-white font-anton text-4xl shadow-lg group-hover:scale-[1.03] group-hover:shadow-xl transition-all duration-300 mb-4 relative overflow-hidden`}>
-                  <span>{member.initials}</span>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
-                </div>
-                <p className="font-bold text-white text-sm leading-tight">{member.name}</p>
-                <p className="text-white/60 text-xs mt-1">{member.role}</p>
-              </div>
-            ))}
-          </div>
+          {/* Right Input Form */}
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
+            <div className="relative w-full sm:w-80">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                required
+                className="w-full bg-white/20 border border-white/30 rounded-full px-6 py-3.5 text-sm text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-[#F5A623] transition-all"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full sm:w-auto bg-[#F5A623] hover:bg-[#e09214] active:scale-95 text-[#231E1B] font-extrabold text-xs sm:text-sm tracking-wider uppercase px-8 py-3.5 rounded-full shadow-md transition-all shrink-0"
+            >
+              {subscribed ? "SUBSCRIBED!" : "SUBSCRIBE"}
+            </button>
+          </form>
         </div>
       </div>
 
-      {/* Footer Links Row */}
-      <div className="pt-14 pb-8 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/15">
-          {/* Brand Column */}
-          <div className="md:col-span-5">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-full bg-[#E0187A] ring-4 ring-[#F5A623]/40 flex items-center justify-center text-white font-extrabold text-lg">
-                D
+      {/* 2. MAIN FOOTER BODY (DARK CHOCOLATE BROWN BACKGROUND) */}
+      <div className="bg-[#231E1B] pt-16 pb-10 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-7xl mx-auto">
+          {/* 4-Column Grid Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 pb-16">
+
+            {/* Column 1: Brand Info */}
+            <div className="md:col-span-5 pr-0 md:pr-8">
+              {/* OffRamp Logo with 4-petal emblem */}
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-9 h-9 rounded-xl bg-[#E0187A] flex items-center justify-center shadow-sm">
+                  <svg className="w-5 h-5 text-white fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM22 12C22 13.1 21.1 14 20 14C18.9 14 18 13.1 18 12C18 10.9 18.9 10 20 10C21.1 10 22 10.9 22 12ZM12 22C10.9 22 10 21.1 10 20C10 18.9 10.9 18 12 18C13.1 18 14 18.9 14 20C14 21.1 13.1 22 12 22ZM2 12C2 10.9 2.9 10 4 10C5.1 10 6 10.9 6 12C6 13.1 5.1 14 4 14C2.9 14 2 13.1 2 12ZM12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16C9.8 16 8 14.2 8 12C8 9.8 9.8 8 12 8Z" />
+                  </svg>
+                </div>
+                <span className="font-extrabold text-2xl tracking-tight text-white">
+                  OffRamp
+                </span>
               </div>
-              <span className="font-anton text-3xl tracking-tight text-white">
-                <span className="text-[#E0187A]">off</span>
-                <span className="text-[#F5A623]">ramp</span>
-              </span>
+
+              {/* Subtext */}
+              <p className="text-white/70 text-sm leading-relaxed">
+                Smart food swaps for Indian meals.
+              </p>
+              <p className="text-white/70 text-sm leading-relaxed mb-6">
+                Expert-verified, diet-agnostic.
+              </p>
+
+              {/* 4 Colored Floral Emblems Row */}
+              <div className="flex items-center gap-2 pt-1">
+                <FloralEmblem bg="bg-[#E0187A]" />
+                <FloralEmblem bg="bg-[#F5A623]" />
+                <FloralEmblem bg="bg-[#1E7E51]" />
+                <FloralEmblem bg="bg-[#2542A5]" />
+              </div>
             </div>
-            <p className="text-white/75 text-sm max-w-sm leading-relaxed mb-6 font-normal">
-              Redefining healthy eating across India without compromising on regional tastes, memories, or cultural heritage.
-            </p>
-            <button
-              onClick={onOpenSwapModal}
-              className="bg-[#FFC93C] hover:bg-[#ffbd12] text-[#3D1400] font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full shadow-md transition-all"
-            >
-              Start Free Swap Trial
-            </button>
+
+            {/* Column 2: PRODUCT */}
+            <div className="md:col-span-2">
+              <h4 className="font-extrabold text-xs tracking-[0.2em] text-[#F5A623] uppercase mb-5">
+                PRODUCT
+              </h4>
+              <ul className="space-y-3 text-sm font-medium text-white/70">
+                <li><a href="#explore" className="hover:text-white transition-colors">Explore Swaps</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Challenges</a></li>
+                <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
+              </ul>
+            </div>
+
+            {/* Column 3: COMPANY */}
+            <div className="md:col-span-2">
+              <h4 className="font-extrabold text-xs tracking-[0.2em] text-[#F5A623] uppercase mb-5">
+                COMPANY
+              </h4>
+              <ul className="space-y-3 text-sm font-medium text-white/70">
+                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Institutions</a></li>
+              </ul>
+            </div>
+
+            {/* Column 4: TRUST */}
+            <div className="md:col-span-3">
+              <h4 className="font-extrabold text-xs tracking-[0.2em] text-[#F5A623] uppercase mb-5">
+                TRUST
+              </h4>
+              <ul className="space-y-3 text-sm font-medium text-white/70">
+                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Help</a></li>
+              </ul>
+            </div>
+
           </div>
 
-          {/* Links Column 1 */}
-          <div className="md:col-span-2">
-            <p className="font-bold text-sm text-[#FFC93C] uppercase tracking-wider mb-4">Explore</p>
-            <ul className="space-y-2.5 text-xs font-medium text-white/80">
-              <li><a href="#explore" className="hover:text-[#FFC93C] transition-colors">Popular Swaps</a></li>
-              <li><a href="#how-it-works" className="hover:text-[#FFC93C] transition-colors">AI Algorithm</a></li>
-              <li><a href="#features" className="hover:text-[#FFC93C] transition-colors">Dietitian Panel</a></li>
-              <li><a href="#pricing" className="hover:text-[#FFC93C] transition-colors">Enterprise Plans</a></li>
-            </ul>
-          </div>
-
-          {/* Links Column 2 */}
-          <div className="md:col-span-2">
-            <p className="font-bold text-sm text-[#FFC93C] uppercase tracking-wider mb-4">Company</p>
-            <ul className="space-y-2.5 text-xs font-medium text-white/80">
-              <li><a href="#" className="hover:text-[#FFC93C] transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-[#FFC93C] transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-[#FFC93C] transition-colors">Press & Media</a></li>
-              <li><a href="#" className="hover:text-[#FFC93C] transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Links Column 3 */}
-          <div className="md:col-span-3">
-            <p className="font-bold text-sm text-[#FFC93C] uppercase tracking-wider mb-4">Indian Flavors</p>
-            <p className="text-white/70 text-xs leading-relaxed mb-4">
-              Curated database covering North Indian, South Indian, Maharashtrian, Bengali, Gujarati & Coastal cuisines.
-            </p>
-            <div className="text-[10px] text-white/50 uppercase tracking-widest font-bold">
-              MADE WITH PASSION FOR INDIA
+          {/* Faint Horizontal Diamond Divider Strip */}
+          <div className="py-9 flex items-center justify-center overflow-hidden select-none pointer-events-none">
+            {/* <div className="flex items-center gap-3 text-xs tracking-widest text-[#F5A623]">
+              {[...Array(32)].map((_, i) => (
+                <span key={i}>◆</span>
+              ))}
+            </div> */}
+            <div className="h-3 w-full pl-1 flex items-center gap-1.5">
+              {Array.from({ length: DIAMOND_COUNT }).map((_, i) => (
+                <div key={i} className="h-full flex items-center justify-start gap-1.5">
+                  <div className="fill-rect h-full w-3 bg-[#40372D] rotate-45 -translate-y-1.5" />
+                  <div className="border-rect h-full w-3 bg-black/10 border-2 border-[#40372D] rotate-45 -translate-y-1.5" />
+                </div>
+              ))}
             </div>
           </div>
-        </div>
 
-        {/* Bottom Bar */}
-        <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
-          <p>© {new Date().getFullYear()} OffRamp India Technologies Inc. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            <span>Crafted with</span>
-            <Heart className="w-3.5 h-3.5 fill-[#E0187A] text-[#E0187A]" />
-            <span>for healthy Indian kitchens.</span>
-          </p>
+          {/* Bottom Legal Bar */}
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4 font-mono">
+            <p className="uppercase tracking-widest text-[11px]">
+              © {new Date().getFullYear()} OFFRAMP · EXPERT-VERIFIED · DIET-AGNOSTIC
+            </p>
+
+            <div className="flex items-center gap-6 font-sans text-xs text-white/60">
+              <a href="#" className="hover:text-white transition-colors">Privacy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms</a>
+              <a href="#" className="hover:text-white transition-colors">Security</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </footer>
   );
 }
 
+// 4-petal floral emblem badge component
+function FloralEmblem({ bg }) {
+  return (
+    <div className={`w-7 h-7 ${bg} rounded-lg flex items-center justify-center shadow-sm`}>
+      <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24">
+        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM22 12C22 13.1 21.1 14 20 14C18.9 14 18 13.1 18 12C18 10.9 18.9 10 20 10C21.1 10 22 10.9 22 12ZM12 22C10.9 22 10 21.1 10 20C10 18.9 10.9 18 12 18C13.1 18 14 18.9 14 20C14 21.1 13.1 22 12 22ZM2 12C2 10.9 2.9 10 4 10C5.1 10 6 10.9 6 12C6 13.1 5.1 14 4 14C2.9 14 2 13.1 2 12ZM12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16C9.8 16 8 14.2 8 12C8 9.8 9.8 8 12 8Z" />
+      </svg>
+    </div>
+  );
+}
