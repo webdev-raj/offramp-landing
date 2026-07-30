@@ -25,7 +25,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
         <div className="space-y-10 sm:space-y-12">
           
           {/* CARD 1: SWAP ENGINE (Warm Amber Yellow) */}
-          <div className="scallop-card bg-[#EA9E2A] bg-diamond-gold p-6 sm:p-10 lg:p-12 relative flex flex-col md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="scallop-card bg-[#EA9E2A] p-6 sm:p-10 lg:p-12 relative flex flex-col md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
             
             {/* Top Right Icon Badge */}
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 text-white shadow-inner z-10">

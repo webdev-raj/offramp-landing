@@ -35,17 +35,17 @@ export default function Home() {
       {/* 5. Tools Grid — 4 feature cards "From kitchen counter to confident choice" */}
       <ToolsGrid onOpenSwapModal={() => setIsSwapModalOpen(true)} />
 
-      {/* 6. Regional Dishes — "Regional dishes that match your goals exactly" */}
+      {/* 6. Meet the Team — Standalone section */}
+      <MeetTheTeam onOpenSwapModal={() => setIsSwapModalOpen(true)} />
+
+      {/* 7. Regional Dishes — "Regional dishes that match your goals exactly" */}
       <RegionalDishes onOpenSwapModal={() => setIsSwapModalOpen(true)} />
 
-      {/* 7. Goal Matching — "Your goal, our recipe logic" */}
+      {/* 8. Goal Matching — "Your goal, our recipe logic" */}
       <GoalMatching onOpenSwapModal={() => setIsSwapModalOpen(true)} />
 
-      {/* 8. Community Reviews — "People are testing familiar food" */}
+      {/* 9. Community Reviews — "People are testing familiar food" */}
       <CommunityReviews />
-
-      {/* 9. Meet the Team — Standalone section */}
-      <MeetTheTeam onOpenSwapModal={() => setIsSwapModalOpen(true)} />
 
       {/* 10. Call to Action Banner (Start with one dish you already love) */}
       <CtaBanner onOpenSwapModal={() => setIsSwapModalOpen(true)} />
