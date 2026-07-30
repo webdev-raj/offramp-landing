@@ -29,7 +29,7 @@ const METRIC_CARDS = [
   },
   {
     id: "reviewed",
-    bgClass: "bg-[#E59400] text-white border-[#B87600]",
+    bgClass: "bg-[#D2932B] text-white border-[#B87600]",
     value: "3,200+",
     label: "Dietitian-reviewed swaps",
   },
@@ -87,23 +87,25 @@ export default function LiveMetrics() {
           {METRIC_CARDS.map((card) => (
             <div
               key={card.id}
-              className={`${card.bgClass} scallop-card rounded-2xl p-5 sm:p-6 border flex flex-col justify-between min-h-[210px] sm:min-h-[230px] shadow-md hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 group cursor-pointer`}
+              className={`${card.bgClass} scallop-card rounded-2xl p-3 sm:p-4 border-2 flex flex-col justify-between min-h-[210px] sm:min-h-[230px] shadow-md hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 group cursor-pointer`}
             >
-              {/* Card Top Star */}
-              <div>
-                <Star className="w-4 h-4 fill-white/80 text-white/80 mb-6 group-hover:scale-110 transition-transform" />
-                <p className="font-anton text-3xl sm:text-4xl lg:text-4xl text-white tracking-tight leading-none">
-                  {card.value}
-                </p>
-                <p className="text-white/90 text-xs sm:text-sm font-semibold mt-2 leading-snug">
-                  {card.label}
+              <div className="border-2 border-white/40 flex flex-col justify-between h-full w-full p-3 sm:p-4">
+                {/* Card Top Star */}
+                <div>
+                  <Star className="w-4 h-4 fill-white/80 text-white/80 mb-6 group-hover:scale-110 transition-transform" />
+                  <p className="font-anton text-3xl sm:text-4xl lg:text-4xl text-white tracking-tight leading-none">
+                    {card.value}
+                  </p>
+                  <p className="text-white/90 text-xs sm:text-sm font-semibold mt-2 leading-snug">
+                    {card.label}
+                  </p>
+                </div>
+
+                {/* Bottom Footer Label */}
+                <p className="text-[9px] uppercase tracking-widest font-extrabold text-white/50 pt-4 border-t border-white/20 mt-4">
+                  OFFRAMP INDIA
                 </p>
               </div>
-
-              {/* Bottom Footer Label */}
-              <p className="text-[9px] uppercase tracking-widest font-extrabold text-white/50 pt-4 border-t border-white/20 mt-4">
-                OFFRAMP INDIA
-              </p>
             </div>
           ))}
         </div>

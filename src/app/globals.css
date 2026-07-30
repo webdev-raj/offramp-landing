@@ -60,8 +60,8 @@
 
 /* 4-sided Scalloped / Postage Stamp Border Mask */
 .scallop-card {
-  --scallop-size: 16px;
-  --scallop-radius: 6px;
+  --scallop-size: 30px;
+  --scallop-radius: 8px;
   -webkit-mask: 
     radial-gradient(var(--scallop-radius) at 50% 0, #0000 99%, #000) 0 0 / var(--scallop-size) 100% repeat-x,
     radial-gradient(var(--scallop-radius) at 50% 100%, #0000 99%, #000) 0 100% / var(--scallop-size) 100% repeat-x,
