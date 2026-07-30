@@ -1,158 +1,190 @@
 "use client";
 
-import { useState } from "react";
-import { Star, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Star, ArrowRight, CheckCircle2 } from "lucide-react";
 
-const GOAL_OPTIONS = [
+const GOAL_CARDS = [
   {
     id: "fitness",
-    label: "Fitness / Gym",
-    icon: "🏋️‍♂️",
-    headerBg: "bg-[#1B7042]",
-    btnClass: "bg-[#1B7042] hover:bg-[#155A34] text-white",
-    description:
-      "High protein, recovery-focused recipe swaps tailored for muscle repair and athletic performance without sacrificing authentic Indian taste.",
-    statValue: "16,000+",
-    statLabel: "Dietitian-submitted gym recipes",
-    actionText: "Explore Gym Swaps",
-  },
-  {
-    id: "bloodsugar",
-    label: "Blood sugar control",
-    icon: "🩸",
-    headerBg: "bg-[#2542A5]",
-    btnClass: "bg-[#2542A5] hover:bg-[#1C3384] text-white",
-    description:
-      "Low-GI substitutions for rice, roti, and sweets designed by top endocrinologists to prevent post-meal glucose spikes.",
-    statValue: "12,400+",
-    statLabel: "Diabetic-friendly regional swaps",
-    actionText: "Explore Low-GI Swaps",
+    label: "GOAL CATEGORY",
+    title: "Fitness\nor Gym",
+    count: "16,000+",
+    svg: "/goalmatch/card_one.svg",
+    bgColor: "#2E8B5A",
+    backBgColor: "#235F3D",
+    btnClass: "bg-[#FFC93C] text-[#14482A] hover:bg-yellow-300",
+    btnText: "EXPLORE GYM SWAPS",
+    description: "High-protein, recovery-focused recipe swaps designed for muscle repair without heavy post-meal fatigue.",
+    highlights: [
+      "30g+ plant & lean protein per meal",
+      "Zero heavy post-workout slump",
+      "Retains authentic tandoori spices",
+    ],
   },
   {
     id: "weight",
-    label: "Weight management",
-    icon: "⚖️",
-    headerBg: "bg-[#D81B60]",
-    btnClass: "bg-[#D81B60] hover:bg-[#B2134E] text-white",
-    description:
-      "Calorie-dense ingredient swaps with high satiety index so you stay full longer while maintaining a healthy deficit.",
-    statValue: "22,000+",
-    statLabel: "Calorie-optimised daily plans",
-    actionText: "Explore Satiety Swaps",
+    label: "GOAL CATEGORY",
+    title: "Weight\nManagement",
+    count: "12,000+",
+    svg: "/goalmatch/card_two.svg",
+    bgColor: "#4A56C4",
+    backBgColor: "#2B3893",
+    btnClass: "bg-[#FFC93C] text-[#1E2766] hover:bg-yellow-300",
+    btnText: "EXPLORE WEIGHT SWAPS",
+    description: "Calorie-optimised daily meal transitions with maximum satiety so you eat full portions while losing weight.",
+    highlights: [
+      "Average 35% calorie reduction",
+      "High dietary fiber & water volume",
+      "No starvation or mini portion sizes",
+    ],
   },
   {
     id: "budget",
-    label: "Budget-friendly",
-    icon: "👛",
-    headerBg: "bg-[#C44319]",
-    btnClass: "bg-[#C44319] hover:bg-[#A63713] text-white",
-    description:
-      "Affordable local pulse, millet, and seasonal veggie alternatives that reduce monthly grocery bills while increasing nutrient density.",
-    statValue: "38%",
-    statLabel: "Average monthly grocery cost reduction",
-    actionText: "Explore Budget Swaps",
+    label: "GOAL CATEGORY",
+    title: "Budget\nFriendly",
+    count: "6,200+",
+    svg: "/goalmatch/card_three.svg",
+    bgColor: "#E53870",
+    backBgColor: "#B51B46",
+    btnClass: "bg-[#FFC93C] text-[#520B1F] hover:bg-yellow-300",
+    btnText: "EXPLORE BUDGET SWAPS",
+    description: "Affordable local pulse, millet, and seasonal veggie swaps that cut grocery spending while boosting nutrition.",
+    highlights: [
+      "Saves up to ₹2,400/month",
+      "Uses readily available local ingredients",
+      "Zero expensive imported health food",
+    ],
+  },
+  {
+    id: "bloodsugar",
+    label: "GOAL CATEGORY",
+    title: "Blood Sugar\nControl",
+    count: "8,400+",
+    svg: "/goalmatch/card_four.svg",
+    bgColor: "#7A3DB8",
+    backBgColor: "#5D2A90",
+    btnClass: "bg-[#FFC93C] text-[#2D1254] hover:bg-yellow-300",
+    btnText: "EXPLORE LOW-GI SWAPS",
+    description: "Low-GI substitutions for rice, roti, and sweets verified by endocrinologists to flatten glucose spikes.",
+    highlights: [
+      "Clinically tested low glycemic load",
+      "Endocrinologist & dietitian verified",
+      "Enjoy traditional dishes safely",
+    ],
   },
 ];
 
 export default function GoalMatching({ onOpenSwapModal }) {
-  const [activeGoal, setActiveGoal] = useState(GOAL_OPTIONS[0]);
-
   return (
     <section className="relative bg-[#F5A623] py-20 lg:py-28 px-6 overflow-hidden border-t border-[#E09010]">
-      {/* Background Devanagari Watermark */}
-      <span
-        aria-hidden="true"
-        className="absolute bottom-4 right-8 text-[14rem] sm:text-[18rem] lg:text-[24rem] font-anton text-[#3D1400]/[0.06] select-none pointer-events-none leading-none"
-      >
-        लक्ष्य
-      </span>
+      <div className="max-w-7xl mx-auto max-h-fit relative z-10">
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Section Header */}
+        <div className="mb-10">
+          <p className="flex items-center gap-2 text-white text-xs sm:text-sm font-extrabold tracking-[0.25em] uppercase mb-3">
+            <Star className="w-3.5 h-3.5 fill-white text-white" />
+            <span>PERSONALISED FILTERING</span>
+          </p>
 
-          {/* Left: Heading + Tab Selectors */}
-          <div className="lg:col-span-6">
-            <p className="flex items-center gap-2 text-white text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-3">
-              <Star className="w-4 h-4 fill-white text-white" />
-              <span>INDIVIDUAL GOAL MATCHING</span>
-            </p>
+          <h2 className="font-poppins font-black text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight whitespace-wrap">
+            <span className="text-white">Your goal, </span>
+            <span className="text-[#DC245E]">our recipe logic.</span>
+          </h2>
+        </div>
 
-            <h2 className="font-anton uppercase text-4xl sm:text-5xl lg:text-6xl leading-[0.96] tracking-tight mb-8">
-              <span className="text-white block">Your goal,</span>
-              <span className="text-[#3D1400] block">our recipe logic.</span>
-            </h2>
+        {/* 2×2 Card Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {GOAL_CARDS.map((card) => (
+            <div
+              key={card.id}
+              className="group relative w-full rounded-xl overflow-hidden cursor-pointer"
+              style={{ aspectRatio: "1 / 0.9" }}
+              onClick={onOpenSwapModal}
+            >
 
-            {/* Stacked Goal Buttons */}
-            <div className="space-y-3 max-w-md">
-              {GOAL_OPTIONS.map((goal) => {
-                const isSelected = activeGoal.id === goal.id;
-                return (
-                  <button
-                    key={goal.id}
-                    onClick={() => setActiveGoal(goal)}
-                    className={`w-full py-4 px-6 rounded-2xl font-bold text-left text-sm sm:text-base flex items-center justify-between transition-all duration-200 shadow-sm ${
-                      isSelected
-                        ? "bg-[#1B7042] text-white ring-4 ring-[#1B7042]/30 scale-[1.02] shadow-md"
-                        : "bg-[#EA9712] hover:bg-[#DE8B07] text-[#3D1400]"
-                    }`}
-                  >
-                    <span className="flex items-center gap-3">
-                      <span>{goal.icon}</span>
-                      <span>{goal.label}</span>
-                    </span>
-                    <ArrowRight
-                      className={`w-4 h-4 transition-transform ${
-                        isSelected ? "translate-x-1 text-white" : "text-[#3D1400]/70"
-                      }`}
-                    />
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Right: Dynamic Goal Outcome Card */}
-          <div className="lg:col-span-6">
-            <div className="rounded-3xl overflow-hidden shadow-2xl bg-white border border-[#E09010] transform hover:scale-[1.01] transition-transform duration-300">
-
-              {/* Header Bar */}
-              <div className={`${activeGoal.headerBg} p-6 text-white flex items-center gap-3 transition-colors duration-300`}>
-                <h3 className="font-anton text-2xl sm:text-3xl tracking-wide uppercase">
-                  {activeGoal.label}
-                </h3>
-                <span className="text-2xl">{activeGoal.icon}</span>
-              </div>
-
-              {/* Body */}
-              <div className="p-8 sm:p-10">
-                <p className="text-[#3A3A3A] text-base sm:text-lg leading-relaxed font-medium mb-8">
-                  {activeGoal.description}
-                </p>
-
-                {/* Highlight Metric */}
-                <div className="bg-[#FDF8EE] border border-[#E8DCC4] rounded-2xl p-6 mb-8">
-                  <p className="font-anton text-4xl sm:text-5xl text-[#1B7042] tracking-tight leading-none mb-1">
-                    {activeGoal.statValue}
+              {/* ── FRONT CARD ── */}
+              <div
+                className="absolute inset-0 rounded-2xl overflow-hidden transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:scale-95"
+                style={{ backgroundColor: card.bgColor }}
+              >
+                {/* Text overlay — TOP LEFT */}
+                <div className="absolute top-0 left-0 z-10 pl-5 pt-8 sm:pl-8 sm:pt-14">
+                  {/* GOAL CATEGORY label */}
+                  <p className="text-white/75 text-[1.03rem] font-bold tracking-[0.2em] uppercase mb-1 font-mono">
+                    {card.label}
                   </p>
-                  <p className="text-[#5A5A5A] text-xs sm:text-sm font-semibold">
-                    {activeGoal.statLabel}
+                  {/* Title */}
+                  <h3 className="font-poppins font-black text-white text-[2rem] sm:text-[4rem] leading-[1.0] tracking-tight whitespace-pre-line">
+                    {card.title}
+                  </h3>
+                  {/* Count */}
+                  <p className="text-white/80 text-xs sm:text-sm font-semibold mt-2.5 tracking-wide">
+                    {card.count}
                   </p>
                 </div>
 
-                {/* CTA */}
-                <button
-                  onClick={onOpenSwapModal}
-                  className={`w-full ${activeGoal.btnClass} font-extrabold text-sm sm:text-base py-4 rounded-full flex items-center justify-center gap-2 shadow-lg transition-all uppercase tracking-wider`}
-                >
-                  <span>{activeGoal.actionText}</span>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                {/* SVG Illustration — fills lower portion */}
+                <div className="absolute inset-0 flex items-end justify-end pr-4">
+                  <div className="relative w-[75%] h-[88%] ">
+                    <Image
+                      src={card.svg}
+                      alt={card.title.replace("\n", " ")}
+                      fill
+                      className="object-contain object-bottom"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* ── BACK CARD (revealed on hover) ── */}
+              <div
+                className="absolute inset-0 rounded-2xl p-5 sm:p-6 flex flex-col justify-between text-white opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out z-20"
+                style={{ backgroundColor: card.backBgColor }}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[10px] font-mono font-extrabold tracking-[0.2em] uppercase text-white/60">
+                      {card.label}
+                    </span>
+                    <span className="bg-white/15 text-white font-bold text-[10px] px-2.5 py-1 rounded-full">
+                      {card.count}
+                    </span>
+                  </div>
+
+                  <h3 className="font-poppins font-black text-white text-xl sm:text-2xl leading-tight whitespace-pre-line mb-3">
+                    {card.title}
+                  </h3>
+
+                  <p className="text-white/85 text-xs sm:text-sm leading-relaxed font-normal mb-4">
+                    {card.description}
+                  </p>
+                </div>
+
+                <div>
+                  <ul className="space-y-2 mb-4">
+                    {card.highlights.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-[11px] sm:text-xs font-medium text-white/90">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#FFC93C] shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <button
+                    onClick={(e) => { e.stopPropagation(); onOpenSwapModal(); }}
+                    className={`w-full ${card.btnClass} font-extrabold text-[10px] sm:text-xs py-3 rounded-full shadow-lg transition-all flex items-center justify-center gap-1.5 uppercase tracking-wider`}
+                  >
+                    <span>{card.btnText}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
 
             </div>
-          </div>
-
+          ))}
         </div>
+
       </div>
     </section>
   );
