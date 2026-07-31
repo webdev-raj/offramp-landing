@@ -191,13 +191,13 @@ export default function GoalMatching({ onOpenSwapModal }) {
 
                     {/* Stat Box */}
                     <div>
-                      <div className="border-2 rounded-xl px-4 py-3 sm:px-5 sm:py-4 mb-4"
+                      <div className="border-2 rounded-xl px-4 py-3 sm:px-6 sm:py-8 mb-4"
                         style={{ backgroundColor: `${card.bgColor}20`,borderColor:`${card.bgColor}` }}>
-                        <p className="font-poppins font-black text-white text-2xl sm:text-3xl leading-none tracking-tight mb-0.5"
+                        <p className="font-poppins font-black text-white text-2xl sm:text-4xl leading-none tracking-tight mb-0.5"
                            style={{ color:`${card.bgColor}` }}>
                           {card.count}+
                         </p>
-                        <p className="text-black text-[10px] sm:text-xs font-medium">
+                        <p className="text-black text-sm sm:text-[1rem] font-medium">
                           Professionally reviewed swaps available
                         </p>
                       </div>
