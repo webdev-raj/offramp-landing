@@ -14,9 +14,9 @@ export default function Hero({ onOpenSwapModal }) {
         <div
           className="w-full h-1/2 md:h-full md:w-[35%] bg-[#F5A623] relative shrink-0"
           style={{
-            backgroundImage: `url('/patternbg.png')`,
+            backgroundImage: `url('/bgyellow.svg')`,
             backgroundRepeat: "repeat",
-            backgroundSize: "400px",
+            backgroundSize: "550px",
           }}
         />
       </div>
