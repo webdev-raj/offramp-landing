@@ -5,7 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 export default function CtaBanner({ onOpenSwapModal }) {
   const DIAMOND_COUNT = 34;
   return (
-    <div className="bg-[#2A409A] relative">
+    <div className="bg-[#314894] relative">
     <section className="text-white py-24 lg:py-40 px-6 overflow-hidden">
       {/* Translucent Purple Watermark Circle on Bottom Right */}
       {/* <div className="absolute -bottom-36 -right-36 w-[450px] h-[450px] rounded-full bg-[#463C9B]/40 pointer-events-none" /> */}
