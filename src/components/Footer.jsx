@@ -22,10 +22,10 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           {/* Left Text Block */}
           <div>
-            <p className="text-[11px] font-mono tracking-[0.22em] text-white/80 uppercase mb-1.5 font-bold">
+            <p className="text-[11px] font-jetbrains tracking-[0.52em] text-white/60 uppercase mb-1.5 font-bold">
               WEEKLY KITCHEN NOTES
             </p>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug">
+            <h3 className="font-jetbrains text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug">
               Safer swaps, expert explainers, and product updates.
             </h3>
           </div>
@@ -45,7 +45,7 @@ export default function Footer() {
 
             <button
               type="submit"
-              className="w-full sm:w-auto bg-[#F5A623] hover:bg-[#e09214] active:scale-95 text-[#231E1B] font-extrabold text-xs sm:text-sm tracking-wider uppercase px-8 py-3.5 rounded-full shadow-md transition-all shrink-0"
+              className="w-full font-jetbrains sm:w-auto bg-[#F5A623] hover:bg-[#e09214] active:scale-95 text-[#231E1B] font-extrabold text-xs sm:text-sm tracking-[0.22em] uppercase px-8 py-3.5 rounded-full shadow-md transition-all shrink-0"
             >
               {subscribed ? "SUBSCRIBED!" : "SUBSCRIBE"}
             </button>
@@ -74,10 +74,10 @@ export default function Footer() {
               </div>
 
               {/* Subtext */}
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="text-white/70 text-sm leading-relaxed font-dmsans">
                 Smart food swaps for Indian meals.
               </p>
-              <p className="text-white/70 text-sm leading-relaxed mb-6">
+              <p className="text-white/70 text-sm leading-relaxed mb-6 font-dmsans">
                 Expert-verified, diet-agnostic.
               </p>
 
@@ -155,10 +155,10 @@ export default function Footer() {
 
             {/* Column 2: PRODUCT */}
             <div className="md:col-span-2">
-              <h4 className="font-extrabold text-xs tracking-[0.2em] text-[#F5A623] uppercase mb-5">
+              <h4 className="font-extrabold font-jetbrains text-xs tracking-[0.2em] text-[#F5A623] uppercase mb-5">
                 PRODUCT
               </h4>
-              <ul className="space-y-3 text-sm font-medium text-white/70">
+              <ul className="space-y-3 text-sm font-medium text-white/70 font-dmsans">
                 <li><a href="#explore" className="hover:text-white transition-colors">Explore Swaps</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Challenges</a></li>
                 <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
@@ -168,10 +168,10 @@ export default function Footer() {
 
             {/* Column 3: COMPANY */}
             <div className="md:col-span-2">
-              <h4 className="font-extrabold text-xs tracking-[0.2em] text-[#F5A623] uppercase mb-5">
+              <h4 className="font-extrabold font-jetbrains text-xs tracking-[0.2em] text-[#F5A623] uppercase mb-5">
                 COMPANY
               </h4>
-              <ul className="space-y-3 text-sm font-medium text-white/70">
+              <ul className="space-y-3 text-sm font-medium text-white/70 font-dmsans">
                 <li><a href="#" className="hover:text-white transition-colors">About</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
@@ -181,10 +181,11 @@ export default function Footer() {
 
             {/* Column 4: TRUST */}
             <div className="md:col-span-3">
-              <h4 className="font-extrabold text-xs tracking-[0.2em] text-[#F5A623] uppercase mb-5">
+              <h4 className="font-extrabold font-jetbrains text-xs tracking-[0.2em] text-[#F5A623] uppercase mb-5">
                 TRUST
               </h4>
-              <ul className="space-y-3 text-sm font-medium text-white/70">
+
+              <ul className="space-y-3 text-sm font-medium text-white/70 font-dmsans">
                 <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
@@ -213,11 +214,11 @@ export default function Footer() {
 
           {/* Bottom Legal Bar */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4 font-mono">
-            <p className="uppercase tracking-widest text-[11px]">
+            <p className="uppercase font-jetbrains tracking-widest text-[11px]">
               © {new Date().getFullYear()} OFFRAMP · EXPERT-VERIFIED · DIET-AGNOSTIC
             </p>
 
-            <div className="flex items-center gap-6 font-sans text-xs text-white/60">
+            <div className="flex items-center font-dmsans gap-6 text-xs text-white/60">
               <a href="#" className="hover:text-white transition-colors">Privacy</a>
               <a href="#" className="hover:text-white transition-colors">Terms</a>
               <a href="#" className="hover:text-white transition-colors">Security</a>

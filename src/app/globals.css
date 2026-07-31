@@ -1,5 +1,44 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetbrainsMonoRegular-RpvmM.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haettenschweiler';
+  src: url('/fonts/HATTEN.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat-bold';
+  src: url('/fonts/Montserrat-Bold') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --font-anton: 'Anton', sans-serif;
@@ -9,6 +48,14 @@
   body {
     font-family: var(--font-poppins);
   }
+}
+
+@theme {
+  --font-dmsans: 'DM Sans', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
+  --font-haetten: 'Haettenschweiler', sans-serif;
+  --font-montserrat-bold: 'Montserrat-bold', sans-serif;
 }
 
 .font-anton {

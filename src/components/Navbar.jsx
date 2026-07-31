@@ -8,20 +8,20 @@ export default function Navbar({ onOpenSwapModal }) {
 
   return (
     <header className="bg-[#FBF3E3] border-b border-[#E8DCC4]/50 sticky top-0 z-40 px-6 md:px-12 py-4 transition-all">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-7xl font-jetbrains mx-auto flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
+        <a href="#" className=" flex items-center gap-2.5 group">
           <div className="w-10 h-10 rounded-full bg-[#E0187A] ring-4 ring-[#F5A623]/40 flex items-center justify-center text-white font-extrabold text-lg shadow-md group-hover:scale-105 transition-transform">
             D
           </div>
-          <span className="font-anton text-2xl tracking-tight text-[#1E1E1E]">
+          <span className=" text-2xl tracking-tight text-[#1E1E1E]">
             <span className="text-[#E0187A]">off</span>
             <span className="text-[#F5A623]">ramp</span>
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-[#3A3A3A]">
+        <nav className="hidden font-dmsans md:flex items-center gap-8 text-sm font-semibold text-[#3A3A3A]">
           <a href="#explore" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             Explore Swaps
           </a>
@@ -40,7 +40,7 @@ export default function Navbar({ onOpenSwapModal }) {
         </nav>
 
         {/* Header Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 font-dmsans">
           <a href="#login" className="hidden sm:inline-block text-sm font-semibold text-[#3A3A3A] hover:text-[#E0187A] transition-colors">
             Log in
           </a>

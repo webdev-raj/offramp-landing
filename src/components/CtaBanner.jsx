@@ -28,7 +28,7 @@ export default function CtaBanner({ onOpenSwapModal }) {
         </div>
 
         {/* Main Headline */}
-        <h2 className="font-poppins font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none mb-5">
+        <h2 className="font-montserrat-bold font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tighter leading-none mb-5">
           <span className="text-white block">Start with one dish</span>
           <span className="text-[#F7AC38] block mt-1">you already love.</span>
         </h2>
