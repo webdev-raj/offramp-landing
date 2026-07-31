@@ -13,13 +13,13 @@ const DIAMOND_COUNT = 34;
 
 export default function StatsBand() {
   return (
-    <section className="relative bg-[#1B2264] text-white z-10">
+    <section className="relative bg-[#314894] text-white z-10">
       {/* Top circle row */}
-      <div className="h-5 w-full bg-[#1B2264] pl-2 flex items-center justify-start gap-2 whitespace-nowrap">
+      <div className="h-5 w-full bg-[#314894] pl-2 flex items-center justify-start gap-2 whitespace-nowrap">
         {Array.from({ length: TOP_CIRCLE_COUNT }).map((_, i) => (
           <div
             key={i}
-            className="h-5 w-6 rounded-full bg-[#1B2264] -translate-y-1 "
+            className="h-5 w-6 rounded-full bg-[#314894] -translate-y-1 "
           />
         ))}
       </div>
@@ -28,7 +28,7 @@ export default function StatsBand() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/15 text-center">
           {STATS.map((stat, idx) => (
             <div key={idx} className="pt-4 md:pt-0 px-2 group">
-              <p className="font-anton text-4xl sm:text-5xl lg:text-6xl text-[#FFC93C] tracking-tight group-hover:scale-105 transition-transform duration-200">
+              <p className="font-anton text-3xl sm:text-4xl lg:text-5xl text-[#FFC93C] tracking-tight group-hover:scale-105 transition-transform duration-200">
                 {stat.value}
               </p>
               <p className="text-white/80 text-xs sm:text-sm font-medium mt-2 max-w-[200px] mx-auto leading-snug">

@@ -5,37 +5,37 @@ import { Star } from "lucide-react";
 const METRIC_CARDS = [
   {
     id: "accuracy",
-    bgClass: "bg-[#1B7042] text-white border-[#155A34]",
+    bgClass: "bg-[#308654] text-white border-[#155A34]",
     value: "91%",
     label: "Prediction accuracy",
   },
   {
     id: "confidence",
-    bgClass: "bg-[#2542A5] text-white border-[#1C3384]",
+    bgClass: "bg-[#314894] text-white border-[#1C3384]",
     value: "4.8/5",
     label: "Confidence score",
   },
   {
     id: "professionals",
-    bgClass: "bg-[#D81B60] text-white border-[#B2134E]",
+    bgClass: "bg-[#DC346B] text-white border-[#B2134E]",
     value: "620+",
     label: "Verified professionals",
   },
   {
     id: "spend",
-    bgClass: "bg-[#C44319] text-white border-[#A13411]",
+    bgClass: "bg-[#C95530] text-white border-[#A13411]",
     value: "38%",
     label: "Grocery spend reduction",
   },
   {
     id: "reviewed",
-    bgClass: "bg-[#D2932B] text-white border-[#B87600]",
+    bgClass: "bg-[#F5AE38] text-white border-[#B87600]",
     value: "3,200+",
     label: "Dietitian-reviewed swaps",
   },
   {
     id: "plans",
-    bgClass: "bg-[#7E38B7] text-white border-[#632994]",
+    bgClass: "bg-[#7951A9] text-white border-[#632994]",
     value: "12k+",
     label: "Weekly active plans",
   },
@@ -56,10 +56,18 @@ export default function LiveMetrics() {
         {/* Header Block */}
         <div className="mb-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <div className="lg:col-span-7">
-            <p className="flex items-center gap-2 text-[#C44319] text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-3">
-              <Star className="w-4 h-4 fill-[#C44319] text-[#C44319]" />
-              <span>LIVE KITCHEN DATA</span>
-            </p>
+            <div className="flex items-center justify-start gap-2 text-[#C95530] text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-3">
+              <svg width="22" height="22" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.35868 7.16446C9.26547 7.16446 10.0006 5.96157 10.0006 4.47774C10.0006 2.9939 9.26547 1.79102 8.35868 1.79102C7.45189 1.79102 6.7168 2.9939 6.7168 4.47774C6.7168 5.96157 7.45189 7.16446 8.35868 7.16446Z" fill="#C95530" />
+                <path d="M9.49458 7.98959C9.77479 8.852 11.146 9.1794 12.5572 8.72087C13.9684 8.26234 14.8852 7.19151 14.605 6.3291C14.3248 5.4667 12.9536 5.13929 11.5424 5.59782C10.1312 6.05635 9.21437 7.12718 9.49458 7.98959Z" fill="#C95530" />
+                <path d="M9.06013 9.32466C8.32653 9.85765 8.43886 11.2629 9.31103 12.4633C10.1832 13.6638 11.485 14.2049 12.2186 13.6719C12.9522 13.1389 12.8398 11.7336 11.9677 10.5332C11.0955 9.33274 9.79374 8.79166 9.06013 9.32466Z" fill="#C95530" />
+                <path d="M7.65629 9.32468C6.92268 8.79168 5.62094 9.33276 4.74876 10.5332C3.87658 11.7337 3.76425 13.1389 4.49786 13.6719C5.23147 14.2049 6.53321 13.6638 7.40539 12.4634C8.27756 11.2629 8.3899 9.85768 7.65629 9.32468Z" fill="#C95530" />
+                <path d="M7.22329 7.98958C7.5035 7.12718 6.58664 6.05635 5.17543 5.59782C3.76422 5.13929 2.39305 5.46669 2.11284 6.3291C1.83263 7.19151 2.74948 8.26234 4.16069 8.72087C5.5719 9.1794 6.94307 8.85199 7.22329 7.98958Z" fill="#C95530" />
+                <path d="M8.3592 10.4484C9.5133 10.4484 10.4489 9.51281 10.4489 8.35871C10.4489 7.20462 9.5133 6.26904 8.3592 6.26904C7.20511 6.26904 6.26953 7.20462 6.26953 8.35871C6.26953 9.51281 7.20511 10.4484 8.3592 10.4484Z" fill="#C95530" />
+                <path opacity="0.3" d="M8.35903 12.5381C10.6672 12.5381 12.5384 10.667 12.5384 8.35879C12.5384 6.0506 10.6672 4.17944 8.35903 4.17944C6.05084 4.17944 4.17969 6.0506 4.17969 8.35879C4.17969 10.667 6.05084 12.5381 8.35903 12.5381Z" stroke="#C95530" stroke-width="0.23882" />
+              </svg>
+              <p>LIVE KITCHEN DATA</p>
+            </div>
 
             <h2 className="font-anton uppercase text-4xl sm:text-5xl lg:text-6xl text-[#1E2538] leading-[0.98] tracking-tight">
               Trusted Kitchen metrics <br className="hidden sm:inline" />
@@ -92,7 +100,16 @@ export default function LiveMetrics() {
               <div className="border-2 border-white/40 flex flex-col justify-between h-full w-full p-3 sm:p-4">
                 {/* Card Top Star */}
                 <div>
-                  <Star className="w-4 h-4 fill-white/80 text-white/80 mb-6 group-hover:scale-110 transition-transform" />
+                  <svg width="22" height="22" className="mb-6 group-hover:scale-110 transition-transform" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.35868 7.16446C9.26547 7.16446 10.0006 5.96157 10.0006 4.47774C10.0006 2.9939 9.26547 1.79102 8.35868 1.79102C7.45189 1.79102 6.7168 2.9939 6.7168 4.47774C6.7168 5.96157 7.45189 7.16446 8.35868 7.16446Z" fill="white" />
+                    <path d="M9.49458 7.98959C9.77479 8.852 11.146 9.1794 12.5572 8.72087C13.9684 8.26234 14.8852 7.19151 14.605 6.3291C14.3248 5.4667 12.9536 5.13929 11.5424 5.59782C10.1312 6.05635 9.21437 7.12718 9.49458 7.98959Z" fill="white" />
+                    <path d="M9.06013 9.32466C8.32653 9.85765 8.43886 11.2629 9.31103 12.4633C10.1832 13.6638 11.485 14.2049 12.2186 13.6719C12.9522 13.1389 12.8398 11.7336 11.9677 10.5332C11.0955 9.33274 9.79374 8.79166 9.06013 9.32466Z" fill="white" />
+                    <path d="M7.65629 9.32468C6.92268 8.79168 5.62094 9.33276 4.74876 10.5332C3.87658 11.7337 3.76425 13.1389 4.49786 13.6719C5.23147 14.2049 6.53321 13.6638 7.40539 12.4634C8.27756 11.2629 8.3899 9.85768 7.65629 9.32468Z" fill="white" />
+                    <path d="M7.22329 7.98958C7.5035 7.12718 6.58664 6.05635 5.17543 5.59782C3.76422 5.13929 2.39305 5.46669 2.11284 6.3291C1.83263 7.19151 2.74948 8.26234 4.16069 8.72087C5.5719 9.1794 6.94307 8.85199 7.22329 7.98958Z" fill="white" />
+                    <path d="M8.3592 10.4484C9.5133 10.4484 10.4489 9.51281 10.4489 8.35871C10.4489 7.20462 9.5133 6.26904 8.3592 6.26904C7.20511 6.26904 6.26953 7.20462 6.26953 8.35871C6.26953 9.51281 7.20511 10.4484 8.3592 10.4484Z" fill="white" />
+                    <path opacity="0.3" d="M8.35903 12.5381C10.6672 12.5381 12.5384 10.667 12.5384 8.35879C12.5384 6.0506 10.6672 4.17944 8.35903 4.17944C6.05084 4.17944 4.17969 6.0506 4.17969 8.35879C4.17969 10.667 6.05084 12.5381 8.35903 12.5381Z" stroke="white" stroke-width="0.23882" />
+                  </svg>
+
                   <p className="font-anton text-3xl sm:text-4xl lg:text-4xl text-white tracking-tight leading-none">
                     {card.value}
                   </p>
