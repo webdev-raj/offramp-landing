@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Star, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Star, ArrowRight } from "lucide-react";
 
 const GOAL_CARDS = [
   {
@@ -16,6 +16,8 @@ const GOAL_CARDS = [
     btnText: "EXPLORE GYM SWAPS",
     illustrationClass: "w-[75%] h-[88%]",
     illustrationWrapperClass: "items-end justify-end pr-4",
+    backTitle: "Fitness / Gym",
+    backDescription: "High-protein, recovery-focused meals optimised for performance and muscle repair. Built for serious training.",
     description: "High-protein, recovery-focused recipe swaps designed for muscle repair without heavy post-meal fatigue.",
     highlights: [
       "30g+ plant & lean protein per meal",
@@ -35,6 +37,8 @@ const GOAL_CARDS = [
     btnText: "EXPLORE WEIGHT SWAPS",
     illustrationClass: "w-[75%] h-[88%]",
     illustrationWrapperClass: "items-end justify-end pr-4",
+    backTitle: "Weight Management",
+    backDescription: "Calorie-aware selections that don't sacrifice satisfaction.",
     description: "Calorie-optimised daily meal transitions with maximum satiety so you eat full portions while losing weight.",
     highlights: [
       "Average 35% calorie reduction",
@@ -54,6 +58,8 @@ const GOAL_CARDS = [
     btnText: "EXPLORE BUDGET SWAPS",
     illustrationClass: "w-[100%] h-[95%] sm:w-[105%] sm:h-[100%]",
     illustrationWrapperClass: "items-end justify-center pr-0",
+    backTitle: "Budget Friendly",
+    backDescription: "Maximum nutrition per rupee — no expensive superfoods.",
     description: "Affordable local pulse, millet, and seasonal veggie swaps that cut grocery spending while boosting nutrition.",
     highlights: [
       "Saves up to ₹2,400/month",
@@ -73,6 +79,8 @@ const GOAL_CARDS = [
     btnText: "EXPLORE LOW-GI SWAPS",
     illustrationClass: "w-[75%] h-[88%]",
     illustrationWrapperClass: "items-end justify-end pr-4",
+    backTitle: "Blood Sugar Control",
+    backDescription: "Low GI, complex carb dishes to reduce glucose spikes.",
     description: "Low-GI substitutions for rice, roti, and sweets verified by endocrinologists to flatten glucose spikes.",
     highlights: [
       "Clinically tested low glycemic load",
@@ -147,45 +155,64 @@ export default function GoalMatching({ onOpenSwapModal }) {
 
               {/* ── BACK CARD (revealed on hover) ── */}
               <div
-                className="absolute inset-0 rounded-2xl p-5 sm:p-6 flex flex-col justify-between text-white opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out z-20"
-                style={{ backgroundColor: card.backBgColor }}
+                className={`absolute border-6 inset-0 rounded-2xl overflow-hidden bg-white opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out z-20 flex`}
+                style={{ borderColor: card.bgColor }}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-mono font-extrabold tracking-[0.2em] uppercase text-white/60">
-                      {card.label}
-                    </span>
-                    <span className="bg-white/15 text-white font-bold text-[10px] px-2.5 py-1 rounded-full">
-                      {card.count}
-                    </span>
+                {/* Left Colored Accent Stripe
+                <div
+                  className="w-1.5 shrink-0"
+                  style={{ backgroundColor: card.bgColor }}
+                /> */}
+
+                {/* Card Content */}
+                <div className="flex-1 flex flex-col">
+                  {/* Top Colored Header */}
+                  <div
+                    className="px-5 py-4 sm:px-7 sm:py-9 flex items-center justify-between gap-3"
+                    style={{ backgroundColor: card.bgColor }}
+                  >
+                    <div>
+                      <p className="text-white/80 text-[1.03rem] sm:text-xs font-bold tracking-[0.18em] uppercase font-mono mb-1">
+                        {card.label}
+                      </p>
+                      <h3 className="font-poppins font-extrabold text-white text-lg sm:text-4xl leading-tight tracking-tight">
+                        {card.backTitle}
+                      </h3>
+                    </div>
+                    <Star className="w-6 h-6 sm:w-8 sm:h-8 fill-white text-white shrink-0 mt-0.5" />
                   </div>
 
-                  <h3 className="font-poppins font-black text-white text-xl sm:text-2xl leading-tight whitespace-pre-line mb-3">
-                    {card.title}
-                  </h3>
+                  {/* White Body */}
+                  <div className="flex-1 flex flex-col justify-between px-5 py-4 sm:px-8 sm:py-6">
+                    {/* Description */}
+                    <p className="text-[#5A5A5A] text-xs sm:text-[1.2rem] leading-loose font-normal mb-4">
+                      {card.backDescription}
+                    </p>
 
-                  <p className="text-white/85 text-xs sm:text-sm leading-relaxed font-normal mb-4">
-                    {card.description}
-                  </p>
-                </div>
+                    {/* Stat Box */}
+                    <div>
+                      <div className="border-2 rounded-xl px-4 py-3 sm:px-5 sm:py-4 mb-4"
+                        style={{ backgroundColor: `${card.bgColor}20`,borderColor:`${card.bgColor}` }}>
+                        <p className="font-poppins font-black text-white text-2xl sm:text-3xl leading-none tracking-tight mb-0.5"
+                           style={{ color:`${card.bgColor}` }}>
+                          {card.count}+
+                        </p>
+                        <p className="text-black text-[10px] sm:text-xs font-medium">
+                          Professionally reviewed swaps available
+                        </p>
+                      </div>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); onOpenSwapModal(); }}
+                        className="w-60 border-2 font-bold text-xs sm:text-sm py-2.5 sm:py-3 rounded-full transition-all flex items-center justify-center gap-2 hover:opacity-80"
+                        style={{ borderColor: card.bgColor, backgroundColor: card.bgColor }}
+                      >
+                        <span className="text-white">Explore library</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
 
-                <div>
-                  <ul className="space-y-2 mb-4">
-                    {card.highlights.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-[11px] sm:text-xs font-medium text-white/90">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#FFC93C] shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button
-                    onClick={(e) => { e.stopPropagation(); onOpenSwapModal(); }}
-                    className={`w-full ${card.btnClass} font-extrabold text-[10px] sm:text-xs py-3 rounded-full shadow-lg transition-all flex items-center justify-center gap-1.5 uppercase tracking-wider`}
-                  >
-                    <span>{card.btnText}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                    {/* Explore Button */}
+                  </div>
                 </div>
               </div>
 
