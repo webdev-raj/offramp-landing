@@ -14,6 +14,8 @@ const GOAL_CARDS = [
     backBgColor: "#235F3D",
     btnClass: "bg-[#FFC93C] text-[#14482A] hover:bg-yellow-300",
     btnText: "EXPLORE GYM SWAPS",
+    illustrationClass: "w-[75%] h-[88%]",
+    illustrationWrapperClass: "items-end justify-end pr-4",
     description: "High-protein, recovery-focused recipe swaps designed for muscle repair without heavy post-meal fatigue.",
     highlights: [
       "30g+ plant & lean protein per meal",
@@ -31,6 +33,8 @@ const GOAL_CARDS = [
     backBgColor: "#2B3893",
     btnClass: "bg-[#FFC93C] text-[#1E2766] hover:bg-yellow-300",
     btnText: "EXPLORE WEIGHT SWAPS",
+    illustrationClass: "w-[75%] h-[88%]",
+    illustrationWrapperClass: "items-end justify-end pr-4",
     description: "Calorie-optimised daily meal transitions with maximum satiety so you eat full portions while losing weight.",
     highlights: [
       "Average 35% calorie reduction",
@@ -48,6 +52,8 @@ const GOAL_CARDS = [
     backBgColor: "#B51B46",
     btnClass: "bg-[#FFC93C] text-[#520B1F] hover:bg-yellow-300",
     btnText: "EXPLORE BUDGET SWAPS",
+    illustrationClass: "w-[100%] h-[95%] sm:w-[105%] sm:h-[100%]",
+    illustrationWrapperClass: "items-end justify-center pr-0",
     description: "Affordable local pulse, millet, and seasonal veggie swaps that cut grocery spending while boosting nutrition.",
     highlights: [
       "Saves up to ₹2,400/month",
@@ -65,6 +71,8 @@ const GOAL_CARDS = [
     backBgColor: "#5D2A90",
     btnClass: "bg-[#FFC93C] text-[#2D1254] hover:bg-yellow-300",
     btnText: "EXPLORE LOW-GI SWAPS",
+    illustrationClass: "w-[75%] h-[88%]",
+    illustrationWrapperClass: "items-end justify-end pr-4",
     description: "Low-GI substitutions for rice, roti, and sweets verified by endocrinologists to flatten glucose spikes.",
     highlights: [
       "Clinically tested low glycemic load",
@@ -124,8 +132,8 @@ export default function GoalMatching({ onOpenSwapModal }) {
                 </div>
 
                 {/* SVG Illustration — fills lower portion */}
-                <div className="absolute inset-0 flex items-end justify-end pr-4">
-                  <div className="relative w-[75%] h-[88%] ">
+                <div className={`absolute inset-0 flex ${card.illustrationWrapperClass}`}>
+                  <div className={`relative ${card.illustrationClass}`}>
                     <Image
                       src={card.svg}
                       alt={card.title.replace("\n", " ")}
