@@ -123,6 +123,19 @@
   mask-composite: intersect;
 }
 
+.scallop-card-top-bottom {
+  --scallop-size: 30px;
+  --scallop-radius: 8px;
+  -webkit-mask: 
+    radial-gradient(var(--scallop-radius) at 50% 0, #0000 99%, #000) 0 0 / var(--scallop-size) 100% repeat-x,
+    radial-gradient(var(--scallop-radius) at 50% 100%, #0000 99%, #000) 0 100% / var(--scallop-size) 100% repeat-x;
+  -webkit-mask-composite: source-in;
+  mask: 
+    radial-gradient(var(--scallop-radius) at 50% 0, #0000 99%, #000) 0 0 / var(--scallop-size) 100% repeat-x,
+    radial-gradient(var(--scallop-radius) at 50% 100%, #0000 99%, #000) 0 100% / var(--scallop-size) 100% repeat-x;
+  mask-composite: intersect;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

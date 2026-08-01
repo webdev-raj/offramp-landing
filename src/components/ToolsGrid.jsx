@@ -33,7 +33,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
         <div className="space-y-10 sm:space-y-12">
 
           {/* CARD 1: SWAP ENGINE (Warm Amber Yellow) */}
-          <div className="scallop-card bg-[#D2932B] p-6 sm:p-10 lg:p-12 relative flex flex-col md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="scallop-card-top-bottom  bg-[#D2932B] p-6 sm:p-10 lg:p-12 relative flex flex-col md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
 
             {/* Top Right Icon Badge */}
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 text-white shadow-inner z-10">
@@ -77,7 +77,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
           </div>
 
           {/* CARD 2: CONFLICT CHECKER (Vivid Pink / Magenta) */}
-          <div className="scallop-card bg-[#DE3968] p-6 sm:p-10 lg:p-12 relative flex flex-col-reverse md:flex-row items-center justify-between gap-8 min-h-[340px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="scallop-card-top-bottom  bg-[#DE3968] p-6 sm:p-10 lg:p-12 relative flex flex-col-reverse md:flex-row items-center justify-between gap-8 min-h-[340px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
 
             {/* Devanagari Background Watermark Text */}
             <span
@@ -129,7 +129,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
           </div>
 
           {/* CARD 3: REAL PLANNER (Navy Blue) */}
-          <div className="scallop-card bg-[#2F539B] p-6 sm:p-10 lg:p-12 relative flex flex-col md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="scallop-card-top-bottom  bg-[#2F539B] p-6 sm:p-10 lg:p-12 relative flex flex-col md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
 
             {/* Top Right Icon Badge */}
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 text-white shadow-inner z-10">
@@ -173,7 +173,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
           </div>
 
           {/* CARD 4: IMPORT BACKUP (Terracotta Rust Red) */}
-          <div className="scallop-card bg-[#CB5638] p-6 sm:p-10 lg:p-12 relative flex flex-col-reverse md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="scallop-card-top-bottom  bg-[#CB5638] p-6 sm:p-10 lg:p-12 relative flex flex-col-reverse md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
 
             {/* Top Right Icon Badge */}
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 text-white shadow-inner z-10">
