@@ -15,7 +15,7 @@ export default function CommunityReviews() {
       {/* Devanagari Background Watermark */}
       <span
         aria-hidden="true"
-        className="absolute top-56 right-6 text-[12rem] sm:text-[8rem] lg:text-[10rem] font-anton text-[#F5A623]/[0.15] select-none pointer-events-none leading-none z-10"
+        className="absolute watermark-shimmer-yello  top-56 right-6 text-[12rem] sm:text-[8rem] lg:text-[10rem] font-anton text-[#F5A623]/[0.15] select-none pointer-events-none leading-none z-10"
       >
         प्रदान
       </span>

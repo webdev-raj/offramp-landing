@@ -82,7 +82,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
             {/* Devanagari Background Watermark Text */}
             <span
               aria-hidden="true"
-              className="absolute -bottom-8 -right-6 text-[11rem] sm:text-[14rem] font-anton text-white/[0.09] select-none pointer-events-none leading-none z-0"
+              className="absolute watermark-shimmer-pink -bottom-8 -right-6 text-[10rem] sm:text-[13rem] font-anton text-white/[0.09] select-none pointer-events-none leading-none z-0"
             >
               विकल्प
             </span>

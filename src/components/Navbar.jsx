@@ -7,7 +7,7 @@ export default function Navbar({ onOpenSwapModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#FBF3E3] border-b border-[#E8DCC4]/50 sticky top-0 z-40 px-6 md:px-12 py-4 transition-all">
+    <header className="bg-[#FBF3E3] border-b border-[#E8DCC4]/50 fixed top-0 w-full z-40 px-4 md:px-12 py-3 sm:py-5 transition-all">
       <div className="max-w-7xl font-jetbrains mx-auto flex items-center justify-between">
         {/* Logo */}
         <a href="#" className=" flex items-center gap-2.5 group">
@@ -46,7 +46,7 @@ export default function Navbar({ onOpenSwapModal }) {
           </a>
           <button
             onClick={onOpenSwapModal}
-            className="bg-[#E0187A] hover:bg-[#c41267] text-white text-sm font-semibold px-6 py-2.5 rounded-full shadow-lg shadow-[#E0187A]/25 hover:shadow-xl hover:shadow-[#E0187A]/35 active:scale-95 transition-all flex items-center gap-2"
+            className="bg-[#E0187A] max-sm:hidden hover:bg-[#c41267] text-white text-sm font-semibold px-6 py-2.5 rounded-full shadow-lg shadow-[#E0187A]/25 hover:shadow-xl hover:shadow-[#E0187A]/35 active:scale-95 transition-all flex items-center gap-2"
           >
             <span>Get started free</span>
           </button>

@@ -47,7 +47,7 @@ export default function LiveMetrics() {
       {/* Background Watermark */}
       <span
         aria-hidden="true"
-        className="absolute top-2/5 right-12 font-dmsans -translate-y-1/2 text-[7rem] sm:text-[8rem] lg:text-[10rem] font-anton text-[#F5A623]/[0.08] select-none pointer-events-none leading-none"
+        className="absolute watermark-shimmer-yello top-2/5 right-12 font-dmsans -translate-y-1/2 text-[7rem] sm:text-[8rem] lg:text-[10rem] font-anton text-[#F5A623]/[0.08] select-none pointer-events-none leading-none"
       >
         पोषण
       </span>

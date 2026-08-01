@@ -153,3 +153,63 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #C01567;
 }
+
+.watermark-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(222, 60, 114, 0.601) 0%,
+    rgba(222, 60, 114, 0.578) 35%,
+    rgba(222, 60, 114, 0.832) 50%,
+    rgba(222, 60, 114, 0.8) 65%,
+    rgba(222, 60, 114, 0.958) 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmer-flow 4s ease-in-out infinite;
+}
+
+.watermark-shimmer-yello {
+  background: linear-gradient(
+    90deg,
+    rgba(250, 240, 208, 0.601) 0%,
+    rgba(250, 240, 208, 0.578) 35%,
+    rgba(250, 240, 208, 0.832) 50%,
+    rgba(250, 240, 208, 0.8) 65%,
+    rgba(250, 240, 208, 0.958) 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmer-flow 4s ease-in-out infinite;
+}
+
+.watermark-shimmer-pink {
+  background: linear-gradient(
+    60deg,
+    rgba(250, 75, 119, 0.242) 0%,
+    rgba(250, 75, 119, 0.396) 35%,
+    rgba(250, 75, 119, 0.377) 50%,
+    rgba(250, 75, 119, 0.342) 65%,
+    rgba(250, 75, 119, 0.396) 100%
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmer-flow 4s ease-in-out infinite;
+}
+
+@keyframes shimmer-flow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

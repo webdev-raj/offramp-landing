@@ -5,7 +5,7 @@ import { ArrowRight, ChevronRight, Star } from "lucide-react";
 
 export default function Hero({ onOpenSwapModal }) {
   return (
-    <section className="relative overflow-hidden min-h-[640px] lg:min-h-[700px] flex flex-col justify-between">
+    <section className="relative overflow-hidden min-h-[30rem] lg:min-h-[48rem] max-sm:mt-16 flex flex-col justify-center">
       {/* Two-panel split background */}
       <div className="absolute inset-0 flex flex-col md:flex-row">
         {/* Pink panel */}
@@ -24,7 +24,7 @@ export default function Hero({ onOpenSwapModal }) {
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row min-h-[640px] lg:min-h-[700px]">
         {/* Left Side Content */}
-        <div className="w-full font-jetbrains md:w-[95%] relative px-6 sm:px-10 lg:pl-6 lg:pr-12 pt-10 pb-12 md:py-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+        <div className="w-full font-jetbrains md:w-[95%] relative isolate px-6 sm:px-10 lg:pl-6 lg:pr-12 pt-10 pb-12 md:py-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
           {/* Subheader Badge */}
           <div className="flex items-center gap-2 text-[#F5AE38] text-xs font-extrabold tracking-widest uppercase mb-4 sm:mb-5">
             <svg width="17" height="17" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@ export default function Hero({ onOpenSwapModal }) {
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-6 sm:mb-8 w-full">
+          <div className="z-10 flex flex-wrap items-center justify-center md:justify-start gap-3 mb-6 sm:mb-8 w-full">
             <button
               onClick={onOpenSwapModal}
               className="bg-[#F5AE38] hover:bg-[#ffbd12] text-[#3D1400] font-bold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-black/15 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all w-full sm:w-auto"
@@ -75,7 +75,7 @@ export default function Hero({ onOpenSwapModal }) {
           </div>
 
           {/* Rating Footer */}
-          <div className="flex items-center justify-center md:justify-start gap-3 text-white/95 text-xs sm:text-sm font-medium">
+          <div className="flex items-center justify-center md:justify-start gap-3 text-white/95 text-xs sm:text-sm font-medium z-10">
             <div className="flex items-center gap-1 text-[#F5AE38]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-[#F5AE38] text-[#F5AE38]" />
@@ -89,7 +89,7 @@ export default function Hero({ onOpenSwapModal }) {
           {/* Subtle Devanagari background watermark */}
           <span
             aria-hidden="true"
-            className="hidden lg:block absolute bottom-4 left-6 text-[11rem] font-anton text-white/[0.05] select-none leading-none pointer-events-none"
+            className="hidden watermark-shimmer lg:block absolute bottom-3 left-50 text-[7rem] font-anton text-white/[0.05] select-none leading-none pointer-events-none"
           >
             आहार
           </span>
