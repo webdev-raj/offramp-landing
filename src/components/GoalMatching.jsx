@@ -97,7 +97,7 @@ export default function GoalMatching({ onOpenSwapModal }) {
 
         {/* Section Header */}
         <div className="mb-10">
-          <p className="flex items-center gap-2 text-white text-xs sm:text-sm font-extrabold tracking-[0.25em] uppercase mb-3">
+          <p className="flex items-center gap-2 text-white text-xs sm:text-sm font-jetbrains tracking-[0.25em] uppercase mb-3">
            <svg width="22" height="22" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.35868 7.16446C9.26547 7.16446 10.0006 5.96157 10.0006 4.47774C10.0006 2.9939 9.26547 1.79102 8.35868 1.79102C7.45189 1.79102 6.7168 2.9939 6.7168 4.47774C6.7168 5.96157 7.45189 7.16446 8.35868 7.16446Z" fill="#fff" />
                 <path d="M9.49458 7.98959C9.77479 8.852 11.146 9.1794 12.5572 8.72087C13.9684 8.26234 14.8852 7.19151 14.605 6.3291C14.3248 5.4667 12.9536 5.13929 11.5424 5.59782C10.1312 6.05635 9.21437 7.12718 9.49458 7.98959Z" fill="#fff" />
@@ -110,7 +110,7 @@ export default function GoalMatching({ onOpenSwapModal }) {
             <span>PERSONALISED FILTERING</span>
           </p>
 
-          <h2 className="font-poppins font-black text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight whitespace-wrap">
+          <h2 className="font-haetten text-5xl sm:text-6xl lg:text-7xl leading-[1.1] whitespace-wrap">
             <span className="text-white">Your goal, </span>
             <span className="text-[#DC245E]">our recipe logic.</span>
           </h2>
@@ -134,15 +134,15 @@ export default function GoalMatching({ onOpenSwapModal }) {
                 {/* Text overlay — TOP LEFT */}
                 <div className="absolute top-0 left-0 z-10 pl-5 pt-8 sm:pl-8 sm:pt-14">
                   {/* GOAL CATEGORY label */}
-                  <p className="text-white/75 text-[1.03rem] font-bold tracking-[0.2em] uppercase mb-1 font-mono">
+                  <p className="text-white/75 text-[1.03rem] font-bold font-jetbrains tracking-[0.2em] uppercase mb-1">
                     {card.label}
                   </p>
                   {/* Title */}
-                  <h3 className="font-poppins font-black text-white text-[2rem] sm:text-[4rem] leading-[1.0] tracking-tight whitespace-pre-line">
+                  <h3 className="font-montserrat-bold font-black text-white text-[2rem] sm:text-[4rem] leading-[1.0] tracking-tight whitespace-pre-line">
                     {card.title}
                   </h3>
                   {/* Count */}
-                  <p className="text-white/80 text-xs sm:text-sm font-semibold mt-2.5 tracking-wide">
+                  <p className="text-white/80 text-xs sm:text-sm font-jetbrains mt-2.5 tracking-wide">
                     {card.count}
                   </p>
                 </div>
@@ -180,10 +180,10 @@ export default function GoalMatching({ onOpenSwapModal }) {
                     style={{ backgroundColor: card.bgColor }}
                   >
                     <div>
-                      <p className="text-white/80 text-[1.03rem] sm:text-xs font-bold tracking-[0.18em] uppercase font-mono mb-1">
+                      <p className="text-white/80 text-[1.03rem] sm:text-xs font-bold tracking-[0.18em] uppercase font-jetbrains mb-1">
                         {card.label}
                       </p>
-                      <h3 className="font-poppins font-extrabold text-white text-lg sm:text-4xl leading-tight tracking-tight">
+                      <h3 className="font-montserrat-bold font-extrabold text-white text-lg sm:text-4xl leading-tight tracking-tight">
                         {card.backTitle}
                       </h3>
                     </div>
@@ -201,7 +201,7 @@ export default function GoalMatching({ onOpenSwapModal }) {
                   {/* White Body */}
                   <div className="flex-1 flex flex-col justify-between px-5 py-4 sm:px-8 sm:py-6">
                     {/* Description */}
-                    <p className="text-[#5A5A5A] text-xs sm:text-[1.2rem] leading-loose font-normal mb-4">
+                    <p className="text-[#5A5A5A] text-xs sm:text-[1.2rem] leading-loose font-dmsans mb-4">
                       {card.backDescription}
                     </p>
 
@@ -209,11 +209,11 @@ export default function GoalMatching({ onOpenSwapModal }) {
                     <div>
                       <div className="border-2 rounded-xl px-4 py-3 sm:px-6 sm:py-8 mb-4"
                         style={{ backgroundColor: `${card.bgColor}20`,borderColor:`${card.bgColor}` }}>
-                        <p className="font-poppins font-black text-white text-2xl sm:text-4xl leading-none tracking-tight mb-0.5"
+                        <p className="font-montserrat-bold font-extrabold text-white text-2xl sm:text-4xl leading-none tracking-tight mb-0.5"
                            style={{ color:`${card.bgColor}` }}>
                           {card.count}+
                         </p>
-                        <p className="text-black text-sm sm:text-[1rem] font-medium">
+                        <p className="text-black text-sm sm:text-[1rem] font-dmsans">
                           Professionally reviewed swaps available
                         </p>
                       </div>
@@ -222,7 +222,7 @@ export default function GoalMatching({ onOpenSwapModal }) {
                         className="w-60 border-2 font-bold text-xs sm:text-sm py-2.5 sm:py-3 rounded-full transition-all flex items-center justify-center gap-2 hover:opacity-80"
                         style={{ borderColor: card.bgColor, backgroundColor: card.bgColor }}
                       >
-                        <span className="text-white">Explore library</span>
+                        <span className="text-white font-dmsans">Explore library</span>
                         <ArrowRight className="w-4 h-4" />
                       </button>
                     </div>

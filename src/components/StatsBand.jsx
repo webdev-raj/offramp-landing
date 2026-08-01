@@ -28,10 +28,10 @@ export default function StatsBand() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/15 text-center">
           {STATS.map((stat, idx) => (
             <div key={idx} className="pt-4 md:pt-0 px-2 group">
-              <p className="font-anton text-3xl sm:text-4xl lg:text-5xl text-[#FFC93C] tracking-tight group-hover:scale-105 transition-transform duration-200">
+              <p className="font-montserrat-bold text-3xl sm:text-3xl lg:text-4xl text-[#FFC93C] tracking-tight group-hover:scale-105 transition-transform duration-200">
                 {stat.value}
               </p>
-              <p className="text-white/80 text-xs sm:text-sm font-medium mt-2 max-w-[200px] mx-auto leading-snug">
+              <p className="text-white/50 text-xs sm:text-sm font-dmsans mt-2 max-w-[200px] mx-auto leading-snug">
                 {stat.label}
               </p>
             </div>

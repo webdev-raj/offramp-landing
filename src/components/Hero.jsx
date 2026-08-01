@@ -24,7 +24,7 @@ export default function Hero({ onOpenSwapModal }) {
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row min-h-[640px] lg:min-h-[700px]">
         {/* Left Side Content */}
-        <div className="w-full md:w-[95%] relative px-6 sm:px-10 lg:pl-6 lg:pr-12 pt-10 pb-12 md:py-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+        <div className="w-full font-jetbrains md:w-[95%] relative px-6 sm:px-10 lg:pl-6 lg:pr-12 pt-10 pb-12 md:py-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
           {/* Subheader Badge */}
           <div className="flex items-center gap-2 text-[#F5AE38] text-xs font-extrabold tracking-widest uppercase mb-4 sm:mb-5">
             <svg width="17" height="17" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@ export default function Hero({ onOpenSwapModal }) {
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-anton uppercase leading-[0.92] text-4xl sm:text-6xl lg:text-[5.5rem] mb-4 sm:mb-5 tracking-tight">
+          <h1 className="font-haetten uppercase leading-[0.8] text-5xl sm:text-7xl lg:text-[7rem] mb-4 sm:mb-5">
             <span className="text-[#F5AE38]">LOVE THE </span>
             <span className="text-white">FOOD</span>
             <br />
@@ -50,7 +50,7 @@ export default function Hero({ onOpenSwapModal }) {
           </h1>
 
           {/* Body Paragraph */}
-          <p className="text-white/90 text-sm sm:text-base max-w-md mb-6 sm:mb-7 leading-relaxed font-normal">
+          <p className="text-white/90 font-dmsans text-base sm:text-lg max-w-md mb-6 sm:mb-7 leading-relaxed font-normal">
             Helping people change what they eat without changing who they are —
             through AI-guided food transitions using familiar Indian flavors.
           </p>

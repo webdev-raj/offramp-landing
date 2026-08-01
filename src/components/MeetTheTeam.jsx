@@ -65,7 +65,7 @@ export default function MeetTheTeam() {
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header with Side-by-Side Pill Toggle Buttons */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex font-jetbrains flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
             <p className="flex items-center gap-2 text-[#F5AE38] text-xs sm:text-sm font-extrabold tracking-[0.2em] uppercase mb-3">
               <svg width="22" height="22" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +80,7 @@ export default function MeetTheTeam() {
               <span>THE PEOPLE BEHIND OFFRAMP</span>
             </p>
 
-            <h2 className="font-anton uppercase text-4xl sm:text-6xl lg:text-7xl text-white leading-[0.95] tracking-tight">
+            <h2 className="font-haetten text-4xl sm:text-6xl lg:text-7xl text-white leading-[0.95]">
               Meet the team
             </h2>
           </div>
@@ -127,17 +127,17 @@ export default function MeetTheTeam() {
                 {/* Bottom White Content Block */}
                 <div className="bg-white p-7 sm:p-8 flex flex-col justify-between min-h-[170px]">
                   {/* Name + Role Badge */}
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <h3 className="font-poppins font-extrabold text-2xl sm:text-3xl text-[#1E2538] leading-tight tracking-tight">
+                  <div className="flex items-center justify-between gap-3 mb-3">
+                    <h3 className="font-montserrat-bold font-extrabold text-2xl sm:text-3xl text-[#1E2538] leading-tight tracking-tight">
                       {member.name}
                     </h3>
-                    <span className={`${member.roleColor} font-mono text-xs font-extrabold uppercase tracking-widest shrink-0 mt-1.5`}>
+                    <span className={`${member.roleColor} font-jetbrains text-xs font-extrabold uppercase tracking-widest shrink-0 mt-1.5`}>
                       {member.role}
                     </span>
                   </div>
 
                   {/* Description */}
-                  <p className="text-[#655848] text-sm sm:text-base leading-relaxed font-normal">
+                  <p className="text-[#655848] text-sm sm:text-base leading-relaxed font-dmsans">
                     {member.description}
                   </p>
                 </div>
@@ -155,13 +155,13 @@ export default function MeetTheTeam() {
 
                 {/* Bottom White Content Block */}
                 <div className="bg-white p-7 sm:p-8 text-center flex flex-col justify-center min-h-[170px]">
-                  <h3 className="font-poppins font-extrabold text-2xl sm:text-3xl text-[#1E2538] leading-tight tracking-tight mb-2">
+                  <h3 className="font-montserrat-bold font-extrabold text-2xl sm:text-3xl text-[#1E2538] leading-tight tracking-tight mb-2">
                     {collab.name}
                   </h3>
-                  <p className="text-[#8B7563] text-sm font-medium">
+                  <p className="text-[#8B7563] text-sm font-medium font-dmsans">
                     {collab.subtextLine1}
                   </p>
-                  <p className="text-[#8B7563] text-sm font-medium">
+                  <p className="text-[#8B7563] text-sm font-medium font-dmsans">
                     {collab.subtextLine2}
                   </p>
                 </div>

@@ -54,9 +54,9 @@ export default function LiveMetrics() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Block */}
-        <div className="mb-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        <div className="mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <div className="lg:col-span-7">
-            <div className="flex items-center justify-start gap-2 text-[#C95530] text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-3">
+            <div className="flex font-jetbrains items-center justify-start gap-2 text-[#C95530] text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-3">
               <svg width="22" height="22" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.35868 7.16446C9.26547 7.16446 10.0006 5.96157 10.0006 4.47774C10.0006 2.9939 9.26547 1.79102 8.35868 1.79102C7.45189 1.79102 6.7168 2.9939 6.7168 4.47774C6.7168 5.96157 7.45189 7.16446 8.35868 7.16446Z" fill="#C95530" />
                 <path d="M9.49458 7.98959C9.77479 8.852 11.146 9.1794 12.5572 8.72087C13.9684 8.26234 14.8852 7.19151 14.605 6.3291C14.3248 5.4667 12.9536 5.13929 11.5424 5.59782C10.1312 6.05635 9.21437 7.12718 9.49458 7.98959Z" fill="#C95530" />
@@ -69,19 +69,19 @@ export default function LiveMetrics() {
               <p>LIVE KITCHEN DATA</p>
             </div>
 
-            <h2 className="font-anton uppercase text-4xl sm:text-5xl lg:text-6xl text-[#1E2538] leading-[0.98] tracking-tight">
+            <h2 className="font-haetten text-5xl sm:text-6xl lg:text-7xl text-[#1E2538] leading-[0.8]">
               Trusted Kitchen metrics <br className="hidden sm:inline" />
-              from real food decisions
+              <span className="text-[#314894]">from real food decisions</span>
             </h2>
           </div>
 
-          <div className="lg:col-span-5 flex flex-col justify-end gap-4">
-            <p className="text-[#4A4A4A] text-base sm:text-lg font-medium leading-relaxed">
+          <div className="lg:col-span-5 flex flex-col justify-end gap-2">
+            <p className="text-[#866535] text-base sm:text-lg font-Montserrat leading-relaxed">
               Numbers grounded in professional input and user outcomes — not marketing estimates.
             </p>
 
             {/* 4 Decorative Floral Badges */}
-            <div className="flex items-center gap-2 pt-2">
+            <div className="flex items-center gap-2">
               {/* red */}
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_41_1125)">
@@ -178,16 +178,16 @@ export default function LiveMetrics() {
                     <path opacity="0.3" d="M8.35903 12.5381C10.6672 12.5381 12.5384 10.667 12.5384 8.35879C12.5384 6.0506 10.6672 4.17944 8.35903 4.17944C6.05084 4.17944 4.17969 6.0506 4.17969 8.35879C4.17969 10.667 6.05084 12.5381 8.35903 12.5381Z" stroke="white" stroke-width="0.23882" />
                   </svg>
 
-                  <p className="font-anton text-3xl sm:text-4xl lg:text-4xl text-white tracking-tight leading-none">
+                  <p className="font-montserrat-bold text-3xl sm:text-4xl lg:text-4xl text-white tracking-tight leading-none">
                     {card.value}
                   </p>
-                  <p className="text-white/90 text-xs sm:text-sm font-semibold mt-2 leading-snug">
+                  <p className="text-white/90 text-xs sm:text-base font-jetbrains mt-2 leading-snug">
                     {card.label}
                   </p>
                 </div>
 
                 {/* Bottom Footer Label */}
-                <p className="text-[9px] uppercase tracking-widest font-extrabold text-white/50 pt-4 border-t border-white/20 mt-4">
+                <p className="text-[9px] font-jetbrains uppercase tracking-widest text-white/50 pt-4 border-t border-white/20 mt-1">
                   OFFRAMP INDIA
                 </p>
               </div>

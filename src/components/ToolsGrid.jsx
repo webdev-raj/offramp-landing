@@ -10,7 +10,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
 
         {/* Section Header */}
         <div className="mb-12 md:mb-16">
-          <div className="flex items-center gap-2 text-[#314894] font-extrabold text-xs sm:text-sm tracking-[0.2em] uppercase mb-3">
+          <div className="flex items-center gap-2 text-[#314894] font-jetbrains font-extrabold text-xs sm:text-sm tracking-[0.2em] uppercase mb-3">
             <svg width="22" height="22" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.35868 7.16446C9.26547 7.16446 10.0006 5.96157 10.0006 4.47774C10.0006 2.9939 9.26547 1.79102 8.35868 1.79102C7.45189 1.79102 6.7168 2.9939 6.7168 4.47774C6.7168 5.96157 7.45189 7.16446 8.35868 7.16446Z" fill="#314894" />
               <path d="M9.49458 7.98959C9.77479 8.852 11.146 9.1794 12.5572 8.72087C13.9684 8.26234 14.8852 7.19151 14.605 6.3291C14.3248 5.4667 12.9536 5.13929 11.5424 5.59782C10.1312 6.05635 9.21437 7.12718 9.49458 7.98959Z" fill="#314894" />
@@ -23,7 +23,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
             <span>FOUR TOOLS · ONE KITCHEN</span>
           </div>
 
-          <h2 className="font-anton uppercase text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-tight">
+          <h2 className="font-haetten text-6xl sm:text-7xl lg:text-8xl leading-[0.8]">
             <span className="text-[#18181B] block">From kitchen counter</span>
             <span className="text-[#E0187A] block">to confident choice</span>
           </h2>
@@ -42,21 +42,21 @@ export default function ToolsGrid({ onOpenSwapModal }) {
 
             {/* Text Left Column */}
             <div className="flex-1 max-w-xl z-10">
-              <p className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-white/80 mb-3">
+              <p className="text-[0.8rem] font-jetbrains tracking-[0.2em] uppercase text-white/80 mb-3">
                 SWAP ENGINE
               </p>
 
-              <h3 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-4">
+              <h3 className="font-montserrat-bold text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-4">
                 Swap with confidence
               </h3>
 
-              <p className="text-white/90 text-sm sm:text-base leading-relaxed mb-8 max-w-md font-normal">
+              <p className="text-white/90 font-dmsans text-sm sm:text-lg leading-relaxed mb-8 max-w-md font-normal">
                 Input-based recommendations with dietitian reasoning. See protein, fibre, and micronutrient impact before you cook — not after.
               </p>
 
               <button
                 onClick={onOpenSwapModal}
-                className="bg-[#FFF4D9] hover:bg-white text-[#2B1B04] font-extrabold text-sm px-7 py-3.5 rounded-full flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all group"
+                className="bg-[#FFF4D9] hover:bg-white font-dmsans tracking-wider text-[#D2932B] font-extrabold text-sm px-7 py-3.5 rounded-full flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all group"
               >
                 <span>Try a swap</span>
                 <ArrowRight className="w-4 h-4 text-[#2B1B04] group-hover:translate-x-1 transition-transform" />
@@ -106,21 +106,21 @@ export default function ToolsGrid({ onOpenSwapModal }) {
 
             {/* Text Right Column */}
             <div className="flex-1 max-w-xl z-10 text-left md:pl-4">
-              <p className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-white/80 mb-3">
+              <p className="text-[0.8rem] font-jetbrains font-extrabold tracking-[0.2em] uppercase text-white/80 mb-3">
                 CONFLICT CHECKER
               </p>
 
-              <h3 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-4">
+              <h3 className="font-montserrat-bold text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-4">
                 Catch potential conflicts
               </h3>
 
-              <p className="text-white/90 text-sm sm:text-base leading-relaxed mb-8 max-w-md font-normal">
+              <p className="text-white/90 font-dmsans text-sm sm:text-lg leading-relaxed mb-8 max-w-md font-normal">
                 Flags ingredient combinations that may affect health goals, allergies, or dietary restrictions before they become a problem.
               </p>
 
               <button
                 onClick={onOpenSwapModal}
-                className="bg-[#FFF4D9] hover:bg-white text-[#2B1B04] font-extrabold text-sm px-7 py-3.5 rounded-full flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all group"
+                className="bg-[#FFF4D9] hover:bg-white text-[#DE3968] font-dmsans tracking-wider text-[#2B1B04] font-extrabold text-sm px-7 py-3.5 rounded-full flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all group"
               >
                 <span>Get charts</span>
                 <ArrowRight className="w-4 h-4 text-[#2B1B04] group-hover:translate-x-1 transition-transform" />
@@ -138,21 +138,21 @@ export default function ToolsGrid({ onOpenSwapModal }) {
 
             {/* Text Left Column */}
             <div className="flex-1 max-w-xl z-10">
-              <p className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-white/80 mb-3">
+              <p className="text-[0.8rem] font-jetbrains font-extrabold tracking-[0.2em] uppercase text-white/80 mb-3">
                 REAL PLANNER
               </p>
 
-              <h3 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-4">
+              <h3 className="font-montserrat-bold text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-4">
                 Plan meals for real life
               </h3>
 
-              <p className="text-white/90 text-sm sm:text-base leading-relaxed mb-8 max-w-md font-normal">
+              <p className="text-white/90 font-dmsans text-sm sm:text-lg leading-relaxed mb-8 max-w-md font-normal">
                 Drag-and-drop weekly builder with automatic macro tracking and shopping list generation. Built for how Indians actually eat.
               </p>
 
               <button
                 onClick={onOpenSwapModal}
-                className="bg-[#FFF4D9] hover:bg-white text-[#1B2264] font-extrabold text-sm px-7 py-3.5 rounded-full flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all group"
+                className="bg-[#FFF4D9] hover:bg-white font-dmsans tracking-wider text-[#1B2264] font-extrabold text-sm px-7 py-3.5 rounded-full flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all group"
               >
                 <span>Build a plan</span>
                 <ArrowRight className="w-4 h-4 text-[#1B2264] group-hover:translate-x-1 transition-transform" />
@@ -194,21 +194,21 @@ export default function ToolsGrid({ onOpenSwapModal }) {
 
             {/* Text Right Column */}
             <div className="flex-1 max-w-xl z-10 md:pl-4">
-              <p className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-white/80 mb-3">
+              <p className="text-[0.8rem] font-jetbrains font-extrabold tracking-[0.2em] uppercase text-white/80 mb-3">
                 IMPORT BACKUP
               </p>
 
-              <h3 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-4">
+              <h3 className="font-montserrat-bold text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-4">
                 Migrate & improve
               </h3>
 
-              <p className="text-white/90 text-sm sm:text-base leading-relaxed mb-8 max-w-md font-normal">
+              <p className="text-white/90 font-dmsans text-sm sm:text-lg leading-relaxed mb-8 max-w-md font-normal">
                 Move from other platforms. OffRamp re-analyses your past meals, identifies pattern gaps, and surfaces habits that actually worked.
               </p>
 
               <button
                 onClick={onOpenSwapModal}
-                className="bg-[#FFF4D9] hover:bg-white text-[#3D1400] font-extrabold text-sm px-7 py-3.5 rounded-full flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all group"
+                className="bg-[#FFF4D9] text-[#C95530] font-dmsans tracking-wider hover:bg-white text-[#3D1400] font-extrabold text-sm px-7 py-3.5 rounded-full flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all group"
               >
                 <span>Review plans</span>
                 <ArrowRight className="w-4 h-4 text-[#3D1400] group-hover:translate-x-1 transition-transform" />

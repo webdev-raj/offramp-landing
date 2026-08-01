@@ -34,7 +34,7 @@ export default function CtaBanner({ onOpenSwapModal }) {
         </h2>
 
         {/* Subtitle */}
-        <p className="text-white/70 text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-9 font-normal">
+        <p className="text-white/70 font-dmsans text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-9 font-normal">
           No diet overhaul, no upfront subscription. Enter a familiar dish and see its goal alignment in seconds.
         </p>
 
@@ -42,7 +42,7 @@ export default function CtaBanner({ onOpenSwapModal }) {
         <div className="mb-9">
           <button
             onClick={onOpenSwapModal}
-            className="bg-[#F7AC2B] hover:bg-[#e2991e] active:scale-95 text-[#231E1B] font-extrabold text-sm sm:text-base tracking-wider uppercase px-9 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all inline-flex items-center gap-2.5"
+            className="bg-[#F7AC2B] hover:bg-[#e2991e] font-jetbrains active:scale-95 text-[#231E1B] font-extrabold text-sm sm:text-base tracking-wider uppercase px-9 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all inline-flex items-center gap-2.5"
           >
             <span>GET STARTED FREE</span>
             <ArrowRight className="w-4.5 h-4.5 text-[#231E1B] stroke-[2.5]" />
@@ -50,7 +50,7 @@ export default function CtaBanner({ onOpenSwapModal }) {
         </div>
 
         {/* Trust Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-white/60 font-medium">
+        <div className="flex flex-wrap items-center font-dmsans justify-center gap-6 text-xs sm:text-sm text-white/60 font-medium">
           <div className="flex items-center gap-1.5">
             <Check className="w-4 h-4 text-[#34D399]/80 stroke-[2.5]" />
             <span>Free forever</span>
