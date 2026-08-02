@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import AnimatedCounter from "./AnimatedCounter";
 
 const STATS = [
   { value: "24,000+", label: "Active users" },
@@ -29,7 +29,7 @@ export default function StatsBand() {
           {STATS.map((stat, idx) => (
             <div key={idx} className="pt-4 md:pt-0 px-2 group">
               <p className="font-montserrat-bold text-3xl sm:text-3xl lg:text-4xl text-[#FFC93C] tracking-tight group-hover:scale-105 transition-transform duration-200">
-                {stat.value}
+                <AnimatedCounter value={stat.value} />
               </p>
               <p className="text-white/50 text-xs sm:text-sm font-dmsans mt-2 max-w-[200px] mx-auto leading-snug">
                 {stat.label}

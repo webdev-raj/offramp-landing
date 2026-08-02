@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Star, ArrowRight } from "lucide-react";
+import AnimatedCounter from "./AnimatedCounter";
 
 const GOAL_CARDS = [
   {
@@ -143,7 +144,7 @@ export default function GoalMatching({ onOpenSwapModal }) {
                   </h3>
                   {/* Count */}
                   <p className="text-white/80 text-xs sm:text-sm font-jetbrains mt-2.5 tracking-wide">
-                    {card.count}
+                    <AnimatedCounter value={card.count} />
                   </p>
                 </div>
 

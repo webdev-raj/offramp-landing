@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ArrowRight, ChevronRight, Star } from "lucide-react";
+import AnimatedCounter from "./AnimatedCounter";
 
 export default function Hero({ onOpenSwapModal }) {
   return (
@@ -80,10 +81,14 @@ export default function Hero({ onOpenSwapModal }) {
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-[#F5AE38] text-[#F5AE38]" />
               ))}
-              <span className="font-bold text-[#F5AE38] ml-1">4.8 / 5</span>
+              <span className="font-bold text-[#F5AE38] ml-1">
+                <AnimatedCounter value="4.8 / 5" />
+              </span>
             </div>
             <span className="w-1.5 h-1.5 rounded-full bg-white/50" />
-            <span>24,800+ active users</span>
+            <span>
+              <AnimatedCounter value="24,800+" /> active users
+            </span>
           </div>
 
           {/* Subtle Devanagari background watermark */}

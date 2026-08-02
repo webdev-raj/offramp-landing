@@ -1,6 +1,7 @@
 "use client";
 
 import { Star } from "lucide-react";
+import AnimatedCounter from "./AnimatedCounter";
 
 const METRIC_CARDS = [
   {
@@ -179,7 +180,7 @@ export default function LiveMetrics() {
                   </svg>
 
                   <p className="font-montserrat-bold text-3xl sm:text-4xl lg:text-4xl text-white tracking-tight leading-none">
-                    {card.value}
+                    <AnimatedCounter value={card.value} />
                   </p>
                   <p className="text-white/90 text-xs sm:text-base font-jetbrains mt-2 leading-snug">
                     {card.label}
