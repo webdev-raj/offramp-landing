@@ -8,8 +8,9 @@ const GOAL_CATEGORIES = [
     id: "weight-loss",
     label: "Weight Loss",
     emoji: "⚖️",
-    bg: "bg-[#2542A5]",
-    hoverBg: "hover:bg-[#1B3494]",
+    bg: "bg-[#2542A5]/40",
+    borderColor: "border-[#2542A5]",
+    hoverBg: "hover:bg-[#2542A5]",
     count: "8,200+",
     desc: "Calorie-controlled Indian meals with high satiety. Roti alternatives, low-oil sabzis and high-protein dals.",
     price: "8,200++",
@@ -19,8 +20,9 @@ const GOAL_CATEGORIES = [
     id: "fitness-gym",
     label: "Fitness / Gym",
     emoji: "🏋️",
-    bg: "bg-[#E0187A]",
-    hoverBg: "hover:bg-[#C01567]",
+    bg: "bg-[#E0187A]/40",
+    hoverBg: "hover:bg-[#E0187A]",
+    borderColor: "border-[#E0187A]",
     count: "16,000+",
     desc: "High-protein, post-workout Indian food swaps. Paneer, dal, sprouts and egg-based meal options tailored for muscle gain.",
     price: "16,000++",
@@ -30,8 +32,9 @@ const GOAL_CATEGORIES = [
     id: "diabetic",
     label: "Diabetic",
     emoji: "🩺",
-    bg: "bg-[#1B7042]",
-    hoverBg: "hover:bg-[#145534]",
+    bg: "bg-[#1B7042]/40",
+    hoverBg: "hover:bg-[#1B7042]",
+     borderColor: "border-[#1B7042]",
     count: "6,400+",
     desc: "Low GI Indian foods. Millets, brown rice, high-fibre vegetables and sugar-free Indian sweets.",
     price: "6,400++",
@@ -41,8 +44,9 @@ const GOAL_CATEGORIES = [
     id: "heart-health",
     label: "Heart Health",
     emoji: "❤️",
-    bg: "bg-[#CB5638]",
-    hoverBg: "hover:bg-[#b34830]",
+    bg: "bg-[#CB5638]/40",
+    hoverBg: "hover:bg-[#CB5638]",
+     borderColor: "border-[#CB5638]",
     count: "5,100+",
     desc: "Low-sodium, low-cholesterol Indian cooking. Olive oil alternatives, steamed snacks and omega-3 rich foods.",
     price: "5,100++",
@@ -52,8 +56,9 @@ const GOAL_CATEGORIES = [
     id: "vegan",
     label: "Vegan",
     emoji: "🌱",
-    bg: "bg-[#7E38B7]",
-    hoverBg: "hover:bg-[#6729A0]",
+    bg: "bg-[#7E38B7]/40",
+    hoverBg: "hover:bg-[#7E38B7]",
+    borderColor: "border-[#7E38B7]",
     count: "9,800+",
     desc: "100% plant-based Indian cuisine. Tofu, jackfruit, soy chaap, and dairy-free versions of classic Indian dishes.",
     price: "9,800++",
@@ -63,8 +68,9 @@ const GOAL_CATEGORIES = [
     id: "keto",
     label: "Keto",
     emoji: "🥩",
-    bg: "bg-[#C44319]",
-    hoverBg: "hover:bg-[#a83515]",
+    bg: "bg-[#C44319]/40",
+     borderColor: "border-[#C44319]",
+    hoverBg: "hover:bg-[#C44319]",
     count: "4,600+",
     desc: "Low-carb Indian meals. Cauliflower rice, almond flour rotis, paneer dishes and keto-friendly Indian curries.",
     price: "4,600++",
@@ -78,7 +84,7 @@ export default function RegionalDishes({ onOpenSwapModal }) {
   const active = GOAL_CATEGORIES.find((g) => g.id === activeGoal) || GOAL_CATEGORIES[1];
 
   return (
-    <section className="relative bg-[#FDF8EE] py-16 lg:py-24 px-6 overflow-hidden">
+     <section className="relative bg-[#FDF8EE] py-16 lg:py-24 px-6 overflow-hidden">
       {/* Background Dots Pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-30"
@@ -87,7 +93,7 @@ export default function RegionalDishes({ onOpenSwapModal }) {
           backgroundSize: "28px 28px",
         }}
       />
-
+ 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
@@ -108,17 +114,17 @@ export default function RegionalDishes({ onOpenSwapModal }) {
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
-
+ 
         {/* Main Grid: Categories + Detail Panel */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          
+ 
           {/* Left: Goal Category Grid */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-4">
             {GOAL_CATEGORIES.map((goal) => (
               <button
                 key={goal.id}
                 onClick={() => setActiveGoal(goal.id)}
-                className={`${goal.bg} ${goal.hoverBg} relative text-white rounded-2xl p-5 text-left transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-1 group ${
+                className={`${goal.bg} ${goal.hoverBg} border-3 ${goal.borderColor} group relative rounded-2xl p-5 text-left transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-1 ${
                   activeGoal === goal.id
                     ? "ring-4 ring-white/60 scale-[1.02] shadow-xl"
                     : "opacity-90 hover:opacity-100"
@@ -128,22 +134,27 @@ export default function RegionalDishes({ onOpenSwapModal }) {
                 {activeGoal === goal.id && (
                   <div className="absolute top-3 right-3 w-3 h-3 rounded-full bg-white shadow-md" />
                 )}
+ 
                 <div className="text-2xl mb-3">{goal.emoji}</div>
-                <p className="font-extrabold text-base leading-tight mb-1">
+ 
+                <p className="font-extrabold text-[#1E2538] group-hover:text-white leading-tight mb-1 transition-colors duration-200">
                   {goal.label}
                 </p>
-                <p className="text-white/80 text-xs font-medium">{goal.count} dishes</p>
-
+ 
+                <p className="text-[#1E2538]/70 group-hover:text-white/90 text-xs font-medium transition-colors duration-200">
+                  {goal.count} dishes
+                </p>
+ 
                 {/* Bottom stat bar */}
-                <div className="mt-4 pt-3 border-t border-white/20">
-                  <p className="text-[9px] uppercase tracking-widest font-bold text-white/50">
+                <div className="mt-4 pt-3 border-t border-[#1E2538]/10 group-hover:border-white/20 transition-colors duration-200">
+                  <p className="text-[9px] uppercase tracking-widest font-bold text-[#1E2538]/50 group-hover:text-white/50 transition-colors duration-200">
                     OFFRAMP INDIA
                   </p>
                 </div>
               </button>
             ))}
           </div>
-
+ 
           {/* Right: Detail Panel */}
           <div
             className={`lg:col-span-5 ${active.highlight} rounded-2xl p-8 flex flex-col justify-between min-h-[340px] shadow-xl transition-all duration-300`}
@@ -156,7 +167,7 @@ export default function RegionalDishes({ onOpenSwapModal }) {
                 </p>
                 <span className="text-2xl">{active.emoji}</span>
               </div>
-
+ 
               {/* Big Count */}
               <p className="font-anton text-6xl sm:text-7xl text-white leading-none tracking-tight mb-2">
                 {active.price}
@@ -164,13 +175,13 @@ export default function RegionalDishes({ onOpenSwapModal }) {
               <p className="text-white/70 text-xs font-medium mb-6">
                 verified regional dish options
               </p>
-
+ 
               {/* Description */}
               <p className="text-white/90 text-sm sm:text-base leading-relaxed font-normal border-t border-white/20 pt-5">
                 {active.desc}
               </p>
             </div>
-
+ 
             {/* CTA */}
             <button
               onClick={onOpenSwapModal}
