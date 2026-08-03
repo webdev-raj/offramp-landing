@@ -25,7 +25,7 @@ export default function Footer() {
             <p className="text-[11px] font-jetbrains tracking-[0.52em] text-white/60 uppercase mb-1.5 font-bold">
               WEEKLY KITCHEN NOTES
             </p>
-            <h3 className="font-jetbrains text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug">
+            <h3 className="font-jetbrains text-xl sm:text-xl md:text-2xl font-extrabold text-white tracking-tight leading-snug">
               Safer swaps, expert explainers, and product updates.
             </h3>
           </div>
