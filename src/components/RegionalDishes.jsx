@@ -95,7 +95,7 @@ export default function RegionalDishes({ onOpenSwapModal }) {
             <p className="text-[#C44319] text-xs font-extrabold tracking-[0.2em] uppercase mb-3">
               ★ GOAL-BASED FILTERS
             </p>
-            <h2 className="font-anton uppercase text-5xl sm:text-6xl lg:text-7xl text-[#1E2538] leading-[0.95] tracking-tight">
+            <h2 className="font-haetten text-5xl sm:text-6xl lg:text-7xl text-[#1E2538] leading-[0.85]">
               Regional dishes that <br className="hidden sm:inline" />
               <span className="text-[#E0187A]">match your goals exactly</span>
             </h2>
