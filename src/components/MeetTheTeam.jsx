@@ -80,7 +80,7 @@ export default function MeetTheTeam() {
               <span>THE PEOPLE BEHIND OFFRAMP</span>
             </p>
 
-            <h2 className="font-haetten text-4xl sm:text-6xl lg:text-7xl text-white leading-[0.95]">
+            <h2 className="font-haetten text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.95]">
               Meet the team
             </h2>
           </div>

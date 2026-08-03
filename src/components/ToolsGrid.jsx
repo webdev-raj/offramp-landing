@@ -23,17 +23,17 @@ export default function ToolsGrid({ onOpenSwapModal }) {
             <span>FOUR TOOLS · ONE KITCHEN</span>
           </div>
 
-          <h2 className="font-haetten text-6xl sm:text-7xl lg:text-8xl leading-[0.8]">
+          <h2 className="font-haetten text-5xl sm:text-6xl lg:text-7xl leading-[0.8]">
             <span className="text-[#18181B] block">From kitchen counter</span>
             <span className="text-[#E0187A] block">to confident choice</span>
           </h2>
         </div>
 
         {/* 4 Feature Cards Stack */}
-        <div className="space-y-10 sm:space-y-12">
+        <div className="space-y-8 sm:space-y-12">
 
           {/* CARD 1: SWAP ENGINE (Warm Amber Yellow) */}
-          <div className="scallop-card-top-bottom  bg-[#D2932B] p-6 sm:p-10 lg:p-12 relative flex flex-col md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="scallop-card-top-bottom bg-[#D2932B] p-6 sm:p-10 lg:p-12 relative flex flex-col md:flex-row items-center justify-between gap-8 min-h-[340px] shadow-xl hover:shadow-2xl transition-all duration-300">
 
             {/* Top Right Icon Badge */}
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 text-white shadow-inner z-10">

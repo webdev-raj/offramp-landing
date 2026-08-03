@@ -35,7 +35,7 @@ export default function CommunityReviews() {
             </svg>
             <span>COMMUNITY ACTIVITY</span>
           </p>
-          <h2 className="font-haetten text-6xl sm:text-7xl lg:text-8xl leading-[0.9]">
+          <h2 className="font-haetten text-5xl sm:text-6xl lg:text-7xl leading-[0.9]">
             <span className="text-[#1E2538] block">People are testing</span>
             <span className="text-[#DC346b] block">familiar food</span>
           </h2>
