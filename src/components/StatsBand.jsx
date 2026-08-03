@@ -15,11 +15,11 @@ export default function StatsBand() {
   return (
     <section className="relative bg-[#314894] text-white z-10">
       {/* Top circle row */}
-      <div className="h-5 w-full bg-[#314894] pl-2 flex items-center justify-start gap-2 whitespace-nowrap">
+      <div className="h-5 w-full bg-[#314894] pl-2 flex items-center justify-start gap-2 ">
         {Array.from({ length: TOP_CIRCLE_COUNT }).map((_, i) => (
           <div
             key={i}
-            className="h-5 w-6 rounded-full bg-[#314894] -translate-y-1 "
+            className="h-5 w-6 rounded-full bg-[#314894] shrink-0 -translate-y-1.5 "
           />
         ))}
       </div>

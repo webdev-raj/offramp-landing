@@ -171,6 +171,19 @@
   animation: shimmer-flow 4s ease-in-out infinite;
 }
 
+/* .scallop-top-border {
+  --scallop-size: 24px;
+  --scallop-radius: 10px;
+  -webkit-mask: radial-gradient(var(--scallop-radius) at 50% 100%, #0000 99%, #000) 0 0 / var(--scallop-size) 100% repeat-x;
+  mask: radial-gradient(var(--scallop-radius) at 50% 100%, #0000 99%, #000) 0 0 / var(--scallop-size) 100% repeat-x;
+} */
+ .scallop-top-border {
+  --scallop-size: 32px;
+  --scallop-radius: 12px;
+  -webkit-mask: radial-gradient(var(--scallop-radius) at 50% 0, #0000 99%, #000) 0 0 / var(--scallop-size) 100% repeat-x;
+  mask: radial-gradient(var(--scallop-radius) at 50% 0, #0000 99%, #000) 0 0 / var(--scallop-size) 100% repeat-x;
+}
+
 .watermark-shimmer-yello {
   background: linear-gradient(
     90deg,
