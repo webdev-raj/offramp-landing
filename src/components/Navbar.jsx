@@ -22,7 +22,7 @@ export default function Navbar({ onOpenSwapModal }) {
 
         {/* Desktop Navigation */}
         <nav className="hidden font-dmsans md:flex items-center gap-8 text-sm font-semibold text-[#3A3A3A]">
-          <a href="#explore" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
+          <a href="/explore" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             Explore Swaps
           </a>
           <a href="#how-it-works" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">

@@ -6,14 +6,14 @@ import AnimatedCounter from "./AnimatedCounter";
 
 export default function Hero({ onOpenSwapModal }) {
   return (
-    <section className="relative overflow-hidden min-h-[30rem] lg:min-h-[48rem] max-sm:mt-16 flex flex-col justify-center">
-      {/* Two-panel split background */}
-      <div className="absolute inset-0 flex flex-col md:flex-row">
+    <section className="relative overflow-hidden min-h-screen md:min-h-[48rem] max-sm:mt-16 flex flex-col justify-center">
+      {/* Two-panel split background (Desktop only) */}
+      <div className="hidden md:flex absolute inset-0 flex-row">
         {/* Pink panel */}
-        <div className="w-full h-1/2 md:h-full md:w-[65%] bg-[#DC346B] relative overflow-hidden shrink-0" />
+        <div className="w-[65%] bg-[#DC346B] relative overflow-hidden shrink-0" />
         {/* Yellow panel with custom patternbg.png */}
         <div
-          className="w-full h-1/2 md:h-full md:w-[35%] bg-[#F5AE38] relative shrink-0"
+          className="w-[35%] bg-[#F5AE38] relative shrink-0"
           style={{
             backgroundImage: `url('/bgyellow.svg')`,
             backgroundRepeat: "repeat",
@@ -23,9 +23,9 @@ export default function Hero({ onOpenSwapModal }) {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row min-h-[640px] lg:min-h-[700px]">
-        {/* Left Side Content */}
-        <div className="w-full font-jetbrains md:w-[95%] relative isolate px-6 sm:px-10 lg:pl-6 lg:pr-12 pt-10 pb-12 md:py-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row">
+        {/* Left Side Content (Pink Section on Mobile) */}
+        <div className="w-full font-jetbrains md:w-[95%] bg-[#DC346B] md:bg-transparent min-h-[51rem] md:min-h-0 relative isolate px-6 sm:px-10 lg:pl-6 lg:pr-12 py-20 md:py-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
           {/* Subheader Badge */}
           <div className="flex items-center gap-2 text-[#F5AE38] text-xs font-extrabold tracking-widest uppercase mb-4 sm:mb-5">
             <svg width="17" height="17" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@ export default function Hero({ onOpenSwapModal }) {
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-haetten uppercase leading-[0.8] text-5xl sm:text-7xl lg:text-[7rem] mb-4 sm:mb-5">
+          <h1 className="font-haetten uppercase leading-[0.8] text-[3.8rem] sm:text-7xl lg:text-[7rem] mb-4 sm:mb-5">
             <span className="text-[#F5AE38]">LOVE THE </span>
             <span className="text-white">FOOD</span>
             <br />
@@ -57,7 +57,7 @@ export default function Hero({ onOpenSwapModal }) {
           </p>
 
           {/* Action Buttons */}
-          <div className="z-10 flex flex-wrap items-center justify-center md:justify-start gap-3 mb-6 sm:mb-8 w-full">
+          <div className="z-10 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 mb-6 sm:mb-8 w-full max-w-md mx-auto md:max-w-none md:mx-0">
             <button
               onClick={onOpenSwapModal}
               className="bg-[#F5AE38] hover:bg-[#ffbd12] text-[#3D1400] font-bold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-black/15 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all w-full sm:w-auto"
@@ -100,9 +100,9 @@ export default function Hero({ onOpenSwapModal }) {
           </span>
         </div>
 
-        {/* Mobile/Desktop Phone Mockup Area */}
-        <div className="w-full md:w-[47%] relative flex items-center justify-center py-8 md:py-0">
-          <div className="relative md:absolute md:top-1/2 md:left-0 md:-translate-y-1/2 md:-translate-x-1/2 z-20 w-[270px] sm:w-[300px] lg:w-[325px] hover:scale-[1.01] transition-transform duration-300">
+        {/* Mobile/Desktop Phone Mockup Area (Yellow Section on Mobile) */}
+        <div className="w-full md:w-[47%] mobile-yellow-bg md:bg-transparent min-h-[90vh] md:min-h-0 relative flex items-center justify-center py-24 md:py-0">
+          <div className="relative md:absolute md:top-1/2 md:left-0 md:-translate-y-1/2 md:-translate-x-1/2 z-20 w-[280px] sm:w-[300px] lg:w-[325px] hover:scale-[1.01] transition-transform duration-300">
             {/* Phone Frame */}
             <div className="rounded-[3rem] bg-[#1C1D21] p-3.5 ring-1 ring-black/40 shadow-2xl border border-white/10">
               <div className="rounded-[2.4rem] bg-[#FDF6E8] overflow-hidden border border-[#E8DCC4]">
@@ -137,6 +137,7 @@ export default function Hero({ onOpenSwapModal }) {
                         src="/butter_chicken.png"
                         alt="Butter Chicken"
                         fill
+                        sizes="56px"
                         className="object-cover"
                       />
                     </div>
@@ -157,6 +158,7 @@ export default function Hero({ onOpenSwapModal }) {
                         src="/tofu_makhani.png"
                         alt="Tofu Makhani"
                         fill
+                        sizes="56px"
                         className="object-cover"
                       />
                     </div>
@@ -191,6 +193,18 @@ export default function Hero({ onOpenSwapModal }) {
           </div>
         </div>
       </div>
+
+      {/* Custom Mobile Yellow Background Style */}
+      <style jsx>{`
+        @media (max-width: 767px) {
+          .mobile-yellow-bg {
+            background-color: #F5AE38;
+            background-image: url('/bgyellow.svg');
+            background-repeat: repeat;
+            background-size: 550px;
+          }
+        }
+      `}</style>
     </section>
   );
 }

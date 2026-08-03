@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${anton.variable} ${poppins.variable} h-full antialiased scroll-smooth`}
     >
       <body className="font-poppins bg-[#FDF8EE] text-[#1E1E1E] min-h-full flex flex-col selection:bg-[#E0187A] selection:text-white">
