@@ -1,13 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import gsap from "gsap";
 
 export default function Navbar({ onOpenSwapModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(headerRef.current, {
+        yPercent: "-900",
+        duration: 0.6,
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <header className="bg-[#FBF3E3] border-b border-[#E8DCC4]/50 fixed top-0 w-full z-40 px-4 md:px-12 py-3 sm:py-5 transition-all">
+    <header
+      ref={headerRef}
+      className="bg-[#FBF3E3] border-b border-[#E8DCC4]/50 fixed top-0 w-full z-40 px-4 md:px-12 py-3 sm:py-5 transition-all"
+    >
       <div className="max-w-7xl font-jetbrains mx-auto flex items-center justify-between">
         {/* Logo */}
         <a href="#" className=" flex items-center gap-2.5 group">
