@@ -30,7 +30,7 @@ const GOAL_CATEGORIES = [
     hoverBg: "hover:bg-[#E0187A]",
     borderColor: "border-[#E0187A]",
     count: "16,000+",
-    desc: "High-protein, post-workout Indian food swaps. Paneer, dal, sprouts and egg-based meal options tailored for muscle gain.",
+    desc: "Find healthier, high-protein Indian meal swaps tailored for post-workout recovery, strength, and muscle gain.",
     price: "16,000++",
     highlight: "bg-[#E0187A]",
   },
