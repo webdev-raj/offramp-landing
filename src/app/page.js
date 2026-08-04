@@ -18,7 +18,7 @@ export default function Home() {
   const [isSwapModalOpen, setIsSwapModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen flex flex-col bg-[#FDF8EE] overflow-x-hidden selection:bg-[#E0187A] selection:text-white">
+    <main className="min-h-screen flex flex-col bg-[#DC346B] overflow-x-hidden selection:bg-[#E0187A] selection:text-white">
 
       {/* 1. Navigation Header */}
       <Navbar onOpenSwapModal={() => setIsSwapModalOpen(true)} />
@@ -54,10 +54,10 @@ export default function Home() {
       <Footer onOpenSwapModal={() => setIsSwapModalOpen(true)} />
 
       {/* Interactive Food Swap Engine Modal */}
-      <InteractiveSwapModal
+      {/* <InteractiveSwapModal
         isOpen={isSwapModalOpen}
         onClose={() => setIsSwapModalOpen(false)}
-      />
+      /> */}
     </main>
   );
 }

@@ -70,9 +70,8 @@ export default function GoalPicker({ selectedGoal, onSelectGoal }) {
               <div
                 key={goal.id}
                 onClick={() => onSelectGoal(isSelected ? null : goal.id)}
-                className={`${goal.bgClass} scallop-card border-4 rounded-3xl p-6 flex flex-col justify-between min-h-[220px] shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group ${
-                  isSelected ? "ring-4 ring-[#FFC93C] scale-[1.03]" : ""
-                }`}
+                className={`${goal.bgClass} scallop-card border-4 rounded-3xl p-6 flex flex-col justify-between min-h-[220px] shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group ${isSelected ? "ring-4 ring-[#FFC93C] scale-[1.03]" : ""
+                  }`}
               >
                 <div>
                   <div className="flex items-center justify-between text-[10px] font-jetbrains uppercase tracking-widest text-white/80 mb-4">
@@ -104,11 +103,15 @@ export default function GoalPicker({ selectedGoal, onSelectGoal }) {
       {/* Wavy bottom divider leading to sand background */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
         <svg
-          viewBox="0 0 1200 120"
+          viewBox="0 0 940 28"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto"
           preserveAspectRatio="none"
-          className="relative block w-full h-12 text-[#FDF6E8] fill-current"
         >
-          <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,40 L1200,120 L0,120 Z"></path>
+          <path
+            d="M0 28C39.1389 28 39.1389 0 78.2778 0C117.417 0 117.417 28 156.556 28C195.694 28 195.694 0 234.833 0C273.972 0 273.972 28 313.111 28C352.25 28 352.25 0 391.389 0C430.528 0 430.528 28 469.667 28C508.805 28 508.805 0 547.944 0C587.083 0 587.083 28 626.222 28C665.361 28 665.361 0 704.5 0C743.639 0 743.639 28 782.778 28C821.916 28 821.916 0 861.055 0C900.194 0 900.194 28 939.333 28H0Z"
+            fill="#FFF5E0"
+          />
         </svg>
       </div>
     </section>
