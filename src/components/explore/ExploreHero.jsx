@@ -12,9 +12,9 @@ export default function ExploreHero({
   onSelectQuickTag,
 }) {
   return (
-    <section className="relative bg-[#D91E5C] text-white pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{
+    <section className="relative bg-[#D91E5C] text-white min-h-[45rem] pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{
     backgroundImage: "url('/flowerSvg.svg')",
-    backgroundSize: "250px",
+    backgroundSize: "350px",
   }}>
       <span
         aria-hidden="true"
@@ -116,7 +116,7 @@ export default function ExploreHero({
 
         {/* Large Overlapping Search Input Bar */}
         <div className="relative">
-          <div className="bg-[#FFF5E0] rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-2xl flex items-center gap-3 transition-shadow focus-within:shadow-yellow-500/20">
+          <div className="bg-[#FFF5E0] rounded-2xl sm:rounded-3xl p-3 sm:p-4 lg:px-6 shadow-2xl flex items-center gap-3 transition-shadow focus-within:shadow-yellow-500/20">
              <svg width="30" height="30" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.35868 7.16446C9.26547 7.16446 10.0006 5.96157 10.0006 4.47774C10.0006 2.9939 9.26547 1.79102 8.35868 1.79102C7.45189 1.79102 6.7168 2.9939 6.7168 4.47774C6.7168 5.96157 7.45189 7.16446 8.35868 7.16446Z" fill="#DC346b" />
               <path d="M9.49458 7.98959C9.77479 8.852 11.146 9.1794 12.5572 8.72087C13.9684 8.26234 14.8852 7.19151 14.605 6.3291C14.3248 5.4667 12.9536 5.13929 11.5424 5.59782C10.1312 6.05635 9.21437 7.12718 9.49458 7.98959Z" fill="#DC346b" />
