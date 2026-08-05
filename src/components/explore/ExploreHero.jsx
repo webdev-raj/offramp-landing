@@ -12,10 +12,10 @@ export default function ExploreHero({
   onSelectQuickTag,
 }) {
   return (
-    <section className="relative bg-[#D91E5C] text-white pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background motif texture simulation + Devanagari watermark */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
-      
+    <section className="relative bg-[#D91E5C] text-white pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{
+    backgroundImage: "url('/flowerSvg.svg')",
+    backgroundSize: "250px",
+  }}>
       <span
         aria-hidden="true"
         className="absolute -bottom-10 left-6 text-[10rem] font-anton text-white/[0.07] select-none pointer-events-none leading-none z-0"
