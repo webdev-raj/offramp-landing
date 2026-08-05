@@ -382,7 +382,7 @@ export default function Hero({ onOpenSwapModal }) {
         // 7. Phone mockup scales + fades in, overlapping the tail end
         .from(
           phoneRef.current,
-          { opacity: 0, duration: 0.7 },
+          { scale:0.8,opacity: 0, duration: 0.7 },
           "-=0.5"
         );
     }, heroRef);
@@ -393,7 +393,7 @@ export default function Hero({ onOpenSwapModal }) {
   return (
     <section
       ref={heroRef}
-      className="relative overflow-hidden min-h-screen md:min-h-[48rem] max-sm:mt-16 flex flex-col justify-center"
+      className="relative overflow-hidden min-h-screen md:min-h-[50rem] max-sm:mt-16 flex flex-col justify-center"
     >
       {/* Two-panel split background (Desktop only) */}
       <div className="hidden md:flex absolute inset-0 flex-row">
@@ -518,20 +518,18 @@ export default function Hero({ onOpenSwapModal }) {
         {/* Mobile/Desktop Phone Mockup Area (Yellow Section on Mobile) */}
         <div className="w-full md:w-[47%] mobile-yellow-bg md:bg-transparent min-h-[90vh] md:min-h-0 relative flex items-center justify-center py-24 md:py-0">
           <div
-            ref={phoneRef}
-            className="relative md:absolute md:top-1/2 md:left-0 md:-translate-y-1/2 md:-translate-x-1/2 z-20 w-[280px] sm:w-[300px] lg:w-[325px] hover:scale-[1.01] transition-transform duration-300"
+            className="relative md:absolute md:top-1/2 md:left-0 md:-translate-y-1/2 md:-translate-x-1/2 z-20 w-[280px] sm:w-[300px] lg:w-[305px] hover:scale-[1.01] transition-transform duration-300"
           >
             {/* Phone Frame */}
-            <div className="rounded-[3rem] bg-[#1C1D21] p-3.5 ring-1 ring-black/40 shadow-2xl border border-white/10">
+            {/* <div className="rounded-[3rem] bg-[#1C1D21] p-3.5 ring-1 ring-black/40 shadow-2xl border border-white/10">
               <div className="rounded-[2.4rem] bg-[#FDF6E8] overflow-hidden border border-[#E8DCC4]">
-                {/* Dynamic Island / Notch */}
+               
                 <div className="h-7 bg-[#FDF6E8] flex items-center justify-center pt-2">
                   <div className="w-20 h-4 bg-black rounded-full flex items-center justify-end px-2">
                     <div className="w-2 h-2 rounded-full bg-[#1A1A1A] ring-1 ring-white/10" />
                   </div>
                 </div>
 
-                {/* Phone App Screen Content */}
                 <div className="px-4 pb-5 pt-1">
                   <p className="text-[11px] font-extrabold uppercase tracking-wider text-[#3A3A3A] mb-0.5 text-center">
                     RECOMMENDED SWAP
@@ -540,7 +538,6 @@ export default function Hero({ onOpenSwapModal }) {
                     AI-guided Indian food transition
                   </p>
 
-                  {/* Dish 1: Butter Chicken (Your Dish) */}
                   <div className="bg-[#C0392B] text-white rounded-xl p-3 mb-2.5 shadow-sm relative overflow-hidden flex items-center justify-between gap-2">
                     <div className="flex-1">
                       <p className="text-[8px] text-white/80 uppercase font-bold tracking-wider">
@@ -561,7 +558,6 @@ export default function Hero({ onOpenSwapModal }) {
                     </div>
                   </div>
 
-                  {/* Dish 2: Tofu Makhani (Better Alternative) */}
                   <div className="bg-[#E0187A] text-white rounded-xl p-3 mb-3 shadow-md relative overflow-hidden flex items-center justify-between gap-2">
                     <div className="flex-1">
                       <p className="text-[8px] text-white/80 uppercase font-bold tracking-wider">
@@ -582,7 +578,6 @@ export default function Hero({ onOpenSwapModal }) {
                     </div>
                   </div>
 
-                  {/* Swap Details Bullet Points */}
                   <ul className="space-y-1.5 mb-4 px-1">
                     <li className="flex items-start gap-1.5 text-[9px] text-[#4A4A4A] font-medium leading-tight">
                       <span className="text-[#E0187A] font-bold">•</span>
@@ -598,7 +593,6 @@ export default function Hero({ onOpenSwapModal }) {
                     </li>
                   </ul>
 
-                  {/* Phone Action CTA Button */}
                   <button
                     onClick={onOpenSwapModal}
                     className="w-full bg-[#E0187A] hover:bg-[#c41267] active:scale-98 text-white text-xs font-bold py-2.5 rounded-full shadow-md transition-all text-center uppercase tracking-wider"
@@ -607,7 +601,16 @@ export default function Hero({ onOpenSwapModal }) {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
+            <Image
+            ref={phoneRef}
+              src="/iPhoneXS-SpaceGray.png"
+              alt="OffRamp App — Recommended Swap: Butter Chicken to Tofu Makhani"
+              width={325}
+              height={663}
+              className="w-full h-auto drop-shadow-2xl"
+              priority
+            />
           </div>
         </div>
       </div>
