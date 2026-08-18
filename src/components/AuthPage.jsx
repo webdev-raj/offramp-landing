@@ -93,9 +93,9 @@ export default function AuthPage({ initialMode = "signup" }) {
             </div>
 
             {/* Bottom Quote Box (Navy Blue) */}
-            <div className="p-1 bg-[#1B3489] max-w-md z-10">
+            <div className="p-1 bg-[#1B3489] max-w-lg z-10">
               <div className="relative text-white p-6 shadow-xl border border-white/10">
-                <p className="italic font-dmsans text-xs sm:text-sm leading-loose text-white/90 font-normal">
+                <p className="italic font-dmsans text-xs sm:text-lg leading-loose text-white/90 font-normal">
                   &ldquo;OffRamp is the first tool that truly respects Indian food culture while helping me control my blood sugar.&rdquo;
                 </p>
                 <div className="flex items-center justify-between font-jetbrains mt-4 pt-3 border-t border-white/10">
