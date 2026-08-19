@@ -41,13 +41,13 @@ export default function Navbar({ onOpenSwapModal }) {
           <a href="/explore" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             Explore Swaps
           </a>
-          <a href="#how-it-works" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
+          <a href="/how-it-works" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             How It Works
           </a>
-          <a href="#features" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
+          <a href="/features" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             Features
           </a>
-          <a href="#pricing" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
+          <a href="/pricing" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             Pricing
           </a>
           <a href="#community" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
@@ -87,9 +87,9 @@ export default function Navbar({ onOpenSwapModal }) {
         <div className="md:hidden pt-4 pb-6 px-4 bg-[#FBF3E3] border-t border-[#E8DCC4] mt-3 rounded-b-2xl shadow-xl animate-in slide-in-from-top duration-200">
           <nav className="flex flex-col gap-4 text-base font-semibold text-[#3A3A3A] mb-6">
             <a href="#explore" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#E0187A]">Explore Swaps</a>
-            <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#E0187A]">How It Works</a>
-            <a href="#features" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#E0187A]">Features</a>
-            <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#E0187A]">Pricing</a>
+            <a href="/how-it-works" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#E0187A]">How It Works</a>
+            <a href="/features" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#E0187A]">Features</a>
+            <a href="/pricing" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#E0187A]">Pricing</a>
             <a href="#community" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#E0187A]">Community</a>
             <a href="#login" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#E0187A]">Log in</a>
           </nav>
