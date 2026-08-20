@@ -164,17 +164,17 @@ export default function RegionalDishes({ onOpenSwapModal }) {
 
                 <div className="text-2xl mb-3">{goal.emoji}</div>
 
-                <p className="font-extrabold text-[#1E2538] group-hover:text-white leading-tight mb-1 transition-colors duration-200">
+                <p className="font-extrabold text-[#1E2538] group-hover:text-white font-montserrat-bold leading-tight mb-1 transition-colors duration-200">
                   {goal.label}
                 </p>
 
-                <p className="text-[#1E2538]/70 group-hover:text-white/90 text-xs font-medium transition-colors duration-200">
+                <p className="text-[#1E2538]/70 group-hover:text-white/90 font-montserrat text-xs font-medium transition-colors duration-200">
                   {goal.count} dishes
                 </p>
 
                 {/* Bottom stat bar */}
                 <div className="mt-4 pt-3 border-t border-[#1E2538]/10 group-hover:border-white/20 transition-colors duration-200">
-                  <p className="text-[9px] uppercase tracking-widest font-bold text-[#1E2538]/50 group-hover:text-white/50 transition-colors duration-200">
+                  <p className="text-[9px] uppercase tracking-widest font-jetbrains font-bold text-[#1E2538]/50 group-hover:text-white/50 transition-colors duration-200">
                     OFFRAMP INDIA
                   </p>
                 </div>
@@ -190,22 +190,22 @@ export default function RegionalDishes({ onOpenSwapModal }) {
             {/* Category Label */}
             <div>
               <div className="flex items-center justify-between mb-6">
-                <p className="text-white/80 text-xs font-extrabold uppercase tracking-widest">
+                <p className="text-white/80 text-xs font-jetbrains uppercase tracking-widest">
                   {active.label}
                 </p>
                 <span className="text-2xl">{active.emoji}</span>
               </div>
 
               {/* Big Count */}
-              <p className="font-anton text-6xl sm:text-7xl text-white leading-none tracking-tight mb-2">
+              <p className="font-montserrat-bold text-6xl sm:text-7xl text-white leading-none tracking-tight mb-2">
                 {active.price}
               </p>
-              <p className="text-white/70 text-xs font-medium mb-6">
+              <p className="text-white/70 text-sm font-dmsans mb-6">
                 verified regional dish options
               </p>
 
               {/* Description */}
-              <p className="text-white/90 text-sm sm:text-base leading-relaxed font-normal border-t border-white/20 pt-5">
+              <p className="text-white/90 text-sm sm:text-base leading-relaxed font-dmsans border-t border-white/20 pt-5">
                 {active.desc}
               </p>
             </div>
@@ -213,7 +213,7 @@ export default function RegionalDishes({ onOpenSwapModal }) {
             {/* CTA */}
             <button
               onClick={onOpenSwapModal}
-              className="mt-6 w-full bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm px-6 py-3.5 rounded-full flex items-center justify-center gap-2 transition-all group"
+              className="mt-6 w-full bg-white/15 hover:bg-white/25 border border-white/30 text-white font-dmsans text-sm px-6 py-3.5 rounded-full flex items-center justify-center gap-2 transition-all group"
             >
               <span>Explore {active.label}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
