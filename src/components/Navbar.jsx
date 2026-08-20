@@ -26,14 +26,19 @@ export default function Navbar({ onOpenSwapModal }) {
     >
       <div className="max-w-7xl font-jetbrains mx-auto flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className=" flex items-center gap-2.5 group">
-          <div className="w-10 h-10 rounded-full bg-[#E0187A] ring-4 ring-[#F5A623]/40 flex items-center justify-center text-white font-extrabold text-lg shadow-md group-hover:scale-105 transition-transform">
-            D
+        <a href="#" className="flex items-center justify-center gap-2 group">
+          <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="32" viewBox="0 0 16 20" fill="none" className="inline-flex">
+            <path d="M0 0H5.38461C10.9075 0 15.3846 4.47715 15.3846 10C15.3846 15.5228 10.9075 20 5.38461 20H0V0Z" fill="#D91E5C" />
+            <rect y="7.69232" width="1.53846" height="4.10256" fill="#FDECDB" />
+            <rect x="3.53906" y="7.69232" width="6.15385" height="4.10256" fill="#FDECDB" />
+            <path d="M13.8457 9.74359L7.69186 13.2965L7.69186 6.19066L13.8457 9.74359Z" fill="#FDECDB" />
+          </svg>
           </div>
-          <span className=" text-2xl tracking-tight text-[#1E1E1E]">
-            <span className="text-[#E0187A]">off</span>
-            <span className="text-[#F5A623]">ramp</span>
-          </span>
+          <div className="font-rajdhani font-black text-4xl leading-none pt-1.5 tracking-tight text-[#1E1E1E]">
+            <span className="text-[#1b3589]">De</span>
+            <span className="text-[#D91e5c]">Tour</span>
+          </div>
         </a>
 
         {/* Desktop Navigation */}
@@ -62,7 +67,7 @@ export default function Navbar({ onOpenSwapModal }) {
             className="hidden sm:inline-flex items-center relative group py-1 text-sm font-semibold text-[#3A3A3A] hover:text-[#E0187A] transition-colors"
           >
             <span>Log in</span>
-            
+
           </a>
           <a
             href="/signup"

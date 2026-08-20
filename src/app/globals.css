@@ -38,6 +38,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('/fonts/Rajdhani-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   :root {
@@ -56,14 +63,7 @@
   --font-jetbrains: 'JetBrains Mono', monospace;
   --font-haetten: 'Haettenschweiler', sans-serif;
   --font-montserrat-bold: 'Montserrat-bold', sans-serif;
-}
-
-.font-anton {
-  font-family: var(--font-anton), sans-serif;
-}
-
-.font-poppins {
-  font-family: var(--font-poppins), sans-serif;
+  --font-rajdhani: 'Rajdhani', sans-serif;
 }
 
 /* Diamond pattern textures matching Figma design */

@@ -61,7 +61,7 @@ export default function Footer() {
 
             {/* Column 1: Brand Info */}
             <div className="md:col-span-5 pr-0 md:pr-8">
-              {/* OffRamp Logo with 4-petal emblem */}
+              {/* OffRamp Logo with 4-petal emblem
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-9 h-9 rounded-xl bg-[#E0187A] flex items-center justify-center shadow-sm">
                   <svg className="w-5 h-5 text-white fill-current" viewBox="0 0 24 24">
@@ -71,7 +71,21 @@ export default function Footer() {
                 <span className="font-extrabold text-2xl tracking-tight text-white">
                   OffRamp
                 </span>
-              </div>
+              </div> */}
+              <a href="#" className="flex items-center justify-center gap-2 group w-fit mb-5">
+                <div >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="32" viewBox="0 0 16 20" fill="none" className="inline-flex">
+                    <path d="M0 0H5.38461C10.9075 0 15.3846 4.47715 15.3846 10C15.3846 15.5228 10.9075 20 5.38461 20H0V0Z" fill="#D91E5C" />
+                    <rect y="7.69232" width="1.53846" height="4.10256" fill="#FDECDB" />
+                    <rect x="3.53906" y="7.69232" width="6.15385" height="4.10256" fill="#FDECDB" />
+                    <path d="M13.8457 9.74359L7.69186 13.2965L7.69186 6.19066L13.8457 9.74359Z" fill="#FDECDB" />
+                  </svg>
+                </div>
+                <div className="font-rajdhani font-black text-4xl leading-none pt-1.5 tracking-tight text-[#1E1E1E]">
+                  <span className="text-[#1b3589]">De</span>
+                  <span className="text-[#D91e5c]">Tour</span>
+                </div>
+              </a>
 
               {/* Subtext */}
               <p className="text-white/70 text-sm leading-relaxed font-dmsans">
