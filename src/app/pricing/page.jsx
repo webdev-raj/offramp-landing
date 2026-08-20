@@ -147,7 +147,10 @@ export default function PricingPage() {
         {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full border-[60px] border-white/[0.03] pointer-events-none" /> */}
 
         <div className="relative z-10 max-w-3xl mx-auto">
-          <p className="font-jetbrains font-bold text-xs tracking-[0.28em] uppercase text-[#ffff] mb-5">Pricing</p>
+          <div className="inline-flex items-center gap-2 border border-white/40 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-jetbrains uppercase tracking-widest text-[#FFC93C] mb-6">
+         
+         Pricing
+          </div>
           <h1 className="font-haetten text-white uppercase leading-[0.85] text-6xl sm:text-7xl lg:text-[6.5rem] mb-6">
             Simple Plans for<br />
             <span className="text-[#F5AE38]">Safer Food Routines.</span>
@@ -155,7 +158,7 @@ export default function PricingPage() {
           <p className="text-white/80 text-base sm:text-lg lg:text-xl leading-relaxed max-w-lg mx-auto mb-5 font-dmsans">
             Start free, no card required. Potential conflict checks are included at every tier.
           </p>
-          <div className="flex items-center justify-center gap-3 text-[#8890C4] text-xs sm:text-sm">
+          <div className="flex items-center justify-center gap-3 text-[#ffffff] text-xs sm:text-sm">
             <span className="font-montserrat font-bold text-[#F5AE38]">12,600+</span>
             <span>home cooks</span>
             <span className="opacity-40">·</span>
