@@ -1,18 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import StatsBand from "@/components/StatsBand";
-import LiveMetrics from "@/components/LiveMetrics";
-import ToolsGrid from "@/components/ToolsGrid";
-import RegionalDishes from "@/components/RegionalDishes";
-import GoalMatching from "@/components/GoalMatching";
-import CommunityReviews from "@/components/CommunityReviews";
-import MeetTheTeam from "@/components/MeetTheTeam";
-import CtaBanner from "@/components/CtaBanner";
-import Footer from "@/components/Footer";
-import InteractiveSwapModal from "@/components/InteractiveSwapModal";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/home/Hero";
+import StatsBand from "@/components/home/StatsBand";
+import LiveMetrics from "@/components/home/LiveMetrics";
+import ToolsGrid from "@/components/home/ToolsGrid";
+import RegionalDishes from "@/components/home/RegionalDishes";
+import GoalMatching from "@/components/home/GoalMatching";
+import CommunityReviews from "@/components/home/CommunityReviews";
+import MeetTheTeam from "@/components/home/MeetTheTeam";
+import CtaBanner from "@/components/home/CtaBanner";
+import Footer from "@/components/layout/Footer";
+import InteractiveSwapModal from "@/components/shared/InteractiveSwapModal";
 
 export default function Home() {
   const [isSwapModalOpen, setIsSwapModalOpen] = useState(false);

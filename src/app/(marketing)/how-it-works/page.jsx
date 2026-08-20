@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AnimatedCounter from "@/components/AnimatedCounter";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import AnimatedCounter from "@/components/shared/AnimatedCounter";
 
 // ── STEP DATA ──────────────────────────────────────────────────────────────
 const STEPS = [
@@ -173,7 +173,7 @@ export default function HowItWorksPage() {
 
       {/* ══ HERO ══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#DC346B] mt-12 lg:mt-20 py-16 px-6 sm:px-10 lg:px-20 overflow-hidden" style={{
-        backgroundImage: "url('/flowerSvg.svg')",
+        backgroundImage: "url('/images/icons/flowerSvg.svg')",
         backgroundSize: "350px",
       }}>
         {/* Devanagari watermark */}

@@ -1,5 +1,5 @@
 "use client";
-import AnimatedCounter from "./AnimatedCounter";
+import AnimatedCounter from "@/components/shared/AnimatedCounter";
 
 const STATS = [
   { value: "24,000+", label: "Active users" },

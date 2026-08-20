@@ -4,7 +4,7 @@
 // import Image from "next/image";
 // import { ArrowRight, ChevronRight, Star } from "lucide-react";
 // import gsap from "gsap";
-// import AnimatedCounter from "./AnimatedCounter";
+// import AnimatedCounter from "@/components/shared/AnimatedCounter";
 
 // export default function Hero({ onOpenSwapModal }) {
 //   const heroRef = useRef(null);
@@ -80,7 +80,7 @@
 //         <div
 //           className="w-[35%] bg-[#F5AE38] relative shrink-0"
 //           style={{
-//             backgroundImage: `url('/bgyellow.svg')`,
+//             backgroundImage: `url('/images/patterns/bgyellow.svg')`,
 //             backgroundRepeat: "repeat",
 //             backgroundSize: "550px",
 //           }}
@@ -228,7 +228,7 @@
 //                     </div>
 //                     <div className="relative w-14 h-14 rounded-lg overflow-hidden border border-white/20 shadow-md shrink-0">
 //                       <Image
-//                         src="/butter_chicken.png"
+//                         src="/images/dishes/butter_chicken.png"
 //                         alt="Butter Chicken"
 //                         fill
 //                         sizes="56px"
@@ -249,7 +249,7 @@
 //                     </div>
 //                     <div className="relative w-14 h-14 rounded-lg overflow-hidden border border-white/30 shadow-md shrink-0">
 //                       <Image
-//                         src="/tofu_makhani.png"
+//                         src="/images/dishes/tofu_makhani.png"
 //                         alt="Tofu Makhani"
 //                         fill
 //                         sizes="56px"
@@ -293,7 +293,7 @@
 //         @media (max-width: 767px) {
 //           .mobile-yellow-bg {
 //             background-color: #F5AE38;
-//             background-image: url('/bgyellow.svg');
+//             background-image: url('/images/patterns/bgyellow.svg');
 //             background-repeat: repeat;
 //             background-size: 550px;
 //           }
@@ -311,7 +311,7 @@ import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight, ChevronRight, Star } from "lucide-react";
 import gsap from "gsap";
-import AnimatedCounter from "./AnimatedCounter";
+import AnimatedCounter from "@/components/shared/AnimatedCounter";
 
 export default function Hero({ onOpenSwapModal }) {
   const heroRef = useRef(null);
@@ -405,7 +405,7 @@ export default function Hero({ onOpenSwapModal }) {
           className="shrink-0 grow-0 bg-[#F5AE38] relative"
           style={{
             width: "35%",
-            backgroundImage: `url('/bgyellow.svg')`,
+            backgroundImage: `url('/images/patterns/bgyellow.svg')`,
             backgroundRepeat: "repeat",
             backgroundSize: "550px",
           }}
@@ -549,7 +549,7 @@ export default function Hero({ onOpenSwapModal }) {
                     </div>
                     <div className="relative w-14 h-14 rounded-lg overflow-hidden border border-white/20 shadow-md shrink-0">
                       <Image
-                        src="/butter_chicken.png"
+                        src="/images/dishes/butter_chicken.png"
                         alt="Butter Chicken"
                         fill
                         sizes="56px"
@@ -569,7 +569,7 @@ export default function Hero({ onOpenSwapModal }) {
                     </div>
                     <div className="relative w-14 h-14 rounded-lg overflow-hidden border border-white/30 shadow-md shrink-0">
                       <Image
-                        src="/tofu_makhani.png"
+                        src="/images/dishes/tofu_makhani.png"
                         alt="Tofu Makhani"
                         fill
                         sizes="56px"
@@ -604,7 +604,7 @@ export default function Hero({ onOpenSwapModal }) {
             </div> */}
             <Image
             ref={phoneRef}
-              src="/iPhoneXS-SpaceGray.png"
+              src="/images/mockups/iPhoneXS-SpaceGray.png"
               alt="OffRamp App — Recommended Swap: Butter Chicken to Tofu Makhani"
               width={325}
               height={663}
@@ -620,7 +620,7 @@ export default function Hero({ onOpenSwapModal }) {
         @media (max-width: 767px) {
           .mobile-yellow-bg {
             background-color: #F5AE38;
-            background-image: url('/bgyellow.svg');
+            background-image: url('/images/patterns/bgyellow.svg');
             background-repeat: repeat;
             background-size: 550px;
           }

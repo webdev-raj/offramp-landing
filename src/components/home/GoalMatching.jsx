@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Star, ArrowRight } from "lucide-react";
-import AnimatedCounter from "./AnimatedCounter";
+import AnimatedCounter from "@/components/shared/AnimatedCounter";
 
 const GOAL_CARDS = [
   {

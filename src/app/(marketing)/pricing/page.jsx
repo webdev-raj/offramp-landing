@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { ChevronDown, Star, Check, Minus, Plus } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // ── PLANS ───────────────────────────────────────────────────────────────────
 const PLANS = [
@@ -140,7 +140,7 @@ export default function PricingPage() {
 
       {/* ══ HERO (Navy) ══════════════════════════════════════════════════ */}
       <section className="relative bg-[#DC346B] text-white py-16 px-6 text-center overflow-hidden mt-16" style={{
-    backgroundImage: "url('/flowerSvg.svg')",
+    backgroundImage: "url('/images/icons/flowerSvg.svg')",
     backgroundSize: "350px",
   }}>
         {/* Background ring decoration */}

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import InteractiveSwapModal from "@/components/InteractiveSwapModal";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import InteractiveSwapModal from "@/components/shared/InteractiveSwapModal";
 import ExploreHero from "./ExploreHero";
 import GoalPicker from "./GoalPicker";
 import SwapsFilterGrid from "./SwapsFilterGrid";

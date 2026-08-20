@@ -67,7 +67,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
             <div className="relative shrink-0 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 flex items-center justify-center z-10">
               <div className="relative w-56 sm:w-72 lg:w-80 h-56 sm:h-72 lg:h-80 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/thali_swap_meal.png"
+                  src="/images/dishes/thali_swap_meal.png"
                   alt="Indian Thali Meal Swap"
                   fill
                   className="object-cover"
@@ -96,7 +96,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
             <div className="relative shrink-0 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 flex items-center justify-center z-10">
               <div className="relative w-56 sm:w-72 lg:w-80 h-56 sm:h-72 lg:h-80 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/dal_curry_bowl.png"
+                  src="/images/dishes/dal_curry_bowl.png"
                   alt="Conflict Checker Dal Bowl"
                   fill
                   className="object-cover"
@@ -163,7 +163,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
             <div className="relative shrink-0 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 flex items-center justify-center z-10">
               <div className="relative w-56 sm:w-72 lg:w-80 h-56 sm:h-72 lg:h-80 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/dosa_sambar_plate.png"
+                  src="/images/dishes/dosa_sambar_plate.png"
                   alt="South Indian Dosa Meal Plan"
                   fill
                   className="object-cover"
@@ -184,7 +184,7 @@ export default function ToolsGrid({ onOpenSwapModal }) {
             <div className="relative shrink-0 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 flex items-center justify-center z-10">
               <div className="relative w-56 sm:w-72 lg:w-80 h-56 sm:h-72 lg:h-80 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/chole_bhature_plate.png"
+                  src="/images/dishes/chole_bhature_plate.png"
                   alt="Chole Bhature Import Backup"
                   fill
                   className="object-cover"

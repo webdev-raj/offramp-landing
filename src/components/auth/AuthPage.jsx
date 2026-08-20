@@ -10,7 +10,7 @@ import {
   ShieldAlert,
   CheckCircle2,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 
 // ── TERMS CONTENT ────────────────────────────────────────────────────────────
 const TERMS_SECTIONS = [

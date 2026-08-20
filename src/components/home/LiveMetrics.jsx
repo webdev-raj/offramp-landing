@@ -1,7 +1,7 @@
 "use client";
 
 import { Star } from "lucide-react";
-import AnimatedCounter from "./AnimatedCounter";
+import AnimatedCounter from "@/components/shared/AnimatedCounter";
 
 const METRIC_CARDS = [
   {

@@ -1,7 +1,7 @@
 "use client";
 
 import { Search, ChevronRight } from "lucide-react";
-import AnimatedCounter from "../AnimatedCounter";
+import AnimatedCounter from "@/components/shared/AnimatedCounter";
 
 const QUICK_TAGS = ["Butter Chicken", "Masala Dosa", "Biryani", "Vada Pav"];
 
@@ -13,7 +13,7 @@ export default function ExploreHero({
 }) {
   return (
     <section className="relative bg-[#D91E5C] text-white min-h-[45rem] pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{
-    backgroundImage: "url('/flowerSvg.svg')",
+    backgroundImage: "url('/images/icons/flowerSvg.svg')",
     backgroundSize: "350px",
   }}>
       <span

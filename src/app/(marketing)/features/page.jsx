@@ -11,8 +11,8 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // ── TAB DATA ────────────────────────────────────────────────────────────────
 const TABS = [
@@ -197,7 +197,7 @@ export default function FeaturesPage() {
           HERO — Pink background
       ══════════════════════════════════════════════════════════════════ */}
       <section className="relative bg-[#DC346B] py-16 mt-20 px-6 text-center overflow-hidden" style={{
-        backgroundImage: "url('/flowerSvg.svg')",
+        backgroundImage: "url('/images/icons/flowerSvg.svg')",
         backgroundSize: "350px",
       }}>
         {/* Devanagari watermark */}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import AnimatedCounter from "../AnimatedCounter";
+import AnimatedCounter from "@/components/shared/AnimatedCounter";
 
 const DIET_FILTERS = ["ALL TYPES", "VEG", "NO-OIL", "FLEX"];
 const REGION_FILTERS = ["All India", "North", "South", "West", "Pan-India"];
@@ -328,7 +328,7 @@ export default function SwapsFilterGrid({
             </div>
           </div>
 
-          <div className="flex items-center md:flex-col items-end justify-between md:justify-center gap-4">
+          <div className="flex md:flex-col items-end justify-between md:justify-center gap-4">
             <div className="text-right">
               <span className="font-haetten text-5xl sm:text-6xl text-[#1A7A45] leading-none block">
                 <AnimatedCounter value="92%" />
