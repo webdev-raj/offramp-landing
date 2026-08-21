@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Explore food swaps",
+    "description": "Browse verified Indian dish alternatives matched to your goal. Start here when you want a healthier version of a meal you already love.",
+    "selector": "[data-tourkit='explore-swaps']",
+    "position": "bottom",
+    "url_pattern": null
+  },
+  {
+    "title": "See how it works",
+    "description": "Walk through the three-step flow: pick a goal, choose a dish, and get a swap. This page shows exactly what happens after you start.",
+    "selector": "[data-tourkit='how-it-works']",
+    "position": "bottom",
+    "url_pattern": null
+  },
+  {
+    "title": "Discover product features",
+    "description": "Open Features to see dish conversion, conflict checks, and planning tools. Use this when you want the full product overview.",
+    "selector": "[data-tourkit='features-link']",
+    "position": "bottom",
+    "url_pattern": null
+  },
+  {
+    "title": "Check simple pricing",
+    "description": "Compare Free, Starter, and paid plans with no card required to start. Pick a tier that matches how often you swap.",
+    "selector": "[data-tourkit='pricing-link']",
+    "position": "bottom",
+    "url_pattern": null
+  },
+  {
+    "title": "Join the community",
+    "description": "Jump to stories from people testing familiar food with OffRamp. A quick way to see how others are using swaps.",
+    "selector": "[data-tourkit='community-link']",
+    "position": "bottom",
+    "url_pattern": null
+  },
+  {
+    "title": "Get started free",
+    "description": "Create your account in a minute and start swapping with no credit card. This is the fastest path from browsing to your first swap.",
+    "selector": "[data-tourkit='get-started-btn']",
+    "position": "bottom",
+    "url_pattern": null
+  }
+]

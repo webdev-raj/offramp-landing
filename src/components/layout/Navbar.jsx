@@ -43,19 +43,19 @@ export default function Navbar({ onOpenSwapModal }) {
 
         {/* Desktop Navigation */}
         <nav className="hidden font-dmsans md:flex items-center gap-8 text-sm font-semibold text-[#3A3A3A]">
-          <a href="/explore" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
+          <a href="/explore" data-tourkit="explore-swaps" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             Explore Swaps
           </a>
-          <a href="/how-it-works" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
+          <a href="/how-it-works" data-tourkit="how-it-works" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             How It Works
           </a>
-          <a href="/features" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
+          <a href="/features" data-tourkit="features-link" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             Features
           </a>
-          <a href="/pricing" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
+          <a href="/pricing" data-tourkit="pricing-link" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             Pricing
           </a>
-          <a href="#community" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
+          <a href="#community" data-tourkit="community-link" className="hover:text-[#E0187A] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E0187A] hover:after:w-full after:transition-all">
             Community
           </a>
         </nav>
@@ -71,6 +71,7 @@ export default function Navbar({ onOpenSwapModal }) {
           </a>
           <a
             href="/signup"
+            data-tourkit="get-started-btn"
             className="bg-[#E0187A] max-sm:hidden hover:bg-[#c41267] text-white text-sm font-semibold px-6 py-2.5 rounded-full shadow-lg shadow-[#E0187A]/25 hover:shadow-xl hover:shadow-[#E0187A]/35 active:scale-95 transition-all flex items-center gap-2"
           >
             <span>Get started free</span>
