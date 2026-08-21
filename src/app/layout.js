@@ -1,5 +1,13 @@
 import { Anton, Poppins } from "next/font/google";
+import Script from "next/script";
+import TourKitProvider from "@/components/shared/TourKitProvider";
 import "./globals.css";
+
+const TOURKIT_SDK_SRC =
+  "https://cdn.jsdelivr.net/gh/webdev-raj/Tourkit@sdk-v14/sdk/dist/tourkit.min.js";
+const TOURKIT_SCRIPT_KEY = process.env.NEXT_PUBLIC_TOURKIT_SCRIPT_KEY;
+const TOURKIT_API =
+  process.env.NEXT_PUBLIC_TOURKIT_API || "https://tourkit-phi.vercel.app";
 
 const anton = Anton({
   subsets: ["latin"],
@@ -32,7 +40,16 @@ export default function RootLayout({ children }) {
       className={`${anton.variable} ${poppins.variable} h-full antialiased scroll-smooth`}
     >
       <body className="font-poppins bg-[#FDF8EE] text-[#1E1E1E] min-h-full flex flex-col selection:bg-[#E0187A] selection:text-white">
+        <TourKitProvider />
         {children}
+        {TOURKIT_SCRIPT_KEY ? (
+          <Script
+            src={TOURKIT_SDK_SRC}
+            strategy="afterInteractive"
+            data-key={TOURKIT_SCRIPT_KEY}
+            data-api={TOURKIT_API}
+          />
+        ) : null}
       </body>
     </html>
   );
