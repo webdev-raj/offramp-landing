@@ -2,10 +2,19 @@
 
 import { useState } from "react";
 
-export default function Footer() {
+export default function Footer({
+  newsletterBg = "bg-[#E0187A]",
+  newsletterLabel = "WEEKLY KITCHEN NOTES",
+  newsletterHeading = "Safer swaps, expert explainers, and product updates.",
+  newsletterButtonBg = "bg-[#F5A623]",
+  newsletterButtonHoverBg = "hover:bg-[#e09214]",
+  newsletterButtonText = "text-[#231E1B]",
+  newsletterFocusRing = "focus:ring-[#F5A623]",
+}) {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const DIAMOND_COUNT = 44;
+
   const handleSubscribe = (e) => {
     e.preventDefault();
     if (email) {
@@ -16,17 +25,17 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full text-white font-poppins">
-      {/* 1. TOP NEWSLETTER SUBSCRIPTION BANNER (PINK BACKGROUND) */}
-      <div className="bg-[#E0187A] py-10 px-6 sm:px-12 lg:px-16">
+    <footer className="w-full text-white">
+      {/* 1. TOP NEWSLETTER SUBSCRIPTION BANNER — background + copy driven by props */}
+      <div className={`${newsletterBg} py-10 px-6 sm:px-12 lg:px-16`}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           {/* Left Text Block */}
           <div>
             <p className="text-[11px] font-jetbrains tracking-[0.52em] text-white/60 uppercase mb-1.5 font-bold">
-              WEEKLY KITCHEN NOTES
+              {newsletterLabel}
             </p>
             <h3 className="font-jetbrains text-xl sm:text-xl md:text-2xl font-extrabold text-white tracking-tight leading-snug">
-              Safer swaps, expert explainers, and product updates.
+              {newsletterHeading}
             </h3>
           </div>
 
@@ -39,13 +48,13 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
                 required
-                className="w-full bg-white/20 border border-white/30 rounded-full px-6 py-3.5 text-sm text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-[#F5A623] transition-all"
+                className={`w-full bg-white/20 border border-white/30 rounded-full px-6 py-3.5 text-sm text-white placeholder-white/70 focus:outline-none focus:ring-2 ${newsletterFocusRing} transition-all`}
               />
             </div>
 
             <button
               type="submit"
-              className="w-full font-jetbrains sm:w-auto bg-[#F5A623] hover:bg-[#e09214] active:scale-95 text-[#231E1B] font-extrabold text-xs sm:text-sm tracking-[0.22em] uppercase px-8 py-3.5 rounded-full shadow-md transition-all shrink-0"
+              className={`w-full font-jetbrains sm:w-auto ${newsletterButtonBg} ${newsletterButtonHoverBg} active:scale-95 ${newsletterButtonText} font-extrabold text-xs sm:text-sm tracking-[0.22em] uppercase px-8 py-3.5 rounded-full shadow-md transition-all shrink-0`}
             >
               {subscribed ? "SUBSCRIBED!" : "SUBSCRIBE"}
             </button>
@@ -53,7 +62,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* 2. MAIN FOOTER BODY (DARK CHOCOLATE BROWN BACKGROUND) */}
+      {/* 2. MAIN FOOTER BODY (DARK CHOCOLATE BROWN BACKGROUND) — unchanged */}
       <div className="bg-[#231E1B] pt-16 pb-10 px-6 sm:px-12 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* 4-Column Grid Layout */}
@@ -61,19 +70,8 @@ export default function Footer() {
 
             {/* Column 1: Brand Info */}
             <div className="md:col-span-5 pr-0 md:pr-8">
-              {/* OffRamp Logo with 4-petal emblem
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-9 h-9 rounded-xl bg-[#E0187A] flex items-center justify-center shadow-sm">
-                  <svg className="w-5 h-5 text-white fill-current" viewBox="0 0 24 24">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM22 12C22 13.1 21.1 14 20 14C18.9 14 18 13.1 18 12C18 10.9 18.9 10 20 10C21.1 10 22 10.9 22 12ZM12 22C10.9 22 10 21.1 10 20C10 18.9 10.9 18 12 18C13.1 18 14 18.9 14 20C14 21.1 13.1 22 12 22ZM2 12C2 10.9 2.9 10 4 10C5.1 10 6 10.9 6 12C6 13.1 5.1 14 4 14C2.9 14 2 13.1 2 12ZM12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16C9.8 16 8 14.2 8 12C8 9.8 9.8 8 12 8Z" />
-                  </svg>
-                </div>
-                <span className="font-extrabold text-2xl tracking-tight text-white">
-                  OffRamp
-                </span>
-              </div> */}
               <a href="#" className="flex items-center justify-center gap-2 group w-fit mb-5">
-                <div >
+                <div>
                   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="32" viewBox="0 0 16 20" fill="none" className="inline-flex">
                     <path d="M0 0H5.38461C10.9075 0 15.3846 4.47715 15.3846 10C15.3846 15.5228 10.9075 20 5.38461 20H0V0Z" fill="#D91E5C" />
                     <rect y="7.69232" width="1.53846" height="4.10256" fill="#FDECDB" />
@@ -211,11 +209,6 @@ export default function Footer() {
 
           {/* Faint Horizontal Diamond Divider Strip */}
           <div className="py-9 flex items-center justify-center overflow-hidden select-none pointer-events-none">
-            {/* <div className="flex items-center gap-3 text-xs tracking-widest text-[#F5A623]">
-              {[...Array(32)].map((_, i) => (
-                <span key={i}>◆</span>
-              ))}
-            </div> */}
             <div className="h-3 w-full pl-1 flex items-center gap-1.5">
               {Array.from({ length: DIAMOND_COUNT }).map((_, i) => (
                 <div key={i} className="h-full flex items-center justify-start gap-1.5">
@@ -242,16 +235,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-// 4-petal floral emblem badge component
-function FloralEmblem({ bg }) {
-  return (
-    <div className={`w-7 h-7 ${bg} rounded-lg flex items-center justify-center shadow-sm`}>
-      <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24">
-        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM22 12C22 13.1 21.1 14 20 14C18.9 14 18 13.1 18 12C18 10.9 18.9 10 20 10C21.1 10 22 10.9 22 12ZM12 22C10.9 22 10 21.1 10 20C10 18.9 10.9 18 12 18C13.1 18 14 18.9 14 20C14 21.1 13.1 22 12 22ZM2 12C2 10.9 2.9 10 4 10C5.1 10 6 10.9 6 12C6 13.1 5.1 14 4 14C2.9 14 2 13.1 2 12ZM12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16C9.8 16 8 14.2 8 12C8 9.8 9.8 8 12 8Z" />
-      </svg>
-    </div>
   );
 }

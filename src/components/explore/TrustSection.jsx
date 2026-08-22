@@ -66,40 +66,6 @@ export default function TrustSection() {
             </div>
           </div>
         </div>
-
-        {/* Weekly Dispatch Banner (Deep Blue Section) */}
-        <div className="bg-[#1B3589] rounded-3xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden shadow-2xl border-4 border-white/20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div className="lg:col-span-6">
-              <p className="text-[#FFC93C] font-jetbrains text-xs font-extrabold uppercase tracking-widest mb-2">
-                WEEKLY DISPATCH
-              </p>
-              <h3 className="font-haetten text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
-                Swap of the week. <br />
-                <span className="text-[#FFC93C]">In your inbox.</span>
-              </h3>
-            </div>
-
-            <div className="lg:col-span-6">
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@email.com"
-                  className="bg-white/10 border-2 border-white/30 rounded-full px-6 py-4 text-white placeholder-white/50 font-jetbrains text-sm focus:outline-none focus:border-[#FFC93C] w-full"
-                />
-                <button
-                  type="submit"
-                  className="bg-[#FFC93C] hover:bg-yellow-300 text-[#1B3589] font-jetbrains font-extrabold text-xs sm:text-sm px-8 py-4 rounded-full uppercase tracking-wider transition-transform hover:scale-105 active:scale-95 shrink-0 shadow-lg"
-                >
-                  {subscribed ? "SUBSCRIBED ✓" : "SUBSCRIBE"}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

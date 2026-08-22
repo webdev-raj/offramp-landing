@@ -52,7 +52,20 @@ export default function ExploreSwapsPage() {
       <TrustSection />
 
       {/* 6. Site Footer */}
-      <Footer onOpenSwapModal={handleOpenModal} />
+      <Footer
+        newsletterBg="bg-[#1b3589]"
+        newsletterLabel="WEEKLY DISPATCH"
+        newsletterHeading={
+          <h1 className="font-haetten tracking-wide font-light leading-[0.85] text-xl sm:text-xl md:text-4xl">
+            Swap of the week.<br />
+            <span className="text-[#F5A623]">In your inbox.</span>
+          </h1>
+        }
+        newsletterButtonBg="bg-[#F5A623]"
+        newsletterButtonHoverBg="hover:bg-[#e09214]"
+        newsletterButtonText="text-[#1E1E1E]"
+        newsletterFocusRing="focus:ring-[#F5A623]"
+      />
 
       {/* Interactive Food Swap Engine Modal */}
       <InteractiveSwapModal
