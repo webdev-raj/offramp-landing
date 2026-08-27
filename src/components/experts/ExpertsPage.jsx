@@ -73,7 +73,7 @@ export default function ExpertsPage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col bg-[#FDF8EE] overflow-x-hidden selection:bg-[#D91E5C] selection:text-white">
+    <main className="min-h-screen flex flex-col bg-[#DC346B] overflow-x-hidden selection:bg-[#D91E5C] selection:text-white">
       {/* 1. Header Navigation */}
       <Navbar onOpenSwapModal={handleOpenSwapModal} />
 
@@ -108,7 +108,7 @@ export default function ExpertsPage() {
 
       {/* 6. Site Footer with Navy Newsletter Variant */}
       <Footer
-        newsletterBg="bg-[#1B2264]"
+        newsletterBg="bg-[#1B3589]"
         newsletterLabel="WEEKLY DISPATCH"
         newsletterHeading={
           <span className="font-haetten tracking-wide font-light leading-[0.85] text-2xl sm:text-3xl md:text-4xl block">

@@ -18,7 +18,7 @@ export default function ExpertsHero({
   onOpenProfile,
 }) {
   return (
-    <section className="relative overflow-hidden pt-24 md:pt-28 pb-12 sm:pb-16 bg-[#DC346B]">
+    <section className="relative overflow-hidden mt-18 md:pt-18 pb-12 sm:pb-16 bg-[#DC346B]">
       {/* Two-panel split background (Desktop only) */}
       <div className="hidden md:flex absolute inset-0 flex-row pointer-events-none">
         {/* Pink panel */}
@@ -42,9 +42,9 @@ export default function ExpertsHero({
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 mb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 md:mb-14">
-          
+
           {/* Left Side Content (Pink Panel) */}
           <div className="md:col-span-7 flex flex-col items-start text-left">
             {/* Top Subheader Badge */}
@@ -54,7 +54,7 @@ export default function ExpertsHero({
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-haetten uppercase leading-[0.85] text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] tracking-tight mb-5">
+            <h1 className="font-haetten uppercase leading-[0.85] text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] mb-5">
               <span className="text-white">FIND YOUR </span>
               <br />
               <span className="text-[#F5AE38]">FOOD EXPERT.</span>
@@ -82,9 +82,9 @@ export default function ExpertsHero({
 
           {/* Right Side Content (Yellow Panel Area) */}
           <div className="md:col-span-5 flex flex-col justify-center space-y-4">
-            
+
             {/* "Your OffRamp Balance" card */}
-            <div className="bg-[#1B2264] border-2 border-white/15 rounded-2xl p-5 sm:p-6 shadow-2xl text-white relative overflow-hidden">
+            <div className="bg-[#1B3589] border-2 border-white/15 p-5 sm:p-6 shadow-2xl text-white relative overflow-hidden">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[11px] font-jetbrains uppercase tracking-[0.2em] text-white/70 font-extrabold">
                   YOUR OFFRAMP BALANCE
@@ -93,7 +93,9 @@ export default function ExpertsHero({
               </div>
 
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-[#F5AE38] text-2xl font-bold">⚡</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 16 16" fill="none">
+                  <path d="M2.66503 9.33328C2.53888 9.33371 2.41519 9.29833 2.30834 9.23126C2.20148 9.1642 2.11586 9.06818 2.0614 8.95438C2.00694 8.84059 1.9859 8.71367 2.0007 8.58838C2.0155 8.4631 2.06555 8.34459 2.14503 8.24661L8.74503 1.44661C8.79454 1.38947 8.86201 1.35085 8.93636 1.3371C9.0107 1.32335 9.08752 1.33529 9.15419 1.37095C9.22086 1.40661 9.27342 1.46388 9.30326 1.53335C9.33309 1.60283 9.33842 1.68038 9.31837 1.75328L8.03837 5.76661C8.00062 5.86763 7.98795 5.97629 8.00143 6.08328C8.01491 6.19028 8.05414 6.2924 8.11576 6.3809C8.17738 6.46939 8.25955 6.54162 8.35522 6.59139C8.45089 6.64115 8.5572 6.66696 8.66503 6.66661H13.3317C13.4579 6.66618 13.5815 6.70156 13.6884 6.76863C13.7952 6.8357 13.8809 6.93171 13.9353 7.04551C13.9898 7.15931 14.0108 7.28622 13.996 7.41151C13.9812 7.53679 13.9312 7.65531 13.8517 7.75328L7.2517 14.5533C7.20219 14.6104 7.13473 14.649 7.06038 14.6628C6.98603 14.6765 6.90922 14.6646 6.84255 14.6289C6.77588 14.5933 6.72331 14.536 6.69348 14.4665C6.66364 14.3971 6.65832 14.3195 6.67837 14.2466L7.95837 10.2333C7.99611 10.1323 8.00879 10.0236 7.99531 9.91661C7.98183 9.80962 7.94259 9.70749 7.88097 9.619C7.81935 9.5305 7.73719 9.45827 7.64152 9.40851C7.54585 9.35874 7.43954 9.33293 7.3317 9.33328H2.66503Z" stroke="#F5A623" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
                 <div className="text-3xl sm:text-4xl font-haetten text-[#F5AE38] tracking-wider leading-none">
                   <PointsValue value="450" suffix="POINTS" />
                 </div>
@@ -109,10 +111,10 @@ export default function ExpertsHero({
               {/* Card 1: Meera */}
               <div
                 onClick={() => onOpenProfile && onOpenProfile("meera-iyer")}
-                className="bg-white rounded-xl p-3 sm:p-3.5 shadow-lg border border-[#E8DCC4] flex items-center justify-between gap-3 hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer group"
+                className="bg-white p-3 sm:p-3.5 shadow-lg border border-[#E8DCC4] flex items-center justify-between gap-3 hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer group"
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="relative w-11 h-11 rounded-full overflow-hidden shrink-0 border-2 border-[#2542A5]/30">
+                  <div className="relative w-11 h-11 overflow-hidden shrink-0 border-2 border-[#2542A5]/30">
                     <Image
                       src="/images/experts/meera_iyer.jpg"
                       alt="Meera"
@@ -131,8 +133,10 @@ export default function ExpertsHero({
                   </div>
                 </div>
 
-                <div className="bg-[#F5AE38] text-[#1E1E1E] font-jetbrains font-extrabold text-xs px-3 py-1.5 rounded-lg shrink-0 flex items-center gap-1 shadow-sm">
-                  <span>⚡</span>
+                <div className="bg-[#F5AE38] text-[#1E1E1E] font-jetbrains font-extrabold text-xs px-3 py-1.5 shrink-0 flex items-center gap-1 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                  <path d="M2.66503 9.33328C2.53888 9.33371 2.41519 9.29833 2.30834 9.23126C2.20148 9.1642 2.11586 9.06818 2.0614 8.95438C2.00694 8.84059 1.9859 8.71367 2.0007 8.58838C2.0155 8.4631 2.06555 8.34459 2.14503 8.24661L8.74503 1.44661C8.79454 1.38947 8.86201 1.35085 8.93636 1.3371C9.0107 1.32335 9.08752 1.33529 9.15419 1.37095C9.22086 1.40661 9.27342 1.46388 9.30326 1.53335C9.33309 1.60283 9.33842 1.68038 9.31837 1.75328L8.03837 5.76661C8.00062 5.86763 7.98795 5.97629 8.00143 6.08328C8.01491 6.19028 8.05414 6.2924 8.11576 6.3809C8.17738 6.46939 8.25955 6.54162 8.35522 6.59139C8.45089 6.64115 8.5572 6.66696 8.66503 6.66661H13.3317C13.4579 6.66618 13.5815 6.70156 13.6884 6.76863C13.7952 6.8357 13.8809 6.93171 13.9353 7.04551C13.9898 7.15931 14.0108 7.28622 13.996 7.41151C13.9812 7.53679 13.9312 7.65531 13.8517 7.75328L7.2517 14.5533C7.20219 14.6104 7.13473 14.649 7.06038 14.6628C6.98603 14.6765 6.90922 14.6646 6.84255 14.6289C6.77588 14.5933 6.72331 14.536 6.69348 14.4665C6.66364 14.3971 6.65832 14.3195 6.67837 14.2466L7.95837 10.2333C7.99611 10.1323 8.00879 10.0236 7.99531 9.91661C7.98183 9.80962 7.94259 9.70749 7.88097 9.619C7.81935 9.5305 7.73719 9.45827 7.64152 9.40851C7.54585 9.35874 7.43954 9.33293 7.3317 9.33328H2.66503Z" stroke="#000" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
                   <PointsValue value={200} suffix="PTS" />
                 </div>
               </div>
@@ -140,10 +144,10 @@ export default function ExpertsHero({
               {/* Card 2: Malhotra */}
               <div
                 onClick={() => onOpenProfile && onOpenProfile("rohit-malhotra")}
-                className="bg-white rounded-xl p-3 sm:p-3.5 shadow-lg border border-[#E8DCC4] flex items-center justify-between gap-3 hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer group"
+                className="bg-white p-3 sm:p-3.5 shadow-lg border border-[#E8DCC4] flex items-center justify-between gap-3 hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer group"
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="relative w-11 h-11 rounded-full overflow-hidden shrink-0 border-2 border-[#1B7042]/30">
+                  <div className="relative w-11 h-11 overflow-hidden shrink-0 border-2 border-[#1B7042]/30">
                     <Image
                       src="/images/experts/rohit_malhotra.jpg"
                       alt="Malhotra"
@@ -162,8 +166,10 @@ export default function ExpertsHero({
                   </div>
                 </div>
 
-                <div className="bg-[#F5AE38] text-[#1E1E1E] font-jetbrains font-extrabold text-xs px-3 py-1.5 rounded-lg shrink-0 flex items-center gap-1 shadow-sm">
-                  <span>⚡</span>
+                <div className="bg-[#F5AE38] text-[#1E1E1E] font-jetbrains font-extrabold text-xs px-3 py-1.5 shrink-0 flex items-center gap-1 shadow-sm">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                  <path d="M2.66503 9.33328C2.53888 9.33371 2.41519 9.29833 2.30834 9.23126C2.20148 9.1642 2.11586 9.06818 2.0614 8.95438C2.00694 8.84059 1.9859 8.71367 2.0007 8.58838C2.0155 8.4631 2.06555 8.34459 2.14503 8.24661L8.74503 1.44661C8.79454 1.38947 8.86201 1.35085 8.93636 1.3371C9.0107 1.32335 9.08752 1.33529 9.15419 1.37095C9.22086 1.40661 9.27342 1.46388 9.30326 1.53335C9.33309 1.60283 9.33842 1.68038 9.31837 1.75328L8.03837 5.76661C8.00062 5.86763 7.98795 5.97629 8.00143 6.08328C8.01491 6.19028 8.05414 6.2924 8.11576 6.3809C8.17738 6.46939 8.25955 6.54162 8.35522 6.59139C8.45089 6.64115 8.5572 6.66696 8.66503 6.66661H13.3317C13.4579 6.66618 13.5815 6.70156 13.6884 6.76863C13.7952 6.8357 13.8809 6.93171 13.9353 7.04551C13.9898 7.15931 14.0108 7.28622 13.996 7.41151C13.9812 7.53679 13.9312 7.65531 13.8517 7.75328L7.2517 14.5533C7.20219 14.6104 7.13473 14.649 7.06038 14.6628C6.98603 14.6765 6.90922 14.6646 6.84255 14.6289C6.77588 14.5933 6.72331 14.536 6.69348 14.4665C6.66364 14.3971 6.65832 14.3195 6.67837 14.2466L7.95837 10.2333C7.99611 10.1323 8.00879 10.0236 7.99531 9.91661C7.98183 9.80962 7.94259 9.70749 7.88097 9.619C7.81935 9.5305 7.73719 9.45827 7.64152 9.40851C7.54585 9.35874 7.43954 9.33293 7.3317 9.33328H2.66503Z" stroke="#000" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
                   <PointsValue value={150} suffix="PTS" />
                 </div>
               </div>
@@ -174,7 +180,7 @@ export default function ExpertsHero({
 
         {/* Full-width Search Bar Sitting on Boundary */}
         <div className="relative z-20 pt-2">
-          <div className="bg-[#FFF5E0] rounded-2xl sm:rounded-3xl p-3 sm:p-4 lg:px-6 shadow-2xl flex items-center gap-3 border border-[#E8DCC4] transition-shadow focus-within:shadow-yellow-500/20">
+          <div className="bg-[#FFF5E0] p-3 sm:p-4 lg:px-6 shadow-2xl flex items-center gap-3 border border-[#E8DCC4] transition-shadow focus-within:shadow-yellow-500/20">
             <svg width="26" height="26" viewBox="1.6 1.6 13.4 13.4" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
               <path d="M8.35868 7.16446C9.26547 7.16446 10.0006 5.96157 10.0006 4.47774C10.0006 2.9939 9.26547 1.79102 8.35868 1.79102C7.45189 1.79102 6.7168 2.9939 6.7168 4.47774C6.7168 5.96157 7.45189 7.16446 8.35868 7.16446Z" fill="#DC346B" />
               <path d="M9.49458 7.98959C9.77479 8.852 11.146 9.1794 12.5572 8.72087C13.9684 8.26234 14.8852 7.19151 14.605 6.3291C14.3248 5.4667 12.9536 5.13929 11.5424 5.59782C10.1312 6.05635 9.21437 7.12718 9.49458 7.98959Z" fill="#DC346B" />
@@ -183,7 +189,7 @@ export default function ExpertsHero({
               <path d="M7.22329 7.98958C7.5035 7.12718 6.58664 6.05635 5.17543 5.59782C3.76422 5.13929 2.39305 5.46669 2.11284 6.3291C1.83263 7.19151 2.74948 8.26234 4.16069 8.72087C5.5719 9.1794 6.94307 8.85199 7.22329 7.98958Z" fill="#DC346B" />
               <path d="M8.3592 10.4484C9.5133 10.4484 10.4489 9.51281 10.4489 8.35871C10.4489 7.20462 9.5133 6.26904 8.3592 6.26904C7.20511 6.26904 6.26953 7.20462 6.26953 8.35871C6.26953 9.51281 7.20511 10.4484 8.3592 10.4484Z" fill="#DC346B" />
             </svg>
-            
+
             <input
               type="text"
               value={searchQuery}
@@ -207,7 +213,22 @@ export default function ExpertsHero({
       </div>
 
       {/* Decorative Wavy / Scalloped Transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-6 bg-[#1B3589] scallop-top-border translate-y-3 z-10" />
+      {/* <div className="absolute bottom-0 left-0 right-0 h-6 bg-[#1B3589] scallop-top-border translate-y-3 z-10" /> */}
+      <div className="h-35 w-full bg-[#19317f] absolute bottom-0 left-0 right-0 ">
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none z-0">
+        <svg
+          viewBox="0 0 940 28"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 28C39.1389 28 39.1389 0 78.2778 0C117.417 0 117.417 28 156.556 28C195.694 28 195.694 0 234.833 0C273.972 0 273.972 28 313.111 28C352.25 28 352.25 0 391.389 0C430.528 0 430.528 28 469.667 28C508.805 28 508.805 0 547.944 0C587.083 0 587.083 28 626.222 28C665.361 28 665.361 0 704.5 0C743.639 0 743.639 28 782.778 28C821.916 28 821.916 0 861.055 0C900.194 0 900.194 28 939.333 28H0Z"
+            fill="#FFF5E0"
+          />
+        </svg>
+      </div>
+      </div>
     </section>
   );
 }

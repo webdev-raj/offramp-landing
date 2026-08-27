@@ -8,7 +8,7 @@ import { MY_REQUESTS } from "./expertsData";
 
 export default function MyRequestsSection() {
   return (
-    <section className="bg-[#1B2264] text-white pt-16 pb-6 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="bg-[#1B3589] text-white pt-16 pb-6 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
