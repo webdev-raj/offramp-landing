@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import DiamondDivider from "@/components/shared/DiamondDivider";
 
 export default function Footer({
   newsletterBg = "bg-[#E0187A]",
@@ -208,16 +209,7 @@ export default function Footer({
           </div>
 
           {/* Faint Horizontal Diamond Divider Strip */}
-          <div className="py-9 flex items-center justify-center overflow-hidden select-none pointer-events-none">
-            <div className="h-3 w-full pl-1 flex items-center gap-1.5">
-              {Array.from({ length: DIAMOND_COUNT }).map((_, i) => (
-                <div key={i} className="h-full flex items-center justify-start gap-1.5">
-                  <div className="fill-rect h-full w-3 bg-[#40372D] rotate-45 -translate-y-1.5" />
-                  <div className="border-rect h-full w-3 bg-black/10 border-2 border-[#40372D] rotate-45 -translate-y-1.5" />
-                </div>
-              ))}
-            </div>
-          </div>
+          <DiamondDivider count={DIAMOND_COUNT} fillColor="bg-[#40372D]" borderColor="border-[#40372D]" className="py-9" />
 
           {/* Bottom Legal Bar */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4 font-mono">
