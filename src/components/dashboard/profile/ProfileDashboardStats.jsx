@@ -63,7 +63,7 @@ export default function ProfileDashboardStats({ stats, loading, error }) {
         {statBoxes.map((box, i) => (
           <div
             key={i}
-            className={`bg-white rounded-2xl p-5 border-2 ${box.borderColor} shadow-sm flex flex-col justify-between h-32 hover:scale-[1.02] transition-transform`}
+            className={`bg-white p-5 border-4 ${box.borderColor} shadow-sm flex flex-col justify-between h-32 hover:scale-[1.02] transition-transform`}
           >
             <p className="font-jetbrains text-[10px] sm:text-[11px] tracking-[0.18em] font-extrabold text-[#9A9AAA] uppercase">
               {box.label}

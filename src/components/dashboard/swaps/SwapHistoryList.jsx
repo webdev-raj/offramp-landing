@@ -12,11 +12,10 @@ function StarRating({ rating, max = 5 }) {
       {Array.from({ length: max }).map((_, i) => (
         <Star
           key={i}
-          className={`w-4 h-4 transition-colors ${
-            i < rating
+          className={`w-4 h-4 transition-colors ${i < rating
               ? "fill-[#F5AE38] text-[#F5AE38]"
               : "fill-transparent text-[#D9CDB8]"
-          }`}
+            }`}
         />
       ))}
     </div>
@@ -105,13 +104,13 @@ export default function SwapHistoryList({ swaps, loading, error }) {
             <p className="font-jetbrains text-[10px] tracking-[0.25em] font-extrabold text-[#9A9AAA] uppercase mb-1">
               SWAP HISTORY
             </p>
-            <h2 className="font-montserrat font-black text-2xl text-[#1E2538]">
+            <h2 className="font-montserrat-bold font-black text-2xl text-[#1E2538]">
               My Swaps
             </h2>
           </div>
 
           {/* Dynamic count badge */}
-          <span className="font-jetbrains font-extrabold text-xs tracking-wider uppercase px-4 py-2 rounded-full bg-[#E0187A] text-white shadow-sm shadow-[#E0187A]/30">
+          <span className="font-jetbrains font-extrabold text-xs tracking-wider uppercase px-4 py-2 bg-[#E0187A] text-white shadow-sm shadow-[#E0187A]/30">
             {swaps.length} RECENT
           </span>
         </div>
@@ -134,7 +133,7 @@ export default function SwapHistoryList({ swaps, loading, error }) {
                 />
 
                 {/* Dish photo thumbnail */}
-                <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden shrink-0 border border-[#E8DCC4]/60 bg-[#F5ECD5]">
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden shrink-0 border border-[#E8DCC4]/60 bg-[#F5ECD5]">
                   <Image
                     src={swap.imageUrl}
                     alt={swap.fromDish}
@@ -147,10 +146,10 @@ export default function SwapHistoryList({ swaps, loading, error }) {
                 {/* Text block */}
                 <div className="flex-1 min-w-0">
                   {/* Dish name: from → to */}
-                  <p className="font-dmsans text-sm sm:text-base leading-snug mb-1 truncate">
-                    <span className="text-[#7A7A8A] font-medium">{swap.fromDish}</span>
+                  <p className="font-rajdhani-light text-base sm:text-lg leading-snug mb-1 truncate">
+                    <span className="text-[#7A7A8A] font-bold">{swap.fromDish}</span>
                     <span className="mx-1.5 text-[#B59963]">→</span>
-                    <span className="font-black text-[#1E2538] font-montserrat">{swap.toDish}</span>
+                    <span className="font-black text-[#1E2538] font-rajdhani">{swap.toDish}</span>
                   </p>
 
                   {/* Timestamp + rating text */}
@@ -168,7 +167,7 @@ export default function SwapHistoryList({ swaps, loading, error }) {
                   <span
                     className={`font-jetbrains font-extrabold text-[10px] sm:text-xs tracking-wider uppercase px-3 py-1.5 rounded ${pillStyle.bg} ${pillStyle.text} shadow-xs`}
                   >
-                    RATED● {swap.rating}/5
+                    RATED {swap.rating}/5
                   </span>
                 </div>
               </div>

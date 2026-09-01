@@ -45,6 +45,12 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Rajdhani-light';
+  src: url('/fonts/Rajdhani-Light.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   :root {
@@ -64,6 +70,7 @@
   --font-haetten: 'Haettenschweiler', sans-serif;
   --font-montserrat-bold: 'Montserrat-bold', sans-serif;
   --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-rajdhani-light: 'Rajdhani-light', sans-serif;
 }
 
 /* Diamond pattern textures matching Figma design */
