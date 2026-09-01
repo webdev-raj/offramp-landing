@@ -38,14 +38,14 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="fixed left-0 top-0 w-64 sm:w-72 bg-[#1B2264] text-white h-screen flex flex-col justify-between p-6 shrink-0 z-30 border-r border-[#2A3382]">
+    <aside className="fixed left-0 top-0 w-64 sm:w-72 bg-[#1B3589] text-white h-screen flex flex-col justify-between p-6 shrink-0 z-30 border-r border-[#2A3382]">
       <div>
         {/* Logo Section */}
         <div className="flex items-center gap-3 mb-8">
           <div className="w-9 h-9 rounded-xl bg-[#E0187A] flex items-center justify-center shadow-md shadow-[#E0187A]/30">
             <Star className="w-5 h-5 text-white fill-white" />
           </div>
-          <div className="font-montserrat font-black text-2xl tracking-tight text-white flex items-center">
+          <div className="font-montserrat-bold font-black text-2xl tracking-tight text-white flex items-center">
             <span>Off</span>
             <span className="text-[#F5AE38]">Ramp</span>
           </div>
@@ -56,7 +56,7 @@ export default function Sidebar() {
           <p className="font-jetbrains text-[10px] tracking-[0.25em] font-extrabold text-white/50 uppercase mb-1">
             DASHBOARD
           </p>
-          <h2 className="font-montserrat font-black text-2xl sm:text-3xl text-white tracking-tight leading-tight">
+          <h2 className="font-montserrat-bold font-black text-2xl sm:text-3xl text-white tracking-tight leading-tight">
             {firstName}
           </h2>
           <p className="font-dmsans text-xs text-white/60 mt-1">
@@ -84,7 +84,7 @@ export default function Sidebar() {
               >
                 <div className="flex items-center gap-3">
                   <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-white/60"}`} />
-                  <span>{item.label}</span>
+                  <span className="font-rajdhani">{item.label}</span>
                 </div>
                 {isActive && <ChevronRight className="w-4 h-4 text-white" />}
               </Link>
