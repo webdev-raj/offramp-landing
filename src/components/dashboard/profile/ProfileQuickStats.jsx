@@ -49,7 +49,7 @@ export default function ProfileQuickStats({ profile, loading, error }) {
               <p className="font-jetbrains text-[10px] tracking-[0.2em] font-extrabold text-[#9A9AAA] uppercase mb-1">
                 {item.label}
               </p>
-              <h3 className="font-montserrat font-black text-xl sm:text-2xl text-[#1E2538]">
+              <h3 className="font-montserrat-bold font-black text-xl sm:text-2xl text-[#1E2538]">
                 {item.value}
               </h3>
             </div>

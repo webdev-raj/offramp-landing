@@ -68,7 +68,7 @@ export default function ProfileDashboardStats({ stats, loading, error }) {
             <p className="font-jetbrains text-[10px] sm:text-[11px] tracking-[0.18em] font-extrabold text-[#9A9AAA] uppercase">
               {box.label}
             </p>
-            <p className={`font-montserrat font-black text-4xl sm:text-5xl ${box.textColor} tracking-tight`}>
+            <p className={`font-montserrat-bold font-black text-4xl sm:text-5xl ${box.textColor} tracking-tight`}>
               {box.value}
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function ProfileDashboardStats({ stats, loading, error }) {
       {/* Full-width UPDATE PREFERENCES button */}
       <Link
         href="/dashboard/preferences"
-        className="w-full bg-[#1E1E1E] hover:bg-[#333333] text-white font-montserrat font-black text-xs sm:text-sm tracking-[0.2em] uppercase py-4 rounded-xl shadow-md transition-all flex items-center justify-center cursor-pointer active:scale-[0.99]"
+        className="w-full bg-[#1E1E1E] hover:bg-[#333333] text-white font-montserrat-bold font-black text-xs sm:text-sm tracking-[0.2em] uppercase py-4 rounded-xl shadow-md transition-all flex items-center justify-center cursor-pointer active:scale-[0.99]"
       >
         UPDATE PREFERENCES
       </Link>
