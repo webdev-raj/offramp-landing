@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   MapPin,
   Clock,
@@ -126,15 +127,12 @@ export default function RequestCard({ req }) {
 
       {/* Footer: read link + action buttons / status badge */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <button
-          type="button"
-          onClick={() =>
-            alert(`Full request from ${req.name} — detail view coming soon`)
-          }
+        <Link
+          href={`/expert/requests/${req.id}`}
           className="font-jetbrains font-extrabold text-[10px] tracking-widest uppercase text-[#2542A5] hover:text-[#E0187A] transition-colors flex items-center gap-1 cursor-pointer"
         >
           READ FULL REQUEST →
-        </button>
+        </Link>
 
         <div className="flex items-center gap-3">
           {isNewStatus ? (

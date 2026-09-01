@@ -46,14 +46,10 @@ export default function UnansweredQueriesList({ queries, loading, error }) {
 
   if (!queries || queries.length === 0) return null;
 
-  const handleAnswer = (query) => {
-    // ⚠️  PLACEHOLDER NAVIGATION — Chat/messaging feature not yet built.
-    // The designer explicitly flagged (Figma comment, Anshuman → raj) that "ANSWER"
-    // should route directly into a per-user chat conversation.
-    // This route is scaffolded as /expert/chats/[queryId] but renders a "coming soon"
-    // placeholder until a dedicated future prompt builds the real chat UI.
-    router.push(`/expert/chats/${query.id}`);
-  };
+  // Filter to conversations that have unanswered queries
+  const unanswered = queries.filter(
+    (q) => (q.unreadCount && q.unreadCount > 0) || q.question
+  );
 
   return (
     <div className="mb-8">
@@ -75,48 +71,57 @@ export default function UnansweredQueriesList({ queries, loading, error }) {
 
       {/* Query rows */}
       <div className="bg-white rounded-2xl border border-[#E8DCC4]/70 shadow-sm divide-y divide-[#E8DCC4]/50 overflow-hidden">
-        {queries.map((query) => (
-          <div
-            key={query.id}
-            className="flex items-start gap-4 p-4 sm:p-5 hover:bg-[#FBF3E3]/30 transition-colors"
-          >
-            {/* Avatar */}
-            <div className="relative w-10 h-10 rounded-full overflow-hidden bg-[#E8DCC4] shrink-0 border border-[#E8DCC4]">
-              <Image
-                src={query.avatarUrl}
-                alt={query.name}
-                fill
-                className="object-cover"
-                unoptimized
-              />
-            </div>
+        {unanswered.map((item) => {
+          const userName = item.userName || item.name || "User";
+          const time = item.lastMessageAt || item.timeAgo || "";
+          const questionText =
+            item.messages && item.messages.length > 0
+              ? item.messages[item.messages.length - 1].text
+              : item.question || "";
 
-            {/* Text block */}
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between gap-2 mb-1">
-                <span className="font-montserrat font-black text-sm text-[#1E2538]">
-                  {query.name}
-                </span>
-                <span className="font-dmsans text-xs text-[#9A9AAA] shrink-0">
-                  {query.timeAgo}
-                </span>
-              </div>
-              <p className="font-dmsans text-sm text-[#4A4A5A] leading-relaxed line-clamp-2">
-                {query.question}
-              </p>
-            </div>
-
-            {/* ANSWER button */}
-            <button
-              type="button"
-              id={`answer-${query.id}`}
-              onClick={() => handleAnswer(query)}
-              className="font-jetbrains font-extrabold text-[10px] sm:text-xs tracking-wider uppercase px-4 py-2 rounded-full border-2 border-[#E0187A] text-[#E0187A] hover:bg-[#E0187A] hover:text-white transition-all cursor-pointer shrink-0 active:scale-95"
+          return (
+            <div
+              key={item.id}
+              className="flex items-start gap-4 p-4 sm:p-5 hover:bg-[#FBF3E3]/30 transition-colors"
             >
-              ANSWER
-            </button>
-          </div>
-        ))}
+              {/* Avatar */}
+              <div className="relative w-10 h-10 rounded-full overflow-hidden bg-[#E8DCC4] shrink-0 border border-[#E8DCC4]">
+                <Image
+                  src={item.avatarUrl}
+                  alt={userName}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+              </div>
+
+              {/* Text block */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <span className="font-montserrat font-black text-sm text-[#1E2538]">
+                    {userName}
+                  </span>
+                  <span className="font-dmsans text-xs text-[#9A9AAA] shrink-0">
+                    {time}
+                  </span>
+                </div>
+                <p className="font-dmsans text-sm text-[#4A4A5A] leading-relaxed line-clamp-2">
+                  {questionText}
+                </p>
+              </div>
+
+              {/* ANSWER button — routes to the WhatsApp-style queries workspace */}
+              <button
+                type="button"
+                id={`answer-${item.id}`}
+                onClick={() => router.push("/expert/queries")}
+                className="font-jetbrains font-extrabold text-[10px] sm:text-xs tracking-wider uppercase px-4 py-2 rounded-full border-2 border-[#E0187A] text-[#E0187A] hover:bg-[#E0187A] hover:text-white transition-all cursor-pointer shrink-0 active:scale-95"
+              >
+                ANSWER
+              </button>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
