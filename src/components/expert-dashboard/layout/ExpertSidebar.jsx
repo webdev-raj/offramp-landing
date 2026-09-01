@@ -11,7 +11,6 @@ import {
   ChevronRight,
   LogOut,
   Star,
-  ArrowLeftRight,
 } from "lucide-react";
 import { useExpertOverview } from "@/lib/hooks/useExpertOverview";
 
@@ -54,7 +53,7 @@ export default function ExpertSidebar() {
           <div className="w-8 h-8 rounded-lg bg-[#E0187A] flex items-center justify-center shadow-md shadow-[#E0187A]/30 shrink-0">
             <Star className="w-4 h-4 text-white fill-white" />
           </div>
-          <div className="font-montserrat font-black text-xl tracking-tight text-white">
+          <div className="font-montserrat-bold font-black text-xl tracking-tight text-white">
             <span>Off</span>
             <span className="text-[#F5AE38]">Ramp</span>
           </div>
@@ -64,7 +63,7 @@ export default function ExpertSidebar() {
         </div>
 
         {/* Expert Identity Card */}
-        <div className="bg-[#F5AE38] rounded-2xl p-4 mb-6">
+        <div className="bg-[#F5AE38] p-4 mb-6">
           <div className="flex items-center justify-center text-center">
             {/* Avatar */}
             <div className="flex items-center flex-col">
@@ -151,14 +150,6 @@ export default function ExpertSidebar() {
 
       {/* ── Bottom pinned links ────────────────────────────────────────── */}
       <div className="p-5 border-t border-white/10 space-y-1">
-        <Link
-          href="/dashboard"
-          className="flex items-center gap-3 px-4 py-3 rounded-xl text-white/60 hover:text-white hover:bg-white/5 transition-all text-sm font-dmsans"
-        >
-          <ArrowLeftRight className="w-4 h-4 text-white/40" />
-          <span>User Dashboard</span>
-        </Link>
-
         <button
           type="button"
           onClick={handleSignOut}
