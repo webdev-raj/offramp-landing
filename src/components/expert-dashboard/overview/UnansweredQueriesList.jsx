@@ -70,7 +70,7 @@ export default function UnansweredQueriesList({ queries, loading, error }) {
       </div>
 
       {/* Query rows */}
-      <div className="bg-white rounded-2xl border border-[#E8DCC4]/70 shadow-sm divide-y divide-[#E8DCC4]/50 overflow-hidden">
+      <div className="divide-y divide-[#E8DCC4]/50 overflow-hidden">
         {unanswered.map((item) => {
           const userName = item.userName || item.name || "User";
           const time = item.lastMessageAt || item.timeAgo || "";
@@ -82,10 +82,10 @@ export default function UnansweredQueriesList({ queries, loading, error }) {
           return (
             <div
               key={item.id}
-              className="flex items-start gap-4 p-4 sm:p-5 hover:bg-[#FBF3E3]/30 transition-colors"
+              className="flex items-start gap-4 p-4 mb-2 sm:p-5 hover:bg-[#FBF3E3]/30 shadow-sm  transition-colors rounded-xl bg-white border border-[#E8DCC4]/70"
             >
               {/* Avatar */}
-              <div className="relative w-10 h-10 rounded-full overflow-hidden bg-[#E8DCC4] shrink-0 border border-[#E8DCC4]">
+              <div className="relative w-10 h-10 rounded-sm overflow-hidden bg-[#E8DCC4] shrink-0 border border-[#E8DCC4]">
                 <Image
                   src={item.avatarUrl}
                   alt={userName}
@@ -98,7 +98,7 @@ export default function UnansweredQueriesList({ queries, loading, error }) {
               {/* Text block */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-2 mb-1">
-                  <span className="font-montserrat font-black text-sm text-[#1E2538]">
+                  <span className="font-montserrat-bold font-black text-sm text-[#1E2538]">
                     {userName}
                   </span>
                   <span className="font-dmsans text-xs text-[#9A9AAA] shrink-0">
@@ -115,7 +115,7 @@ export default function UnansweredQueriesList({ queries, loading, error }) {
                 type="button"
                 id={`answer-${item.id}`}
                 onClick={() => router.push("/expert/queries")}
-                className="font-jetbrains font-extrabold text-[10px] sm:text-xs tracking-wider uppercase px-4 py-2 rounded-full border-2 border-[#E0187A] text-[#E0187A] hover:bg-[#E0187A] hover:text-white transition-all cursor-pointer shrink-0 active:scale-95"
+                className="font-jetbrains font-extrabold text-[10px] sm:text-xs tracking-wider uppercase px-4 py-2 rounded-sm border-2 border-[#E0187A] text-[#E0187A] hover:bg-[#E0187A] hover:text-white transition-all cursor-pointer shrink-0 active:scale-95"
               >
                 ANSWER
               </button>

@@ -61,12 +61,12 @@ export default function RequestCard({ req }) {
   const isNewStatus = !req.status || req.status === "new";
 
   return (
-    <div className="bg-white border-2 border-[#2542A5] rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white border-2 border-[#2542A5] p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
       {/* Top row: avatar + name/meta + urgency + points */}
       <div className="flex items-start justify-between gap-4 mb-3">
         {/* Left: avatar + name + meta */}
         <div className="flex items-start gap-3">
-          <div className="relative w-11 h-11 rounded-full overflow-hidden bg-[#E8DCC4] shrink-0 border-2 border-[#E8DCC4]">
+          <div className="relative w-11 h-11 rounded-sm overflow-hidden bg-[#E8DCC4] shrink-0 border-2 border-[#E8DCC4]">
             <Image
               src={req.avatarUrl}
               alt={req.name}
@@ -77,25 +77,25 @@ export default function RequestCard({ req }) {
           </div>
           <div>
             <div className="flex items-center flex-wrap gap-2 mb-1">
-              <span className="font-montserrat font-black text-base text-[#1E2538]">
+              <span className="font-montserrat-bold font-black text-base text-[#1E2538]">
                 {req.name}
               </span>
               {req.isNew && (
-                <span className="font-jetbrains font-extrabold text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-[#F5AE38] text-[#1E1E1E]">
+                <span className="font-jetbrains font-extrabold text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-sm bg-[#F5AE38] text-[#1E1E1E]">
                   NEW
                 </span>
               )}
             </div>
             <div className="flex flex-wrap items-center gap-3 text-[#7A7A8A]">
-              <span className="flex items-center gap-1 font-dmsans text-xs">
+              <span className="flex items-center gap-1 font-jetbrains text-xs">
                 <MapPin className="w-3 h-3" />
                 {req.location}
               </span>
-              <span className="flex items-center gap-1 font-dmsans text-xs">
+              <span className="flex items-center gap-1 font-jetbrains text-xs">
                 <Clock className="w-3 h-3" />
                 {req.timeAgo}
               </span>
-              <span className="flex items-center gap-1 font-dmsans text-xs">
+              <span className="flex items-center gap-1 font-jetbrains text-xs">
                 <ContactIcon method={req.contactMethod} />
                 {req.contactMethod}
               </span>
@@ -116,7 +116,7 @@ export default function RequestCard({ req }) {
       </div>
 
       {/* Subject line */}
-      <p className="font-montserrat font-black text-sm sm:text-base text-[#2542A5] mb-2">
+      <p className="font-rajdhani text-sm sm:text-base text-[#2542A5] mb-2">
         {req.subject}
       </p>
 
@@ -141,7 +141,7 @@ export default function RequestCard({ req }) {
                 type="button"
                 id={`reject-${req.id}`}
                 onClick={() => console.log(`Rejected request ${req.id}`)}
-                className="flex items-center gap-1.5 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-4 py-2 rounded-xl border-2 border-[#CB5638] text-[#CB5638] hover:bg-[#CB5638] hover:text-white transition-all cursor-pointer active:scale-95"
+                className="flex items-center gap-1.5 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-4 py-2 rounded-sm border-2 border-[#CB5638] text-[#CB5638] hover:bg-[#CB5638] hover:text-white transition-all cursor-pointer active:scale-95"
               >
                 <XCircle className="w-4 h-4" />
                 REJECT
@@ -150,7 +150,7 @@ export default function RequestCard({ req }) {
                 type="button"
                 id={`accept-${req.id}`}
                 onClick={() => console.log(`Accepted request ${req.id}`)}
-                className="flex items-center gap-1.5 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-4 py-2 rounded-xl bg-[#1B7042] text-white hover:bg-[#145733] transition-all cursor-pointer active:scale-95 shadow-sm"
+                className="flex items-center gap-1.5 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-4 py-2 rounded-sm bg-[#1B7042] text-white hover:bg-[#145733] transition-all cursor-pointer active:scale-95 shadow-sm"
               >
                 <CheckCircle className="w-4 h-4" />
                 ACCEPT

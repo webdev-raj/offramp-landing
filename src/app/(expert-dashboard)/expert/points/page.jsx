@@ -19,7 +19,7 @@ export default function ExpertPointsPage() {
             POINTS &amp; EARNINGS
           </p>
         </div>
-        <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-none text-[#F5AE38]">
+        <h1 className="font-montserrat-bold font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-none text-[#F5AE38]">
           Points
         </h1>
       </div>

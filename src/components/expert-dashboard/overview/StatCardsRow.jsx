@@ -51,17 +51,17 @@ export default function StatCardsRow({ expert, loading }) {
       {cards.map((card) => (
         <div
           key={card.label}
-          className={`bg-white rounded-2xl p-5 border-2 ${card.borderColor} shadow-sm flex flex-col justify-between h-32 hover:scale-[1.02] transition-transform`}
+          className={`bg-white p-5 border-4 ${card.borderColor} shadow-sm flex flex-col justify-between h-32 hover:scale-[1.02] transition-transform`}
         >
           <p className="font-jetbrains text-[10px] sm:text-[11px] tracking-[0.15em] font-extrabold text-[#9A9AAA] uppercase leading-tight">
             {card.label}
           </p>
           <div className="flex items-end gap-1">
-            <p className={`font-montserrat font-black ${card.large ? "text-4xl sm:text-5xl" : "text-4xl sm:text-5xl"} ${card.textColor} tracking-tight leading-none`}>
+            <p className={`font-montserrat-bold font-black ${card.large ? "text-4xl sm:text-5xl" : "text-4xl sm:text-5xl"} ${card.textColor} tracking-tight leading-none`}>
               {card.display}
             </p>
             {card.unit && (
-              <p className={`font-montserrat font-black text-xl sm:text-2xl ${card.textColor} pb-0.5`}>
+              <p className={`font-montserrat-bold font-black text-xl sm:text-2xl ${card.textColor} pb-0.5`}>
                 {card.unit}
               </p>
             )}

@@ -8,7 +8,7 @@ export default function WelcomeBanner({ expert, loading }) {
   }
 
   const title = expert?.title ?? "Dr.";
-  const lastName = expert?.lastName ?? "Iyer";
+  const lastName = expert?.firstName ?? "Iyer";
   const requests = expert?.newRequestsCount ?? 0;
   const queries = expert?.openQueriesCount ?? 0;
 
@@ -37,8 +37,8 @@ export default function WelcomeBanner({ expert, loading }) {
         <p className="font-jetbrains font-extrabold text-[10px] sm:text-xs tracking-[0.28em] uppercase text-white/70 mb-2">
           EXPERT WORKSPACE
         </p>
-        <h1 className="font-montserrat font-black text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-          <span className="text-white">Welcome back, </span>
+        <h1 className="font-montserrat-bold font-black text-2xl sm:text-3xl lg:text-4xl leading-none mb-3">
+          <span className="text-white">Welcome back, </span><br/>
           <span className="text-[#F5AE38]">
             {title} {lastName}.
           </span>
