@@ -14,13 +14,13 @@ export default function ChatThread({
   const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  // // const scrollToBottom = () => {
+  // //   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  // // };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [conversation?.messages]);
+  // useEffect(() => {
+  //   // scrollToBottom();
+  // }, [conversation?.messages]);
 
   if (!conversation) {
     return (
