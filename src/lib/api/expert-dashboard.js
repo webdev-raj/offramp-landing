@@ -288,6 +288,51 @@ export const MOCK_EXPERT_CONVERSATIONS = [
   },
 ];
 
+export const MOCK_EXPERT_POINTS = {
+  totalPoints: 1640,
+  sessions: 312,
+  pointsThisMonth: 640,
+  perSessionRate: 200,
+  queryBonusRate: 15,
+  recentActivity: [
+    {
+      id: "activity_001",
+      type: "session",
+      description: "Session completed — Kavita Iyer",
+      timeAgo: "2 weeks ago",
+      points: 200,
+    },
+    {
+      id: "activity_002",
+      type: "session",
+      description: "Session completed — Sunita Menon",
+      timeAgo: "3 days ago",
+      points: 200,
+    },
+    {
+      id: "activity_003",
+      type: "profile_view",
+      description: "Profile viewed by 14 users",
+      timeAgo: "Today",
+      points: 10,
+    },
+    {
+      id: "activity_004",
+      type: "query",
+      description: "Query answered — Deepa K.",
+      timeAgo: "2 days ago",
+      points: 15,
+    },
+    {
+      id: "activity_005",
+      type: "query",
+      description: "Query answered — Amit S.",
+      timeAgo: "3 days ago",
+      points: 15,
+    },
+  ],
+};
+
 // ── API Functions ─────────────────────────────────────────────────────────────
 
 /**
@@ -325,4 +370,13 @@ export async function getExpertRequestById(requestId) {
 export async function getExpertQueries(expertId = "expert_001") {
   await new Promise((r) => setTimeout(r, 300));
   return MOCK_EXPERT_CONVERSATIONS;
+}
+
+/**
+ * Fetches points, balance, and earnings activity for the given expert.
+ * TODO: replace with real fetch(`/api/experts/${expertId}/points`) once backend exists
+ */
+export async function getExpertPoints(expertId = "expert_001") {
+  await new Promise((r) => setTimeout(r, 300));
+  return MOCK_EXPERT_POINTS;
 }

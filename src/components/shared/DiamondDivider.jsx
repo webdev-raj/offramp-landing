@@ -4,22 +4,23 @@ export default function DiamondDivider({
   count = 44,
   fillColor = "bg-[#E0187A]",
   borderColor = "border-[#E0187A]",
+  triangleColor = "text-[#E0187A]",
   variant = "diamonds", // 'diamonds' | 'triangles'
   className = "py-6",
 }) {
   if (variant === "triangles") {
     return (
       <div className={`${className} flex flex-col items-center justify-center overflow-hidden select-none pointer-events-none gap-1`}>
-        <div className="flex items-center gap-1.5 justify-center flex-wrap text-[#E0187A] text-[10px] tracking-[0.2em]">
+        <div className={`flex items-center gap-1.5 justify-center flex-wrap ${triangleColor} text-[10px] tracking-[0.2em]`}>
           {Array.from({ length: count }).map((_, i) => (
-            <span key={i} className="inline-block transform -rotate-90 text-[#E0187A]/75 font-bold">
+            <span key={i} className="inline-block transform -rotate-90 opacity-75 font-bold">
               ▲
             </span>
           ))}
         </div>
-        <div className="flex items-center gap-1.5 justify-center flex-wrap text-[#E0187A] text-[10px] tracking-[0.2em] max-w-[60%]">
+        <div className={`flex items-center gap-1.5 justify-center flex-wrap ${triangleColor} text-[10px] tracking-[0.2em] max-w-[60%]`}>
           {Array.from({ length: Math.floor(count / 2) }).map((_, i) => (
-            <span key={`sub-${i}`} className="inline-block transform -rotate-90 text-[#E0187A]/60 font-bold">
+            <span key={`sub-${i}`} className="inline-block transform -rotate-90 opacity-60 font-bold">
               ▲
             </span>
           ))}
