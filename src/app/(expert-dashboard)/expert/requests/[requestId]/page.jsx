@@ -136,7 +136,7 @@ export default function RequestDetailPage({ params }) {
         {/* User Identity & Top Meta Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[#E8DCC4]/60">
           <div className="flex items-start sm:items-center gap-4">
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-[#E8DCC4] shrink-0 border-2 border-[#2542A5] shadow-md">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-sm overflow-hidden bg-[#E8DCC4] shrink-0 border-2 border-[#2542A5] shadow-md">
               <Image
                 src={req.avatarUrl}
                 alt={req.name}
@@ -147,7 +147,7 @@ export default function RequestDetailPage({ params }) {
             </div>
             <div>
               <div className="flex items-center flex-wrap gap-2.5 mb-1.5">
-                <h1 className="font-montserrat font-black text-2xl sm:text-3xl text-[#1E2538]">
+                <h1 className="font-montserrat-bold font-black text-2xl sm:text-3xl text-[#1E2538]">
                   {req.name}
                 </h1>
                 {req.isNew && (

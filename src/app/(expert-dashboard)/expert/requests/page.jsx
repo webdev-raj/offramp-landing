@@ -49,13 +49,13 @@ function RequestsContent() {
     <div>
       {/* ── Page Header ─────────────────────────────────────────────── */}
       <div className="mb-6">
-        <div className="flex items-center gap-2 mb-1.5">
+        <div className="flex items-center gap-2 mb-3">
           <span className="text-[#E0187A] font-bold text-xs">◆</span>
           <p className="font-jetbrains text-[10px] sm:text-xs tracking-[0.25em] font-extrabold text-[#B59963] uppercase">
             REQUEST MANAGEMENT
           </p>
         </div>
-        <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-none">
+        <h1 className="font-montserrat-bold font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-none">
           <span className="text-[#1E2538]">All </span>
           <span className="text-[#2542A5]">Requests</span>
         </h1>

@@ -80,10 +80,10 @@ export default function ChatThread({
             </div>
 
             <div>
-              <h3 className="font-montserrat font-black text-sm sm:text-base text-[#1E2538] leading-tight">
+              <h3 className="font-montserrat-bold font-black text-sm sm:text-lg text-[#1E2538] leading-tight">
                 {conversation.userName}
               </h3>
-              <p className="font-dmsans text-[11px] text-[#1B7042] font-semibold flex items-center gap-1">
+              <p className="font-dmsans text-[11px] text-[#1B7042] flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#1B7042]" />
                 Asking clinical query · Active
               </p>
