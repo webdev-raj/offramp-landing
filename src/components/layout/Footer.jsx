@@ -172,10 +172,10 @@ export default function Footer({
                 PRODUCT
               </h4>
               <ul className="space-y-3 text-sm font-medium text-white/70 font-dmsans">
-                <li><a href="#explore" className="hover:text-white transition-colors">Explore Swaps</a></li>
+                <li><a href="/explore" className="hover:text-white transition-colors">Explore Swaps</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Challenges</a></li>
-                <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
+                <li><a href="/how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
+                <li><a href="/features" className="hover:text-white transition-colors">Features</a></li>
               </ul>
             </div>
 

@@ -34,7 +34,7 @@ export default function Sidebar() {
 
   const handleLogout = () => {
     setMockLoggedIn(false);
-    router.push("/auth");
+    router.push("/login");
   };
 
   return (

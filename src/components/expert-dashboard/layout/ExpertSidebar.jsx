@@ -40,7 +40,7 @@ export default function ExpertSidebar() {
       localStorage.removeItem(EXPERT_SESSION_KEY);
       window.dispatchEvent(new Event("offramp-auth-change"));
     } catch (_) { }
-    router.push("/auth");
+    router.push("/login");
   };
 
   return (

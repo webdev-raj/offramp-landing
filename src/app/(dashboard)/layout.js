@@ -20,13 +20,13 @@ export default function DashboardLayout({ children }) {
           setIsAuthenticated(true);
         } else {
           setIsAuthenticated(false);
-          router.replace("/auth");
+          router.replace("/login");
         }
       }
     } catch (err) {
       console.warn("Could not check auth status:", err);
       setIsAuthenticated(false);
-      router.replace("/auth");
+      router.replace("/login");
     }
   }, [router]);
 
