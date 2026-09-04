@@ -22,13 +22,13 @@ export default function ExpertDashboardLayout({ children }) {
           setIsAuthenticated(true);
         } else {
           setIsAuthenticated(false);
-          router.replace("/login");
+          router.replace("/expert/login");
         }
       }
     } catch (err) {
       console.warn("Could not check expert auth status:", err);
       setIsAuthenticated(false);
-      router.replace("/login");
+      router.replace("/expert/login");
     }
   }, [router]);
 
