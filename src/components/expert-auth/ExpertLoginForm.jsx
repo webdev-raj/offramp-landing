@@ -53,7 +53,7 @@ export default function ExpertLoginForm() {
       {/* ── Form Card ── */}
       <div className="bg-[#FFFDF5] border-t-4 border-black shadow-2xl p-6 sm:p-8 relative">
         {/* Tab Switcher at Top */}
-        <div className="grid grid-cols-2 bg-[#FFF5DB] border border-[#EADFC7] rounded-xl mb-6 overflow-hidden">
+        <div className="grid grid-cols-2 bg-[#FFF5DB] border border-[#EADFC7] rounded-sm mb-6 overflow-hidden">
           <button
             type="button"
             className="bg-[#1B2264] text-white font-montserrat-bold font-black text-xs sm:text-sm py-2.5 px-4 shadow-sm transition-all text-center"
@@ -82,7 +82,7 @@ export default function ExpertLoginForm() {
         <button
           type="button"
           onClick={handleGoogleSignIn}
-          className="w-full bg-white hover:bg-gray-50 border-2 border-[#FFE8B0] text-[#1E1E1E] font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-sm transition-all flex items-center justify-center gap-2.5 mb-5 cursor-pointer"
+          className="w-full bg-white hover:bg-gray-50 border-2 border-[#FFE8B0] text-[#1E1E1E] font-bold text-xs sm:text-sm py-3 px-4 rounded-sm shadow-sm transition-all flex items-center justify-center gap-2.5 mb-5 cursor-pointer"
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24">
             <path
@@ -128,7 +128,7 @@ export default function ExpertLoginForm() {
               onChange={handleChange}
               placeholder="you@example.com"
               required
-              className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-3 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 transition-all placeholder:text-[#A8946B] placeholder:font-dmsans"
+              className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-3 px-4 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 transition-all placeholder:text-[#A8946B] placeholder:font-dmsans"
             />
           </div>
 
@@ -144,7 +144,7 @@ export default function ExpertLoginForm() {
                 onChange={handleChange}
                 placeholder="Your password"
                 required
-                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-3 px-4 pr-11 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 transition-all placeholder:text-[#A8946B] placeholder:font-dmsans"
+                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-3 px-4 pr-11 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 transition-all placeholder:text-[#A8946B] placeholder:font-dmsans"
               />
               <button
                 type="button"
@@ -178,7 +178,7 @@ export default function ExpertLoginForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-[#FDE3A0] hover:bg-[#FCD34D] active:scale-[0.99] text-[#523A0B] font-extrabold text-xs sm:text-sm py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 uppercase tracking-wider mt-6 font-montserrat-bold cursor-pointer disabled:opacity-75"
+            className="w-full bg-[#FDE3A0] hover:bg-[#FCD34D] active:scale-[0.99] text-[#523A0B] font-extrabold text-xs sm:text-sm py-3.5 px-6 rounded-sm shadow-md transition-all flex items-center justify-center gap-2 uppercase tracking-wider mt-6 font-montserrat-bold cursor-pointer disabled:opacity-75"
           >
             <span>{isLoading ? "AUTHENTICATING..." : "SIGN IN TO DASHBOARD"}</span>
             <ArrowRight className="w-4 h-4" />

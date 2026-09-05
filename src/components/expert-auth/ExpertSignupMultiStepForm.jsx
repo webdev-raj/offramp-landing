@@ -88,7 +88,7 @@ export default function ExpertSignupMultiStepForm() {
             <span className="font-medium text-[#1B2264] underline">{formData.email || "your email"}</span> within 3&ndash;5 business days.
           </p>
 
-          <div className="bg-[#FFF5DB] border border-[#EADFC7] rounded-xl p-4 text-left mb-6">
+          <div className="bg-[#FFF5DB] border border-[#EADFC7] rounded-sm p-4 text-left mb-6">
             <div className="flex items-center gap-2 text-[#8B6830] font-jetbrains text-xs font-bold uppercase tracking-wider mb-2">
               <Award className="w-4 h-4 text-[#F5AE38]" />
               <span>Next Steps</span>
@@ -103,7 +103,7 @@ export default function ExpertSignupMultiStepForm() {
           <div className="space-y-2.5">
             <Link
               href="/"
-              className="w-full bg-[#1B2264] hover:bg-[#141A4F] text-white font-montserrat-bold font-bold text-xs sm:text-sm py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 uppercase tracking-wider"
+              className="w-full bg-[#1B2264] hover:bg-[#141A4F] text-white font-montserrat-bold font-bold text-xs sm:text-sm py-3.5 px-6 rounded-sm shadow-md transition-all flex items-center justify-center gap-2 uppercase tracking-wider"
             >
               <span>Back to Homepage</span>
               <ArrowRight className="w-4 h-4" />
@@ -111,7 +111,7 @@ export default function ExpertSignupMultiStepForm() {
 
             <Link
               href="/expert/login"
-              className="w-full bg-[#FFF5DB] hover:bg-[#FBE8B5] text-[#523A0B] font-montserrat-bold font-bold text-xs py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wider"
+              className="w-full bg-[#FFF5DB] hover:bg-[#FBE8B5] text-[#523A0B] font-montserrat-bold font-bold text-xs py-3 px-6 rounded-sm transition-all flex items-center justify-center gap-2 uppercase tracking-wider"
             >
               <span>Go to Sign In</span>
             </Link>
@@ -126,7 +126,7 @@ export default function ExpertSignupMultiStepForm() {
       {/* ── Form Card ── */}
       <div className="bg-[#FFFDF5] border-t-4 border-black  shadow-2xl p-6 sm:p-8 relative">
         {/* Tab Switcher at Top */}
-        <div className="grid grid-cols-2 bg-[#FFF5DB] border border-[#EADFC7] rounded-xl mb-6 overflow-hidden">
+        <div className="grid grid-cols-2 bg-[#FFF5DB] border border-[#EADFC7] rounded-sm mb-6 overflow-hidden">
           <Link
             href="/expert/login"
             className="text-[#1E1E1E] hover:text-[#E0187A] font-montserrat-bold font-bold text-xs sm:text-sm py-2.5 px-4 transition-all text-center flex items-center justify-center"
@@ -221,7 +221,7 @@ export default function ExpertSignupMultiStepForm() {
                   onChange={handleChange}
                   placeholder="Meera"
                   required
-                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
+                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
                 />
               </div>
               <div>
@@ -235,7 +235,7 @@ export default function ExpertSignupMultiStepForm() {
                   onChange={handleChange}
                   placeholder="Iyer"
                   required
-                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
+                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
                 />
               </div>
             </div>
@@ -252,7 +252,7 @@ export default function ExpertSignupMultiStepForm() {
                 onChange={handleChange}
                 placeholder="you@example.com"
                 required
-                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
+                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
               />
             </div>
 
@@ -270,7 +270,7 @@ export default function ExpertSignupMultiStepForm() {
                   placeholder="Min. 8 characters"
                   required
                   minLength={8}
-                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 pr-11 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
+                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 pr-11 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
                 />
                 <button
                   type="button"
@@ -299,7 +299,7 @@ export default function ExpertSignupMultiStepForm() {
                   onChange={handleChange}
                   placeholder="Chennai"
                   required
-                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
+                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
                 />
               </div>
               <div>
@@ -312,7 +312,7 @@ export default function ExpertSignupMultiStepForm() {
                   value={formData.yearsExperience}
                   onChange={handleChange}
                   placeholder="e.g. 8"
-                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
+                  className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
                 />
               </div>
             </div>
@@ -321,7 +321,7 @@ export default function ExpertSignupMultiStepForm() {
             <button
               type="submit"
               disabled={!isStep1Valid}
-              className={`w-full font-montserrat-bold font-black text-xs sm:text-sm py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 uppercase tracking-wider mt-5 ${
+              className={`w-full font-montserrat-bold font-black text-xs sm:text-sm py-3.5 px-6 rounded-sm shadow-md transition-all flex items-center justify-center gap-2 uppercase tracking-wider mt-5 ${
                 isStep1Valid
                   ? "bg-[#FDE3A0] hover:bg-[#FCD34D] text-[#523A0B] cursor-pointer active:scale-98"
                   : "bg-[#FDE3A0]/60 text-[#8B734B]/60 cursor-not-allowed"
@@ -345,7 +345,7 @@ export default function ExpertSignupMultiStepForm() {
                 name="specialty"
                 value={formData.specialty}
                 onChange={handleChange}
-                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-xs sm:text-sm py-2.5 px-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 cursor-pointer"
+                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-xs sm:text-sm py-2.5 px-3.5 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 cursor-pointer"
               >
                 {SPECIALTY_OPTIONS.map((opt) => (
                   <option key={opt} value={opt}>
@@ -367,7 +367,7 @@ export default function ExpertSignupMultiStepForm() {
                 rows={2}
                 placeholder="e.g. Registered Dietitian (IDA), MSc Clinical Nutrition, Certified Diabetes Educator"
                 required
-                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-xs sm:text-sm py-2.5 px-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B] resize-none"
+                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-xs sm:text-sm py-2.5 px-3.5 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B] resize-none"
               />
             </div>
 
@@ -383,7 +383,7 @@ export default function ExpertSignupMultiStepForm() {
                 onChange={handleChange}
                 placeholder="e.g. English, Hindi, Tamil"
                 required
-                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
+                className="w-full bg-[#FFE8B0] text-[#1E1E1E] font-medium text-sm py-2.5 px-3.5 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1B2264]/40 placeholder:text-[#A8946B]"
               />
             </div>
 
@@ -415,7 +415,7 @@ export default function ExpertSignupMultiStepForm() {
               <button
                 type="button"
                 onClick={handleBack}
-                className="w-1/3 bg-[#FFF5DB] hover:bg-[#FBE8B5] text-[#523A0B] font-montserrat-bold font-bold text-xs py-3.5 px-4 rounded-xl transition-all flex items-center justify-center gap-1.5 uppercase"
+                className="w-1/3 bg-[#FFF5DB] hover:bg-[#FBE8B5] text-[#523A0B] font-montserrat-bold font-bold text-xs py-3.5 px-4 rounded-sm transition-all flex items-center justify-center gap-1.5 uppercase"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>BACK</span>
@@ -423,7 +423,7 @@ export default function ExpertSignupMultiStepForm() {
 
               <button
                 type="submit"
-                className="w-2/3 bg-[#FDE3A0] hover:bg-[#FCD34D] text-[#523A0B] font-montserrat-bold font-black text-xs sm:text-sm py-3.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 uppercase tracking-wider cursor-pointer"
+                className="w-2/3 bg-[#FDE3A0] hover:bg-[#FCD34D] text-[#523A0B] font-montserrat-bold font-black text-xs sm:text-sm py-3.5 px-4 rounded-sm shadow-md transition-all flex items-center justify-center gap-2 uppercase tracking-wider cursor-pointer"
               >
                 <span>NEXT &mdash; REVIEW</span>
                 <ArrowRight className="w-4 h-4" />
@@ -436,7 +436,7 @@ export default function ExpertSignupMultiStepForm() {
         {currentStep === 3 && (
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Summary Review Card */}
-            <div className="bg-[#FFF5DB] border border-[#EADFC7] rounded-xl p-3.5 space-y-2.5 text-xs font-dmsans">
+            <div className="bg-[#FFF5DB] border border-[#EADFC7] rounded-sm p-3.5 space-y-2.5 text-xs font-dmsans">
               <div className="flex justify-between border-b border-[#EADFC7]/60 pb-1.5">
                 <span className="text-[#8B6830] font-jetbrains uppercase text-[10px] font-bold">NAME</span>
                 <span className="text-[#1E1E1E] font-bold">{formData.firstName} {formData.lastName}</span>
@@ -464,7 +464,7 @@ export default function ExpertSignupMultiStepForm() {
             </div>
 
             {/* Note on Manual Review */}
-            <div className="bg-[#1B2264]/5 border border-[#1B2264]/20 rounded-xl p-3 text-xs font-dmsans text-[#1B2264] flex items-start gap-2">
+            <div className="bg-[#1B2264]/5 border border-[#1B2264]/20 rounded-sm p-3 text-xs font-dmsans text-[#1B2264] flex items-start gap-2">
               <Sparkles className="w-4 h-4 text-[#F5AE38] shrink-0 mt-0.5" />
               <p className="leading-snug">
                 We review every application personally to protect Indian nutritional health. You will receive an onboarding decision within 3&ndash;5 business days.
@@ -476,7 +476,7 @@ export default function ExpertSignupMultiStepForm() {
               <button
                 type="button"
                 onClick={handleBack}
-                className="w-1/3 bg-[#FFF5DB] hover:bg-[#FBE8B5] text-[#523A0B] font-montserrat-bold font-bold text-xs py-3.5 px-4 rounded-xl transition-all flex items-center justify-center gap-1.5 uppercase"
+                className="w-1/3 bg-[#FFF5DB] hover:bg-[#FBE8B5] text-[#523A0B] font-montserrat-bold font-bold text-xs py-3.5 px-4 rounded-sm transition-all flex items-center justify-center gap-1.5 uppercase"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>BACK</span>
@@ -484,7 +484,7 @@ export default function ExpertSignupMultiStepForm() {
 
               <button
                 type="submit"
-                className="w-2/3 bg-[#1B2264] hover:bg-[#141A4F] text-white font-montserrat-bold font-black text-xs sm:text-sm py-3.5 px-4 rounded-xl shadow-lg shadow-[#1B2264]/25 transition-all flex items-center justify-center gap-2 uppercase tracking-wider cursor-pointer active:scale-98"
+                className="w-2/3 bg-[#1B2264] hover:bg-[#141A4F] text-white font-montserrat-bold font-black text-xs sm:text-sm py-3.5 px-4 rounded-sm shadow-lg shadow-[#1B2264]/25 transition-all flex items-center justify-center gap-2 uppercase tracking-wider cursor-pointer active:scale-98"
               >
                 <span>SUBMIT APPLICATION</span>
                 <ArrowRight className="w-4 h-4" />

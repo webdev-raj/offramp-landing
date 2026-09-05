@@ -5,7 +5,7 @@ import { Zap } from "lucide-react";
 export default function PointsHeroCard({ data, loading }) {
   if (loading) {
     return (
-      <div className="bg-[#1B2264] border-2 border-[#F5AE38] rounded-3xl p-6 sm:p-8 shadow-xl animate-pulse mb-8">
+      <div className="bg-[#1B2264] border-2 border-[#F5A623] rounded-3xl p-6 sm:p-8 shadow-xl animate-pulse mb-8">
         <div className="h-6 w-40 bg-white/20 rounded mb-4" />
         <div className="h-12 w-64 bg-white/20 rounded mb-6" />
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -31,9 +31,7 @@ export default function PointsHeroCard({ data, loading }) {
   ];
 
   return (
-    <div className="bg-[#1B2264] border-2 border-[#F5AE38] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl mb-8 relative overflow-hidden">
-      {/* Decorative background glow */}
-      <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[#F5AE38]/10 blur-2xl pointer-events-none" />
+    <div className="bg-[#1B3589] border-2 border-[#F5A623] p-6 sm:p-8 lg:p-10 shadow-xl mb-8 relative overflow-hidden">
 
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative z-10">
         {/* Left: Total Points Display */}
@@ -42,11 +40,11 @@ export default function PointsHeroCard({ data, loading }) {
             TOTAL POINTS EARNED
           </p>
           <div className="flex items-center gap-2 sm:gap-3">
-            <span className="text-[#F5AE38] text-3xl sm:text-5xl lg:text-6xl font-black">
-              ⚡
+            <span className="text-[#F5A623] text-3xl sm:text-5xl lg:text-6xl font-black flex items-end h-10">
+              <Zap/>
             </span>
-            <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl text-[#F5AE38] tracking-tight">
-              {total} POINTS
+            <h2 className="font-montserrat-bold font-black text-3xl sm:text-4xl lg:text-7xl text-[#F5A623] tracking-tight">
+              {total} <span className="text-lg sm:text-xl font-jetbrains font-thin text-white/60">POINTS</span>
             </h2>
           </div>
         </div>
@@ -56,12 +54,12 @@ export default function PointsHeroCard({ data, loading }) {
           {subCards.map((card) => (
             <div
               key={card.label}
-              className="bg-[#242C7D] border border-white/15 rounded-2xl p-4 flex flex-col justify-between hover:border-[#F5AE38]/40 transition-colors"
+              className="bg-[#29418E] rounded-lg p-4 flex flex-col justify-between transition-colors"
             >
-              <p className="font-jetbrains text-[9px] sm:text-[10px] tracking-[0.2em] font-extrabold text-white/60 uppercase mb-1">
+              <p className="font-jetbrains sm:text-xs tracking-[0.2em] text-white/60 uppercase mb-1">
                 {card.label}
               </p>
-              <p className="font-montserrat font-black text-lg sm:text-xl text-white">
+              <p className="font-montserrat-bold font-black text-lg sm:text-3xl text-white">
                 {card.value}
               </p>
             </div>
