@@ -215,6 +215,7 @@ export const MOCK_EXPERT_CONVERSATIONS = [
     userId: "user_priya_sharma",
     userName: "Priya Sharma",
     avatarUrl: "/images/dashboard/avatars/priya-sharma.jpg",
+    status: "unanswered",
     unreadCount: 1,
     lastMessageAt: "3 hrs ago",
     messages: [
@@ -231,6 +232,11 @@ export const MOCK_EXPERT_CONVERSATIONS = [
     userId: "user_rohit_m",
     userName: "Rohit M.",
     avatarUrl: "/images/dashboard/avatars/rohit-m.jpg",
+    status: "scheduled",
+    scheduledSession: {
+      date: "Today",
+      time: "10:00 AM",
+    },
     unreadCount: 1,
     lastMessageAt: "1 day ago",
     messages: [
@@ -247,6 +253,7 @@ export const MOCK_EXPERT_CONVERSATIONS = [
     userId: "user_deepa_k",
     userName: "Deepa K.",
     avatarUrl: "/images/dashboard/avatars/deepa-k.jpg",
+    status: "answered",
     unreadCount: 0,
     lastMessageAt: "2 days ago",
     messages: [
@@ -259,7 +266,7 @@ export const MOCK_EXPERT_CONVERSATIONS = [
       {
         id: "msg_004",
         sender: "expert",
-        text: "Great question — I'd recommend keeping jaggery under 1 tsp per day and monitoring your post-meal glucose. It's not a full substitute for avoiding sugar.",
+        text: "Jaggery has a GI of around 84, only marginally lower than refined sugar. For Type 2 diabetics, limit all concentrated sweeteners to under 10g per day. A small piece as a post-meal palate cleanser is fine. Focus on low-GI alternatives or spices like cinnamon.",
         timestamp: "2 days ago",
       },
     ],
@@ -269,6 +276,7 @@ export const MOCK_EXPERT_CONVERSATIONS = [
     userId: "user_amit_s",
     userName: "Amit S.",
     avatarUrl: "/images/dashboard/avatars/amit-s.jpg",
+    status: "answered",
     unreadCount: 0,
     lastMessageAt: "3 days ago",
     messages: [

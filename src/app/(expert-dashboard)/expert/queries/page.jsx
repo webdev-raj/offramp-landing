@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import ConversationList from "@/components/expert-dashboard/queries/ConversationList";
 import ChatThread from "@/components/expert-dashboard/queries/ChatThread";
-import DiamondDivider from "@/components/shared/DiamondDivider";
 import { useExpertQueries } from "@/lib/hooks/useExpertQueries";
 
 export default function ExpertQueriesPage() {
@@ -37,6 +36,7 @@ export default function ExpertQueriesPage() {
           };
           return {
             ...c,
+            status: "answered",
             unreadCount: 0,
             lastMessageAt: "Just now",
             messages: [...c.messages, newMsg],
@@ -47,45 +47,44 @@ export default function ExpertQueriesPage() {
     );
   };
 
+  const handleScheduleSession = (convId, sessionData) => {
+    setConversations((prev) =>
+      prev.map((c) => {
+        if (c.id === convId) {
+          return {
+            ...c,
+            status: "scheduled",
+            scheduledSession: sessionData,
+          };
+        }
+        return c;
+      })
+    );
+  };
+
   const currentConversation = conversations.find((c) => c.id === selectedId);
 
   return (
-    <div>
-      {/* ── Page Header ─────────────────────────────────────────────── */}
-      <div className="mb-6">
-        <div className="flex items-center gap-2 mb-1.5">
-          <span className="text-[#E0187A] font-bold text-xs">◆</span>
-          <p className="font-jetbrains text-[10px] sm:text-xs tracking-[0.25em] font-extrabold text-[#B59963] uppercase">
-            USER QUESTIONS
-          </p>
-        </div>
-        <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-none text-[#1E2538]">
-          <span className="text-[#E0187A]">Queries </span> &amp; Conversations
-        </h1>
-        {/* <p className="font-dmsans text-xs sm:text-sm text-[#7A7A8A] mt-2">
-          WhatsApp-style direct messaging thread with users seeking nutritional guidance.
-        </p> */}
-      </div>
-
-      {/* ── Loading / Error States ──────────────────────────────────── */}
+    <div className="-m-6 sm:-m-10 lg:-m-12 h-screen flex flex-col md:flex-row overflow-hidden bg-white">
+      {/* ── Loading / Error States ── */}
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8">
-          <div className="md:col-span-5 h-[680px] bg-white border-2 border-[#E8DCC4] rounded-3xl animate-pulse p-6" />
-          <div className="md:col-span-7 h-[680px] bg-white border-2 border-[#E8DCC4] rounded-3xl animate-pulse p-6" />
+        <div className="flex-1 flex flex-col md:flex-row h-full animate-pulse">
+          <div className="w-full md:w-80 lg:w-[360px] bg-[#1B2264]/10 h-full border-r border-[#E8DCC4]" />
+          <div className="flex-1 bg-[#FFFDF5] h-full" />
         </div>
       ) : error ? (
-        <div className="bg-white rounded-2xl p-8 border border-red-200 text-center mb-8">
+        <div className="flex-1 flex items-center justify-center p-8 text-center bg-[#FFFDF5]">
           <p className="font-dmsans text-sm text-red-600">
-            Failed to load conversations. Please try again.
+            Failed to load conversations. Please refresh or try again later.
           </p>
         </div>
       ) : (
-        /* ── Responsive Two-Panel WhatsApp-Style Grid ──────────────── */
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8">
+        /* ── Full-Screen Unified Two-Panel Workspace ── */
+        <>
           {/* Left Panel: Conversation List */}
           <div
-            className={`md:col-span-5 ${
-              isMobileThreadOpen ? "hidden md:block" : "block"
+            className={`w-full md:w-80 lg:w-[360px] h-full shrink-0 ${
+              isMobileThreadOpen ? "hidden md:flex flex-col" : "flex flex-col"
             }`}
           >
             <ConversationList
@@ -97,21 +96,19 @@ export default function ExpertQueriesPage() {
 
           {/* Right Panel: Chat Thread View */}
           <div
-            className={`md:col-span-7 ${
-              !isMobileThreadOpen ? "hidden md:block" : "block"
+            className={`flex-1 h-full overflow-hidden ${
+              !isMobileThreadOpen ? "hidden md:flex flex-col" : "flex flex-col"
             }`}
           >
             <ChatThread
               conversation={currentConversation}
               onBack={() => setIsMobileThreadOpen(false)}
               onSendMessage={handleSendMessage}
+              onScheduleSession={handleScheduleSession}
             />
           </div>
-        </div>
+        </>
       )}
-
-      {/* ── Shared Bottom Divider ────────────────────────────────────── */}
-      <DiamondDivider variant="triangles" count={44} className="pt-4 pb-12" />
     </div>
   );
 }
