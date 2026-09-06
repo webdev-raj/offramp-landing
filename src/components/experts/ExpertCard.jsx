@@ -22,20 +22,20 @@ export default function ExpertCard({ expert, onOpenProfile, onOpenSwapModal }) {
         {/* Top Header Row: Avatar + Name + Specialty + Credentials */}
         <div className="flex items-start gap-3.5 mb-4 cursor-pointer" onClick={handleViewProfile}>
           <div
-            className="relative w-14 h-14 overflow-hidden shrink-0 border-2 shadow-sm"
+            className="relative w-24 h-24 overflow-hidden shrink-0 border-4 shadow-sm"
             style={{ borderColor: expert.accentColor }}
           >
             <Image
               src={expert.avatar}
               alt={expert.name}
               fill
-              sizes="56px"
+              sizes="56px"  
               className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
 
           <div className="min-w-0 flex-1">
-            <h3 className="font-montserrat-bold text-lg sm:text-xl text-[#1E1E1E] leading-snug truncate group-hover:text-[#E0187A] transition-colors">
+            <h3 className="font-montserrat-bold text-xl sm:text-2xl text-[#1E1E1E] leading-snug truncate group-hover:text-[#E0187A] transition-colors">
               {expert.name}
             </h3>
             <p
