@@ -30,7 +30,7 @@ export default function ConversationList({
   return (
     <div className="bg-white border-r border-[#E8DCC4] flex flex-col h-full overflow-hidden shrink-0">
       {/* ── Top Header (Navy #1B2264) ────────────────────────────────── */}
-      <div className="bg-[#1B2264] p-5 shrink-0">
+      <div className="bg-[#1B3589] p-5 shrink-0">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-haetten text-3xl sm:text-4xl text-white tracking-wide uppercase leading-none">
             Queries

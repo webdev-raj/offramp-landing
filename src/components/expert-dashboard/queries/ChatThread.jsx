@@ -69,7 +69,7 @@ export default function ChatThread({
   return (
     <div className="bg-[#FFFDF5] h-full flex flex-col overflow-hidden">
       {/* ── Top Header (Navy #1B2264) ────────────────────────────────── */}
-      <div className="bg-[#1B2264] px-6 py-4.5 flex items-center justify-between shrink-0 shadow-sm">
+      <div className="bg-[#1B3589] px-6 py-4.5 flex items-center justify-between shrink-0 shadow-sm">
         <div className="flex items-center gap-3.5">
           <div className="relative w-10 h-10 rounded-sm overflow-hidden bg-[#E8DCC4] shrink-0 border border-[#F5AE38]">
             <Image
