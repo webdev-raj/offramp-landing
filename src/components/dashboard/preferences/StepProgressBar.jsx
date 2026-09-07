@@ -39,7 +39,7 @@ export default function StepProgressBar({ currentStep }) {
   return (
     <div className="mb-8">
       {/* ── Progress Circles & Connecting Lines ──────────────────────── */}
-      <div className="flex items-center justify-between max-w-2xl mx-auto mb-8 px-2">
+      <div className="flex items-center justify-start mb-8 px-2">
         {STEPS.map((step, idx) => {
           const isCompleted = currentStep > step.id;
           const isCurrent = currentStep === step.id;
