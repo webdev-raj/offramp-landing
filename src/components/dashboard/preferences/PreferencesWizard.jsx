@@ -19,9 +19,9 @@ function isStepValid(step, data) {
     case 1:
       return !!data.region && data.preferredCuisines?.length > 0;
     case 2:
-      return !!data.dietaryStyle;
+      return !!data.allergies && !!data.transitionPath;
     case 3:
-      return !!data.budgetLevel && !!data.transitionPath;
+      return !!data.budgetLevel;
     case 4:
       return true;
     default:
@@ -149,11 +149,10 @@ export default function PreferencesWizard() {
           type="button"
           onClick={handleBack}
           disabled={step === 1}
-          className={`inline-flex items-center gap-2 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-5 py-3 rounded-xl border-2 transition-all ${
-            step === 1
+          className={`inline-flex items-center gap-2 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-5 py-3 rounded-xl border-2 transition-all ${step === 1
               ? "border-[#E8DCC4] text-[#C4B89A] cursor-not-allowed bg-[#FAF7F0]"
               : "border-[#E8DCC4] text-[#4A4A5A] hover:border-[#1B3589]/40 hover:bg-[#F5F3FF] cursor-pointer active:scale-95"
-          }`}
+            }`}
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           Back
@@ -170,11 +169,10 @@ export default function PreferencesWizard() {
             type="button"
             onClick={handleNext}
             disabled={!canProceed}
-            className={`inline-flex items-center gap-2 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-6 py-3 rounded-xl border-2 transition-all ${
-              canProceed
+            className={`inline-flex items-center gap-2 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-6 py-3 rounded-xl border-2 transition-all ${canProceed
                 ? "bg-[#1B3589] border-[#1B3589] text-white hover:bg-[#162B72] cursor-pointer shadow-md active:scale-95"
                 : "bg-[#E8DCC4]/50 border-[#E8DCC4] text-[#C4B89A] cursor-not-allowed"
-            }`}
+              }`}
           >
             Next
             <ArrowRight className="w-3.5 h-3.5" />
