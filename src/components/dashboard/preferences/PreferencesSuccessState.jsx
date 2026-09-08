@@ -1,12 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import DiamondDivider from "@/components/shared/DiamondDivider";
 
 export default function PreferencesSuccessState() {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col items-center justify-center py-16 text-center">
+    <div>
+    <div className="flex flex-col items-center justify-center py-16 text-center bg-white mt-15">
       {/* Animated check circle */}
       <div className="relative mb-8">
         {/* Pulsing ring */}
@@ -26,50 +28,19 @@ export default function PreferencesSuccessState() {
         </div>
       </div>
 
-      {/* Eyebrow */}
-      <p className="font-jetbrains font-extrabold text-[11px] tracking-[0.3em] uppercase text-[#1B7042] mb-3">
-        ✦ PREFERENCES SAVED
-      </p>
-
       {/* Heading */}
       <h2 className="font-montserrat-bold font-black text-3xl sm:text-4xl text-[#1E2538] tracking-tight mb-4">
-        You&apos;re all set!
+        Preferences Saved!
       </h2>
 
       {/* Sub-text */}
       <p className="font-dmsans text-sm text-[#7A7A8A] max-w-sm leading-relaxed mb-3">
-        Your dietary profile has been saved. We&apos;re now personalizing your food swap
-        recommendations based on your preferences.
-      </p>
-      <p className="font-dmsans text-xs text-[#9A9AAA] max-w-xs leading-relaxed mb-10">
-        Your transition journey starts now. Expect your first tailored swap suggestions
-        to appear shortly on your dashboard.
+        Your Recommendation have been updated.
       </p>
 
-      {/* Cards row */}
-      <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-        {[
-          { label: "Personalized Swaps", icon: "🔄", color: "#1B3589" },
-          { label: "Diet-Safe Picks", icon: "🛡️", color: "#1B7042" },
-          { label: "Budget Matched", icon: "💡", color: "#CB5638" },
-        ].map((item) => (
-          <div
-            key={item.label}
-            className="flex flex-col items-center gap-2 px-6 py-4 rounded-2xl border border-[#E8DCC4]/60 bg-white shadow-sm min-w-[110px]"
-          >
-            <span className="text-2xl">{item.icon}</span>
-            <span
-              className="font-jetbrains font-extrabold text-[10px] tracking-wider uppercase"
-              style={{ color: item.color }}
-            >
-              {item.label}
-            </span>
-          </div>
-        ))}
-      </div>
 
       {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row gap-3 mt-6">
         <button
           type="button"
           onClick={() => router.push("/dashboard")}
@@ -86,5 +57,8 @@ export default function PreferencesSuccessState() {
         </button>
       </div>
     </div>
+      <DiamondDivider variant="triangles" count={44} className="pt-12 pb-6" />
+    </div>
+    
   );
 }

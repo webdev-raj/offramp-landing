@@ -124,14 +124,14 @@ export default function Step4Review({ data, onEdit }) {
             </button>
           </div>
           <ReviewRow
-            label="Diet Style"
-            value={resolveLabel(dietaryStyle, DIETARY_STYLES)}
-            accent="#E0187A"
-          />
-          <ReviewRow
             label="Allergies"
             value={allergies.map((id) => resolveLabel(id, ALLERGY_OPTIONS))}
             accent="#CB5638"
+          />
+           <ReviewRow
+            label="Transition"
+            value={resolveLabel(transitionPath, TRANSITION_PATH_OPTIONS)}
+            accent="#6C5CE7"
           />
         </div>
 
@@ -157,11 +157,7 @@ export default function Step4Review({ data, onEdit }) {
             value={resolveLabel(budgetLevel, BUDGET_OPTIONS)}
             accent="#1B7042"
           />
-          <ReviewRow
-            label="Transition"
-            value={resolveLabel(transitionPath, TRANSITION_PATH_OPTIONS)}
-            accent="#6C5CE7"
-          />
+         
         </div>
       </div>
 

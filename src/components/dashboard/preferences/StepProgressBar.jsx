@@ -89,7 +89,7 @@ export default function StepProgressBar({ currentStep }) {
       </div>
 
       {/* ── Step Eyebrow + Heading + Subtext ────────────────────────── */}
-      <div className="mb-6">
+      <div className="mb-6 pt-6">
         <p className="font-jetbrains font-extrabold text-[11px] tracking-[0.25em] uppercase text-[#1B3589] mb-1.5">
           {details.eyebrow}
         </p>
