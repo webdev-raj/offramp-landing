@@ -2,38 +2,89 @@
 
 import { REGION_OPTIONS, CUISINE_OPTIONS } from "@/lib/api/dashboard";
 
-function OptionChip({ option, selected, onToggle, accentColor = "#1B3589" }) {
+// ─── Region Row ────────────────────────────────────────────────────────────────
+function RegionRow({ option, selected, onSelect }) {
   const isDisabled = !option.available;
+
+  if (isDisabled) {
+    return (
+      <div className="flex items-center gap-2.5 px-4 py-3 rounded-xl border border-dashed border-[#D6C99A] bg-transparent opacity-50 cursor-not-allowed select-none">
+        <span className="text-[#9A8E6E] text-[11px]">⊘</span>
+        <span className="font-dmsans text-sm text-[#9A8E6E]">{option.label}</span>
+      </div>
+    );
+  }
 
   return (
     <button
       type="button"
-      disabled={isDisabled}
-      onClick={() => !isDisabled && onToggle(option.id)}
-      className={`relative inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 font-jetbrains font-extrabold text-[11px] tracking-wider uppercase transition-all cursor-pointer select-none ${
-        isDisabled
-          ? "border-[#E8DCC4] bg-[#FAF7F0] text-[#C4B89A] cursor-not-allowed"
-          : selected
-          ? "border-current text-white shadow-md scale-[1.02]"
-          : "border-[#E8DCC4] bg-white text-[#4A4A5A] hover:border-[#1B3589]/40 hover:bg-[#F5F3FF]"
+      onClick={() => onSelect(option.id)}
+      className={`w-full flex items-center gap-2.5 px-4 py-3 rounded-xl border-2 transition-all cursor-pointer select-none text-left ${
+        selected
+          ? "bg-[#1B3589] border-[#1B3589] text-white shadow-md"
+          : "bg-white border-[#E8DCC4] text-[#2E2E3A] hover:border-[#1B3589]/40 hover:bg-[#F0F3FF]"
       }`}
-      style={selected && !isDisabled ? { backgroundColor: accentColor, borderColor: accentColor } : {}}
     >
-      {option.label}
-      {isDisabled && (
-        <span className="font-jetbrains text-[9px] tracking-wider text-[#C4B89A] normal-case font-normal ml-1">
-          soon
-        </span>
-      )}
-      {selected && !isDisabled && (
-        <svg className="w-3 h-3 shrink-0" viewBox="0 0 12 12" fill="none">
-          <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      {selected && (
+        <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       )}
+      <span className="font-dmsans font-medium text-sm">{option.label}</span>
     </button>
   );
 }
 
+// ─── Cuisine Chip ──────────────────────────────────────────────────────────────
+function CuisineChip({ option, selected, onToggle }) {
+  const isDisabled = !option.available;
+
+  if (isDisabled) {
+    return (
+      <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-dashed border-[#D6C99A] text-[#9A8E6E] opacity-50 cursor-not-allowed select-none font-dmsans text-xs">
+        <span className="text-[10px]">⊘</span>
+        {option.label}
+      </span>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => onToggle(option.id)}
+      className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border-2 font-dmsans font-medium text-sm transition-all cursor-pointer select-none ${
+        selected
+          ? "bg-[#F5AE38] border-[#F5AE38] text-[#1E1E1E] shadow-sm"
+          : "bg-white border-[#D6C99A] text-[#2E2E3A] hover:border-[#F5AE38]/60 hover:bg-[#FEF9EC]"
+      }`}
+    >
+      {selected && (
+        <svg className="w-3 h-3 shrink-0" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )}
+      {option.label}
+    </button>
+  );
+}
+
+// ─── Coming Soon Divider ───────────────────────────────────────────────────────
+function ComingSoonDivider() {
+  return (
+    <div className="flex items-center gap-2 my-3">
+      <svg className="w-3.5 h-3.5 text-[#C4A95A] shrink-0" viewBox="0 0 16 16" fill="none">
+        <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M8 5v3l2 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      <span className="font-jetbrains text-[10px] font-bold tracking-[0.18em] uppercase text-[#C4A95A]">
+        Coming Soon
+      </span>
+      <div className="flex-1 h-px bg-[#E8DCC4]" />
+    </div>
+  );
+}
+
+// ─── Main Component ────────────────────────────────────────────────────────────
 export default function Step1Cuisines({ data, onChange }) {
   const { region, preferredCuisines = [] } = data;
 
@@ -48,59 +99,89 @@ export default function Step1Cuisines({ data, onChange }) {
     onChange({ region: id });
   }
 
+  const availableRegions = REGION_OPTIONS.filter((o) => o.available);
+  const disabledRegions = REGION_OPTIONS.filter((o) => !o.available);
+  const availableCuisines = CUISINE_OPTIONS.filter((o) => o.available);
+  const disabledCuisines = CUISINE_OPTIONS.filter((o) => !o.available);
+
   return (
-    <div className="space-y-8">
-      {/* ── Region ──────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-2xl p-6 border border-[#E8DCC4]/60 shadow-sm">
-        <div className="flex items-center gap-2 mb-4">
-          <span className="w-1.5 h-6 rounded-full bg-[#1B3589]" />
-          <p className="font-jetbrains font-extrabold text-[11px] tracking-[0.2em] uppercase text-[#1B3589]">
-            SELECT YOUR REGION
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          {REGION_OPTIONS.map((opt) => (
-            <OptionChip
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* ── Left: Region Panel ──────────────────────────────────────────── */}
+      <div className="bg-white rounded-2xl p-5 border border-[#E8DCC4]/70 shadow-sm">
+        {/* Panel Header */}
+        <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#8A8070] mb-4">
+          Region
+        </p>
+
+        {/* Available Regions */}
+        <div className="flex flex-col gap-2">
+          {availableRegions.map((opt) => (
+            <RegionRow
               key={opt.id}
               option={opt}
               selected={region === opt.id}
-              onToggle={selectRegion}
-              accentColor="#1B3589"
+              onSelect={selectRegion}
             />
           ))}
         </div>
+
+        {/* Coming Soon divider */}
+        {disabledRegions.length > 0 && <ComingSoonDivider />}
+
+        {/* Disabled Regions */}
+        {disabledRegions.length > 0 && (
+          <div className="flex flex-col gap-2">
+            {disabledRegions.map((opt) => (
+              <RegionRow
+                key={opt.id}
+                option={opt}
+                selected={false}
+                onSelect={() => {}}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* ── Cuisines ─────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-2xl p-6 border border-[#E8DCC4]/60 shadow-sm">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-6 rounded-full bg-[#E0187A]" />
-            <p className="font-jetbrains font-extrabold text-[11px] tracking-[0.2em] uppercase text-[#E0187A]">
-              PREFERRED CUISINES
-            </p>
-          </div>
-          {preferredCuisines.length > 0 && (
-            <span className="font-jetbrains font-bold text-[10px] tracking-wider text-[#1B3589] bg-[#1B3589]/10 px-2.5 py-1 rounded-full">
-              {preferredCuisines.length} selected
-            </span>
-          )}
+      {/* ── Right: Preferred Cuisines Panel ────────────────────────────── */}
+      <div className="bg-white rounded-2xl p-5 border border-[#E8DCC4]/70 shadow-sm">
+        {/* Panel Header */}
+        <div className="flex items-center gap-2 mb-4">
+          <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#8A8070]">
+            Preferred Cuisines
+          </p>
+          <span className="font-jetbrains text-[9px] tracking-wider text-[#B0A484] normal-case">
+            optional
+          </span>
         </div>
-        <div className="flex flex-wrap gap-3">
-          {CUISINE_OPTIONS.map((opt) => (
-            <OptionChip
+
+        {/* Available Cuisines */}
+        <div className="flex flex-wrap gap-2">
+          {availableCuisines.map((opt) => (
+            <CuisineChip
               key={opt.id}
               option={opt}
               selected={preferredCuisines.includes(opt.id)}
               onToggle={toggleCuisine}
-              accentColor="#E0187A"
             />
           ))}
         </div>
-        {preferredCuisines.length === 0 && (
-          <p className="mt-3 font-dmsans text-xs text-[#9A9AAA] italic">
-            Select at least one cuisine to continue.
-          </p>
+
+        {/* Coming Soon divider */}
+        {disabledCuisines.length > 0 && <ComingSoonDivider />}
+
+        {/* Disabled Cuisines */}
+        {disabledCuisines.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {disabledCuisines.map((opt) => (
+              <CuisineChip
+                key={opt.id}
+                option={opt}
+                selected={false}
+                onToggle={() => {}}
+              />
+            ))}
+          </div>
         )}
       </div>
     </div>
