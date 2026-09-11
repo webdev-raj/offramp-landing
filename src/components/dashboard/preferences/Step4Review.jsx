@@ -8,176 +8,180 @@ import {
   TRANSITION_PATH_OPTIONS,
 } from "@/lib/api/dashboard";
 
-const DIETARY_STYLES = [
-  { id: "vegetarian", label: "Vegetarian" },
-  { id: "vegan", label: "Vegan" },
-  { id: "jain", label: "Jain" },
-  { id: "keto", label: "Keto / Low-carb" },
-  { id: "gluten-free", label: "Gluten-Free" },
-  { id: "no-restriction", label: "No Restriction" },
-];
-
-function ReviewRow({ label, value, accent = "#1B3589" }) {
-  return (
-    <div className="flex items-start justify-between gap-4 py-3.5 border-b border-[#F0EAD6] last:border-0">
-      <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#9A9AAA] shrink-0 mt-0.5">
-        {label}
-      </p>
-      <div className="flex flex-wrap gap-2 justify-end">
-        {Array.isArray(value) ? (
-          value.length > 0 ? (
-            value.map((v) => (
-              <span
-                key={v}
-                className="font-jetbrains font-bold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-lg"
-                style={{ backgroundColor: `${accent}15`, color: accent }}
-              >
-                {v}
-              </span>
-            ))
-          ) : (
-            <span className="font-dmsans text-xs text-[#9A9AAA] italic">Not set</span>
-          )
-        ) : value ? (
-          <span
-            className="font-jetbrains font-bold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-lg"
-            style={{ backgroundColor: `${accent}15`, color: accent }}
-          >
-            {value}
-          </span>
-        ) : (
-          <span className="font-dmsans text-xs text-[#9A9AAA] italic">Not set</span>
-        )}
-      </div>
-    </div>
-  );
-}
-
 function resolveLabel(id, options) {
   return options.find((o) => o.id === id)?.label || id;
 }
 
-export default function Step4Review({ data, onEdit }) {
+export default function Step4Review({ data, onEdit, onSave, saving }) {
   const {
     region,
     preferredCuisines = [],
-    dietaryStyle,
     allergies = [],
     budgetLevel,
     transitionPath,
   } = data;
 
+  const budgetOption = BUDGET_OPTIONS.find((o) => o.id === budgetLevel);
+
   return (
-    <div className="space-y-6">
-      {/* ── Summary Cards ──────────────────────────────────────────── */}
-      <div className="bg-white rounded-2xl p-6 border border-[#E8DCC4]/60 shadow-sm">
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-6 rounded-full bg-[#F5AE38]" />
-            <p className="font-jetbrains font-extrabold text-[11px] tracking-[0.2em] uppercase text-[#F5AE38]">
-              YOUR PREFERENCES SUMMARY
-            </p>
-          </div>
+    <div className="space-y-4">
+      {/* ── Cuisines Card (full-width) ──────────────────────────────── */}
+      <div className="bg-white rounded-2xl p-5 border border-[#E8DCC4]/70 shadow-sm">
+        <div className="flex items-center justify-between mb-3">
+          <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#1B7042]">
+            Your Cuisines
+          </p>
+          <button
+            type="button"
+            onClick={() => onEdit(1)}
+            className="font-jetbrains font-bold text-[10px] tracking-wider uppercase text-[#4A4A5A] hover:text-[#1B3589] cursor-pointer transition-colors"
+          >
+            Edit
+          </button>
         </div>
 
-        {/* Step 1 */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-2">
-            <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#1B3589]">
-              Step 1 — Cuisines
-            </p>
-            <button
-              type="button"
-              onClick={() => onEdit(1)}
-              className="font-jetbrains font-bold text-[10px] tracking-wider uppercase text-[#E0187A] hover:underline cursor-pointer"
-            >
-              Edit →
-            </button>
-          </div>
-          <ReviewRow
-            label="Region"
-            value={resolveLabel(region, REGION_OPTIONS)}
-            accent="#1B3589"
-          />
-          <ReviewRow
-            label="Cuisines"
-            value={preferredCuisines.map((id) => resolveLabel(id, CUISINE_OPTIONS))}
-            accent="#E0187A"
-          />
+        {/* Region */}
+        <p className="font-montserrat-bold font-black text-xl tracking-tight text-[#1E1E1E] mb-3">
+          {resolveLabel(region, REGION_OPTIONS).toUpperCase()}
+        </p>
+
+        {/* Cuisine pills */}
+        <div className="flex flex-wrap gap-2">
+          {preferredCuisines.length > 0 ? (
+            preferredCuisines.map((id) => (
+              <span
+                key={id}
+                className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#D6C99A] font-dmsans text-sm text-[#2E2E3A]"
+              >
+                {resolveLabel(id, CUISINE_OPTIONS)}
+              </span>
+            ))
+          ) : (
+            <span className="font-dmsans text-xs text-[#9A9AAA] italic">
+              No cuisines selected
+            </span>
+          )}
         </div>
+      </div>
 
-        {/* Divider */}
-        <div className="w-full h-px bg-[#F0EAD6] mb-6" />
-
-        {/* Step 2 */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-2">
-            <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#E0187A]">
-              Step 2 — Constraints
+      {/* ── Constraints + Budget (side-by-side) ────────────────────── */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Constraints */}
+        <div className="bg-white rounded-2xl p-5 border border-[#E8DCC4]/70 shadow-sm">
+          <div className="flex items-center justify-between mb-3">
+            <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#1B7042]">
+              Your Constraints
             </p>
             <button
               type="button"
               onClick={() => onEdit(2)}
-              className="font-jetbrains font-bold text-[10px] tracking-wider uppercase text-[#E0187A] hover:underline cursor-pointer"
+              className="font-jetbrains font-bold text-[10px] tracking-wider uppercase text-[#4A4A5A] hover:text-[#1B3589] cursor-pointer transition-colors"
             >
-              Edit →
+              Edit
             </button>
           </div>
-          <ReviewRow
-            label="Allergies"
-            value={allergies.map((id) => resolveLabel(id, ALLERGY_OPTIONS))}
-            accent="#CB5638"
-          />
-           <ReviewRow
-            label="Transition"
-            value={resolveLabel(transitionPath, TRANSITION_PATH_OPTIONS)}
-            accent="#6C5CE7"
-          />
+
+          {/* Allergies */}
+          <p className="font-dmsans text-sm text-[#2E2E3A] mb-2">
+            {allergies.length > 0
+              ? allergies
+                  .map((id) => resolveLabel(id, ALLERGY_OPTIONS))
+                  .join(", ")
+              : "None selected"}
+          </p>
+
+          {/* Transition path */}
+          <p className="font-jetbrains text-[10px] tracking-wider text-[#8A8070]">
+            Transition:{" "}
+            <span className="text-[#5A5A6A]">
+              {transitionPath
+                ? resolveLabel(transitionPath, TRANSITION_PATH_OPTIONS).toLowerCase()
+                : "not set"}
+            </span>
+          </p>
         </div>
 
-        {/* Divider */}
-        <div className="w-full h-px bg-[#F0EAD6] mb-6" />
-
-        {/* Step 3 */}
-        <div>
-          <div className="flex items-center justify-between mb-2">
+        {/* Budget */}
+        <div className="bg-white rounded-2xl p-5 border border-[#E8DCC4]/70 shadow-sm">
+          <div className="flex items-center justify-between mb-3">
             <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#1B7042]">
-              Step 3 — Budget
+              Your Budget
             </p>
             <button
               type="button"
               onClick={() => onEdit(3)}
-              className="font-jetbrains font-bold text-[10px] tracking-wider uppercase text-[#E0187A] hover:underline cursor-pointer"
+              className="font-jetbrains font-bold text-[10px] tracking-wider uppercase text-[#4A4A5A] hover:text-[#1B3589] cursor-pointer transition-colors"
             >
-              Edit →
+              Edit
             </button>
           </div>
-          <ReviewRow
-            label="Budget"
-            value={resolveLabel(budgetLevel, BUDGET_OPTIONS)}
-            accent="#1B7042"
-          />
-         
+
+          {/* Budget level name */}
+          <p
+            className="font-jetbrains font-extrabold text-lg tracking-wider uppercase mb-1"
+            style={{ color: budgetOption?.color || "#1E1E1E" }}
+          >
+            {budgetOption?.label || "Not set"}
+          </p>
+
+          {/* Description */}
+          <p className="font-dmsans text-sm text-[#7A7A8A]">
+            {budgetOption?.description || ""}
+          </p>
         </div>
       </div>
 
-      {/* ── Confirmation Notice ────────────────────────────────────── */}
-      <div className="flex items-start gap-3 px-5 py-4 rounded-xl bg-[#1B3589]/5 border border-[#1B3589]/15">
-        <div className="w-5 h-5 rounded-full bg-[#1B3589] flex items-center justify-center shrink-0 mt-0.5">
-          <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none">
-            <path
-              d="M6 2v4l2.5 1.5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
+      {/* ── Green Save CTA Banner ─────────────────────────────────── */}
+      <button
+        type="button"
+        onClick={onSave}
+        disabled={saving}
+        className="w-full flex items-center gap-4 px-6 py-5 rounded-2xl bg-[#1B7042] hover:bg-[#165E38] text-white cursor-pointer transition-all active:scale-[0.99] shadow-md disabled:opacity-60"
+      >
+        {/* Checkmark circle */}
+        <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+          {saving ? (
+            <svg
+              className="w-4 h-4 animate-spin"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+              />
+            </svg>
+          ) : (
+            <svg className="w-4 h-4" viewBox="0 0 12 12" fill="none">
+              <path
+                d="M2 6l3 3 5-5"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )}
         </div>
-        <p className="font-dmsans text-xs text-[#4A4A5A] leading-relaxed">
-          Once you click <strong>Save Preferences</strong>, our system will begin personalizing
-          your swap recommendations. You can always return here to update them.
-        </p>
-      </div>
+
+        <div className="text-left">
+          <p className="font-jetbrains font-extrabold text-sm tracking-wider uppercase">
+            {saving ? "Saving..." : "Save & Get Swapping"}
+          </p>
+          <p className="font-dmsans text-sm text-white/70 mt-0.5">
+            We&apos;ll personalise your recommendations immediately
+          </p>
+        </div>
+      </button>
     </div>
   );
 }

@@ -121,7 +121,7 @@ export default function PreferencesWizard() {
       case 3:
         return <Step3Budget data={wizardData} onChange={handleChange} />;
       case 4:
-        return <Step4Review data={wizardData} onEdit={handleEditStep} />;
+        return <Step4Review data={wizardData} onEdit={handleEditStep} onSave={handleSave} saving={saving} />;
       default:
         return null;
     }
@@ -142,7 +142,8 @@ export default function PreferencesWizard() {
         </div>
       )}
 
-      {/* ── Navigation Buttons ───────────────────────────────────────── */}
+      {/* ── Navigation Buttons (hidden on step 4 — CTA lives inside Step4Review) */}
+      {step < TOTAL_STEPS && (
       <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#F0EAD6]">
         {/* Back */}
         <button
@@ -158,69 +159,31 @@ export default function PreferencesWizard() {
           Back
         </button>
 
-        {/* Right side: Skip + Next / Save */}
+        {/* Right side: Skip + Next */}
         <div className="flex items-center gap-3">
-          {/* Skip (only on non-final steps) */}
-          {step < TOTAL_STEPS && (
-            <button
-              type="button"
-              onClick={handleNext}
-              className="font-jetbrains font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-xl border-2 border-[#E8DCC4] text-[#7A7A8A] hover:border-[#1B3589]/30 hover:bg-[#F5F3FF] cursor-pointer transition-all active:scale-95"
-            >
-              Skip
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={handleNext}
+            className="font-jetbrains font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-xl border-2 border-[#E8DCC4] text-[#7A7A8A] hover:border-[#1B3589]/30 hover:bg-[#F5F3FF] cursor-pointer transition-all active:scale-95"
+          >
+            Skip
+          </button>
 
-          {/* Next / Save */}
-          {step < TOTAL_STEPS ? (
-            <button
-              type="button"
-              onClick={handleNext}
-              disabled={!canProceed}
-              className={`inline-flex items-center gap-2 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-6 py-3 rounded-xl border-2 transition-all ${canProceed
-                  ? "bg-[#1B3589] border-[#1B3589] text-white hover:bg-[#162B72] cursor-pointer shadow-md active:scale-95"
-                  : "bg-[#E8DCC4]/50 border-[#E8DCC4] text-[#C4B89A] cursor-not-allowed"
-                }`}
-            >
-              Next
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={handleSave}
-              disabled={saving}
-              className="inline-flex items-center gap-2 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-6 py-3 rounded-xl border-2 bg-[#1B7042] border-[#1B7042] text-white hover:bg-[#165E38] cursor-pointer shadow-md active:scale-95 transition-all disabled:opacity-60"
-            >
-              {saving ? (
-                <>
-                  <svg className="w-3.5 h-3.5 animate-spin" viewBox="0 0 24 24" fill="none">
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    />
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-                    />
-                  </svg>
-                  Saving...
-                </>
-              ) : (
-                <>
-                  <Save className="w-3.5 h-3.5" />
-                  Save Preferences
-                </>
-              )}
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={handleNext}
+            disabled={!canProceed}
+            className={`inline-flex items-center gap-2 font-jetbrains font-extrabold text-xs tracking-wider uppercase px-6 py-3 rounded-xl border-2 transition-all ${canProceed
+                ? "bg-[#1B3589] border-[#1B3589] text-white hover:bg-[#162B72] cursor-pointer shadow-md active:scale-95"
+                : "bg-[#E8DCC4]/50 border-[#E8DCC4] text-[#C4B89A] cursor-not-allowed"
+              }`}
+          >
+            Next
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
         </div>
       </div>
+      )}
     </div>
   );
 }
