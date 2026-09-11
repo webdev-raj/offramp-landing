@@ -30,6 +30,7 @@ const MOCK_SWAP_HISTORY = [
     daysAgo: "2d ago",
     rating: 5,
     accentColor: "#E0187A",
+    dietTag: "PLANT-FORWARD",
   },
   {
     id: "swap_002",
@@ -39,6 +40,7 @@ const MOCK_SWAP_HISTORY = [
     date: "21/2/2026",
     rating: 4,
     accentColor: "#2542A5",
+    dietTag: "PLANT-FORWARD",
   },
   {
     id: "swap_003",
@@ -48,6 +50,7 @@ const MOCK_SWAP_HISTORY = [
     date: "21/2/2026",
     rating: 5,
     accentColor: "#1B7042",
+    dietTag: "PLANT-FORWARD",
   },
   {
     id: "swap_004",
@@ -57,6 +60,7 @@ const MOCK_SWAP_HISTORY = [
     date: "18/2/2026",
     rating: 4,
     accentColor: "#CB5638",
+    dietTag: "HIGH-PROTEIN",
   },
   {
     id: "swap_005",
@@ -66,6 +70,7 @@ const MOCK_SWAP_HISTORY = [
     date: "15/2/2026",
     rating: 5,
     accentColor: "#F5AE38",
+    dietTag: "LOW-GI",
   },
 ];
 
