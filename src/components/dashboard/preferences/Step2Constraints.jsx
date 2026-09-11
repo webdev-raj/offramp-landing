@@ -1,6 +1,6 @@
 "use client";
 
-import { ALLERGY_OPTIONS,TRANSITION_PATH_OPTIONS } from "@/lib/api/dashboard";
+import { ALLERGY_OPTIONS, TRANSITION_PATH_OPTIONS } from "@/lib/api/dashboard";
 
 // const DIETARY_STYLES = [
 //   { id: "vegetarian", label: "Vegetarian", icon: "🥦", color: "#1B7042" },
@@ -11,6 +11,107 @@ import { ALLERGY_OPTIONS,TRANSITION_PATH_OPTIONS } from "@/lib/api/dashboard";
 //   { id: "no-restriction", label: "No Restriction", icon: "✨", color: "#6C5CE7" },
 // ];
 
+// ─── Coming Soon Divider ───────────────────────────────────────────────────────
+function ComingSoonDivider() {
+  return (
+    <div className="flex items-center gap-2 my-3">
+      <svg className="w-3.5 h-3.5 text-[#C4A95A] shrink-0" viewBox="0 0 16 16" fill="none">
+        <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5" />
+        <path
+          d="M8 5v3l2 1.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <span className="font-jetbrains text-[10px] font-bold tracking-[0.18em] uppercase text-[#C4A95A]">
+        Coming Soon
+      </span>
+      <div className="flex-1 h-px bg-[#E8DCC4]" />
+    </div>
+  );
+}
+
+// ─── Allergy Chip ──────────────────────────────────────────────────────────────
+function AllergyChip({ option, selected, onToggle }) {
+  const isDisabled = !option.available;
+
+  if (isDisabled) {
+    return (
+      <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-dashed border-[#D6C99A] text-[#9A8E6E] opacity-50 cursor-not-allowed select-none font-dmsans text-xs">
+        <span className="text-[10px]">⊘</span>
+        {option.label}
+      </span>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => onToggle(option.id)}
+      className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border-2 font-dmsans font-medium text-sm transition-all cursor-pointer select-none ${
+        selected
+          ? "bg-[#CB3A6B] border-[#CB3A6B] text-white shadow-sm"
+          : "bg-white border-[#D6C99A] text-[#2E2E3A] hover:border-[#CB3A6B]/50 hover:bg-[#FFF0F5]"
+      }`}
+    >
+      {selected && (
+        <svg className="w-3 h-3 shrink-0" viewBox="0 0 12 12" fill="none">
+          <path
+            d="M2 6l3 3 5-5"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      )}
+      {option.label}
+    </button>
+  );
+}
+
+// ─── Transition Path Chip ──────────────────────────────────────────────────────
+function TransitionChip({ option, selected, onSelect }) {
+  const isDisabled = !option.available;
+
+  if (isDisabled) {
+    return (
+      <span className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-dashed border-[#D6C99A] text-[#9A8E6E] opacity-50 cursor-not-allowed select-none font-dmsans text-sm">
+        <span className="text-[10px]">⊘</span>
+        {option.label}
+      </span>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(option.id)}
+      className={`inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border-2 font-dmsans font-medium text-sm transition-all cursor-pointer select-none ${
+        selected
+          ? "bg-[#CB5638] border-[#CB5638] text-white shadow-sm"
+          : "bg-white border-[#D6C99A] text-[#2E2E3A] hover:border-[#CB5638]/50 hover:bg-[#FFF4F0]"
+      }`}
+    >
+      {selected && (
+        <svg className="w-3 h-3 shrink-0" viewBox="0 0 12 12" fill="none">
+          <path
+            d="M2 6l3 3 5-5"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      )}
+      {option.label}
+    </button>
+  );
+}
+
+// ─── Main Component ────────────────────────────────────────────────────────────
 export default function Step2Constraints({ data, onChange }) {
   const { transitionPath, allergies = [] } = data;
 
@@ -25,154 +126,87 @@ export default function Step2Constraints({ data, onChange }) {
     onChange({ allergies: next });
   }
 
-  return (
-    <div className="space-y-8">
-      {/* ── Dietary Style ─────────────────────────────────────────── */}
-      {/* <div className="bg-white rounded-2xl p-6 border border-[#E8DCC4]/60 shadow-sm">
-        <div className="flex items-center gap-2 mb-5">
-          <span className="w-1.5 h-6 rounded-full bg-[#E0187A]" />
-          <p className="font-jetbrains font-extrabold text-[11px] tracking-[0.2em] uppercase text-[#E0187A]">
-            DIETARY STYLE
-          </p>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {DIETARY_STYLES.map((style) => {
-            const isSelected = dietaryStyle === style.id;
-            return (
-              <button
-                key={style.id}
-                type="button"
-                onClick={() => selectDiet(style.id)}
-                className={`flex flex-col items-start gap-2 p-4 rounded-xl border-2 transition-all text-left cursor-pointer ${
-                  isSelected
-                    ? "shadow-md scale-[1.02]"
-                    : "border-[#E8DCC4] bg-white hover:border-[#E0187A]/30 hover:bg-[#FFF5F9]"
-                }`}
-                style={
-                  isSelected
-                    ? {
-                        borderColor: style.color,
-                        backgroundColor: `${style.color}12`,
-                      }
-                    : {}
-                }
-              >
-                <span className="text-xl">{style.icon}</span>
-                <span
-                  className="font-jetbrains font-extrabold text-[11px] tracking-wider uppercase"
-                  style={{ color: isSelected ? style.color : "#4A4A5A" }}
-                >
-                  {style.label}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      </div> */}
+  const availableAllergies = ALLERGY_OPTIONS.filter((o) => o.available);
+  const disabledAllergies = ALLERGY_OPTIONS.filter((o) => !o.available);
+  const availableTransitions = TRANSITION_PATH_OPTIONS.filter((o) => o.available);
+  const disabledTransitions = TRANSITION_PATH_OPTIONS.filter((o) => !o.available);
 
-      {/* ── Allergies / Intolerances ──────────────────────────────── */}
-      <div className="bg-white rounded-2xl p-6 border border-[#E8DCC4]/60 shadow-sm">
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-6 rounded-full bg-[#CB5638]" />
-            <p className="font-jetbrains font-extrabold text-[11px] tracking-[0.2em] uppercase text-[#CB5638]">
-              ALLERGIES & INTOLERANCES
-            </p>
-          </div>
-          {allergies.length > 0 && (
-            <span className="font-jetbrains font-bold text-[10px] tracking-wider text-[#CB5638] bg-[#CB5638]/10 px-2.5 py-1 rounded-full">
-              {allergies.length} flagged
-            </span>
-          )}
-        </div>
-        <div className="flex flex-wrap gap-3">
-          {ALLERGY_OPTIONS.map((opt) => {
-            const isDisabled = !opt.available;
-            const isSelected = allergies.includes(opt.id);
-            return (
-              <button
-                key={opt.id}
-                type="button"
-                disabled={isDisabled}
-                onClick={() => !isDisabled && toggleAllergy(opt.id)}
-                className={`inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border-2 font-jetbrains font-extrabold text-[11px] tracking-wider uppercase transition-all ${
-                  isDisabled
-                    ? "border-[#E8DCC4] bg-[#FAF7F0] text-[#C4B89A] cursor-not-allowed"
-                    : isSelected
-                    ? "bg-[#CB5638] border-[#CB5638] text-white shadow-md scale-[1.02]"
-                    : "border-[#E8DCC4] bg-white text-[#4A4A5A] hover:border-[#CB5638]/40 hover:bg-[#FFF4F1] cursor-pointer"
-                }`}
-              >
-                {opt.label}
-                {isDisabled && (
-                  <span className="font-normal text-[9px] normal-case text-[#C4B89A] ml-1">soon</span>
-                )}
-              </button>
-            );
-          })}
-        </div>
-        <p className="mt-4 font-dmsans text-xs text-[#9A9AAA]">
-          We&apos;ll never recommend swaps containing these ingredients.
+  return (
+    <div className="space-y-4">
+      {/* ── Allergies Panel ────────────────────────────────────────── */}
+      <div className="bg-white rounded-2xl p-5 border border-[#E8DCC4]/70 shadow-sm">
+        {/* Header */}
+        <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#8A8070] mb-1">
+          Allergies
         </p>
+        <p className="font-dmsans text-sm text-[#5A5A6A] mb-4">
+          Help us avoid recommending dishes you can&apos;t eat.
+        </p>
+
+        {/* Available allergy chips */}
+        <div className="flex flex-wrap gap-2">
+          {availableAllergies.map((opt) => (
+            <AllergyChip
+              key={opt.id}
+              option={opt}
+              selected={allergies.includes(opt.id)}
+              onToggle={toggleAllergy}
+            />
+          ))}
+        </div>
+
+        {/* Coming Soon divider + disabled chips */}
+        {disabledAllergies.length > 0 && <ComingSoonDivider />}
+        {disabledAllergies.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {disabledAllergies.map((opt) => (
+              <AllergyChip
+                key={opt.id}
+                option={opt}
+                selected={false}
+                onToggle={() => {}}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
-      <div className="bg-white rounded-2xl p-6 border border-[#E8DCC4]/60 shadow-sm">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="w-1.5 h-6 rounded-full bg-[#6C5CE7]" />
-          <p className="font-jetbrains font-extrabold text-[11px] tracking-[0.2em] uppercase text-[#6C5CE7]">
-            TRANSITION PATH
-          </p>
-        </div>
-        <p className="font-dmsans text-xs text-[#9A9AAA] mb-5 ml-4">
-          The dietary journey you&apos;re currently on.
+      {/* ── Diet Transition Path Panel ─────────────────────────────── */}
+      <div className="bg-white rounded-2xl p-5 border border-[#E8DCC4]/70 shadow-sm">
+        {/* Header */}
+        <p className="font-jetbrains font-extrabold text-[10px] tracking-[0.2em] uppercase text-[#8A8070] mb-1">
+          Diet Transition Path
+        </p>
+        <p className="font-dmsans text-sm text-[#5A5A6A] mb-4">
+          Where do you want to go?
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {TRANSITION_PATH_OPTIONS.map((opt) => {
-            const isDisabled = !opt.available;
-            const isSelected = transitionPath === opt.id;
-            return (
-              <button
-                key={opt.id}
-                type="button"
-                disabled={isDisabled}
-                onClick={() => !isDisabled && onChange({ transitionPath: opt.id })}
-                className={`flex items-center justify-between px-5 py-3.5 rounded-xl border-2 font-jetbrains font-extrabold text-xs tracking-wider uppercase transition-all ${
-                  isDisabled
-                    ? "border-[#E8DCC4] bg-[#FAF7F0] text-[#C4B89A] cursor-not-allowed"
-                    : isSelected
-                    ? "bg-[#6C5CE7] border-[#6C5CE7] text-white shadow-md"
-                    : "border-[#E8DCC4] bg-white text-[#4A4A5A] hover:border-[#6C5CE7]/40 hover:bg-[#F5F3FF] cursor-pointer"
-                }`}
-              >
-                <span>{opt.label}</span>
-                {isDisabled ? (
-                  <span className="font-normal text-[9px] normal-case text-[#C4B89A]">soon</span>
-                ) : isSelected ? (
-                  <svg className="w-3.5 h-3.5" viewBox="0 0 12 12" fill="none">
-                    <path
-                      d="M2 6l3 3 5-5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                ) : (
-                  <svg className="w-3.5 h-3.5 text-[#C4B89A]" viewBox="0 0 12 12" fill="none">
-                    <path
-                      d="M4 2l4 4-4 4"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                )}
-              </button>
-            );
-          })}
+        {/* Available transition chips */}
+        <div className="flex flex-wrap gap-2">
+          {availableTransitions.map((opt) => (
+            <TransitionChip
+              key={opt.id}
+              option={opt}
+              selected={transitionPath === opt.id}
+              onSelect={(id) => onChange({ transitionPath: id })}
+            />
+          ))}
         </div>
+
+        {/* Coming Soon divider + disabled chips */}
+        {disabledTransitions.length > 0 && <ComingSoonDivider />}
+        {disabledTransitions.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {disabledTransitions.map((opt) => (
+              <TransitionChip
+                key={opt.id}
+                option={opt}
+                selected={false}
+                onSelect={() => {}}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
