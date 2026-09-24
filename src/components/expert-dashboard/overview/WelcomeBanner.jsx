@@ -27,7 +27,7 @@ export default function WelcomeBanner({ expert, loading }) {
       : `${queries} open queries`;
 
   return (
-    <div className="relative rounded-2xl bg-[#DC346B] p-7 sm:p-9 mb-6 overflow-hidden">
+    <div className="relative bg-[#DC346B] p-7 sm:p-9 mb-6 overflow-hidden">
       {/* Decorative soft circles (purely decorative, match mockup) */}
       <div className="absolute -right-10 -top-10 w-52 h-52 rounded-full bg-white/10 pointer-events-none" />
       <div className="absolute -right-4 top-10 w-32 h-32 rounded-full bg-white/5 pointer-events-none" />

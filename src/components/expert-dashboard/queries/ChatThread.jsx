@@ -88,8 +88,8 @@ export default function ChatThread({
               {isScheduled && conversation.scheduledSession
                 ? `Session: ${conversation.scheduledSession.date}, ${conversation.scheduledSession.time}`
                 : isAnswered
-                ? "Query answered"
-                : "Awaiting your response"}
+                  ? "Query answered"
+                  : "Awaiting your response"}
             </p>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function ChatThread({
 
               <div className="flex items-start justify-end gap-2.5 w-full">
                 {/* Navy Expert Message Bubble */}
-                <div className="bg-[#1B2264] text-white rounded-2xl rounded-tr-xs p-4 sm:p-5 text-xs sm:text-sm leading-relaxed shadow-sm max-w-lg">
+                <div className="bg-[#1B3589] text-white rounded-2xl rounded-tr-xs p-4 sm:p-5 text-xs sm:text-sm leading-relaxed shadow-sm max-w-lg">
                   {msg.text}
                 </div>
 
@@ -188,7 +188,7 @@ export default function ChatThread({
         {/* Scheduled Session Confirmation Banner (Inline) */}
         {isScheduled && conversation.scheduledSession && (
           <div className="my-3">
-            <div className="border-2 border-[#1B7042] bg-white rounded-xl p-3.5 flex items-center justify-center gap-2 text-xs sm:text-sm font-jetbrains font-bold text-[#1B7042] shadow-xs max-w-md mx-auto">
+            <div className="border-2 border-[#1B7042] bg-white p-3.5 flex items-center justify-center gap-2 text-xs sm:text-sm font-jetbrains font-bold text-[#1B7042] shadow-xs max-w-md mx-auto">
               <Calendar className="w-4 h-4 text-[#1B7042]" />
               <span>
                 Session confirmed &ndash; {conversation.scheduledSession.date},{" "}

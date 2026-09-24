@@ -82,7 +82,7 @@ export default function ConversationList({
               >
                 {/* User Avatar with Pink border if unread */}
                 <div
-                  className={`relative w-11 h-11 rounded-sm overflow-hidden bg-[#E8DCC4] shrink-0 border-2 ${
+                  className={`relative w-11 h-11 overflow-hidden bg-[#E8DCC4] shrink-0 border-3 ${
                     hasUnread ? "border-[#E0187A]" : "border-[#E8DCC4]"
                   }`}
                 >

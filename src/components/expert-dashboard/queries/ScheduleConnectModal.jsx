@@ -7,7 +7,6 @@ import { X, Check } from "lucide-react";
 const DATE_OPTIONS = [
   { label: "Today", value: "Today" },
   { label: "Tomorrow", value: "Tomorrow" },
-  { label: "Wed, 10 Sep", value: "Wed, 10 Sep" },
 ];
 
 const TIME_OPTIONS = [
@@ -45,11 +44,11 @@ export default function ScheduleConnectModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-      <div className="bg-[#FFFDF5] border border-[#E8DCC4] rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div className="bg-[#FFFDF5] border border-[#E8DCC4] shadow-2xl w-full max-w-sm overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         {/* ── Modal Header ────────────────────────────────────────── */}
         <div className="p-5 flex items-center justify-between border-b border-[#E8DCC4]">
           <div className="flex items-center gap-3">
-            <div className="relative w-9 h-9 rounded-sm overflow-hidden bg-[#E8DCC4] shrink-0 border border-[#F5AE38]">
+            <div className="relative w-12 h-12 overflow-hidden bg-[#E8DCC4] shrink-0 border-2 border-[#F5AE38]">
               <Image
                 src={conversation.avatarUrl}
                 alt={conversation.userName}
@@ -71,7 +70,7 @@ export default function ScheduleConnectModal({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#8C827A] hover:text-[#1E1E1E] hover:bg-black/5 transition-colors"
+            className="p-1.5 text-[#8C827A] hover:text-[#1E1E1E] hover:bg-black/5 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -79,9 +78,9 @@ export default function ScheduleConnectModal({
 
         {/* ── Two-Column Picker Table ─────────────────────────────── */}
         <div className="p-5">
-          <div className="border border-[#EADFC7] rounded-xl overflow-hidden bg-white mb-4">
+          <div className="border border-[#EADFC7] overflow-hidden bg-white mb-4">
             {/* Table Header */}
-            <div className="grid grid-cols-2 bg-[#FFF5DB] border-b border-[#EADFC7] py-2">
+            <div className="grid grid-cols-2 bg-[#FFE8B0] border-b border-[#EADFC7] py-2">
               <span className="text-center font-jetbrains font-extrabold text-[10px] text-[#8C734B] tracking-[0.2em] uppercase">
                 DATE
               </span>
@@ -93,7 +92,7 @@ export default function ScheduleConnectModal({
             {/* Grid rows with interactive selection */}
             <div className="grid grid-cols-2 divide-x divide-[#EADFC7]">
               {/* Date Column */}
-              <div className="p-2 space-y-1">
+              <div className="p-2 space-y-1 flex items-center flex-col justify-center">
                 {DATE_OPTIONS.map((d) => {
                   const isSelected = selectedDate === d.value;
                   return (
@@ -101,9 +100,9 @@ export default function ScheduleConnectModal({
                       key={d.value}
                       type="button"
                       onClick={() => setSelectedDate(d.value)}
-                      className={`w-full py-2 px-3 text-center rounded-lg text-xs font-montserrat transition-all ${
+                      className={`w-full py-2 px-3 text-center text-xs font-montserrat transition-all ${
                         isSelected
-                          ? "bg-[#FFF5DB] font-montserrat-bold font-black text-[#1E1E1E] border-y-2 border-[#1B2264] shadow-xs"
+                          ? "bg-[#F1E9DB] font-montserrat-bold font-black text-[#1E1E1E] border-y-2 border-[#1B2264] shadow-xs"
                           : "text-[#8C827A] hover:bg-black/5 font-medium"
                       }`}
                     >
@@ -122,9 +121,9 @@ export default function ScheduleConnectModal({
                       key={t}
                       type="button"
                       onClick={() => setSelectedTime(t)}
-                      className={`w-full py-2 px-3 text-center rounded-lg text-xs font-montserrat transition-all ${
+                      className={`w-full py-2 px-3 text-center text-xs font-montserrat transition-all ${
                         isSelected
-                          ? "bg-[#FFF5DB] font-montserrat-bold font-black text-[#1E1E1E] border-y-2 border-[#1B2264] shadow-xs"
+                          ? "bg-[#F1E9DB] font-montserrat-bold font-black text-[#1E1E1E] border-y-2 border-[#1B2264] shadow-xs"
                           : "text-[#8C827A] hover:bg-black/5 font-medium"
                       }`}
                     >
@@ -137,8 +136,8 @@ export default function ScheduleConnectModal({
           </div>
 
           {/* ── Scheduled For Summary Bar (Navy #1B2264) ───────────── */}
-          <div className="bg-[#1B2264] rounded-xl p-3.5 flex items-center justify-between text-white mb-4 shadow-sm">
-            <span className="font-jetbrains text-[9px] font-bold tracking-widest uppercase text-white/60">
+          <div className="bg-[#1B3589] p-3.5 flex items-center justify-between text-white mb-4 shadow-sm">
+            <span className="font-jetbrains text-[9px] tracking-widest uppercase text-white/50">
               SCHEDULED FOR
             </span>
             <span className="font-montserrat-bold font-black text-sm text-white">
@@ -150,7 +149,7 @@ export default function ScheduleConnectModal({
           <button
             type="button"
             onClick={handleConfirm}
-            className="w-full bg-[#1B2264] hover:bg-[#141A4F] text-white font-montserrat-bold font-black text-xs sm:text-sm tracking-wider uppercase py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+            className="w-full bg-[#1B3589] hover:bg-[#141A4F] text-white font-montserrat-bold font-black text-xs sm:text-sm tracking-wider uppercase py-3.5 px-6 rounded-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
           >
             <Check className="w-4 h-4" />
             <span>CONFIRM SESSION</span>
